@@ -54,11 +54,23 @@ a { color: inherit; text-decoration: none; }
   justify-content: space-between;
 }
 .nav-logo {
-  font-family: var(--mono);
-  font-weight: 500;
-  font-size: 18px;
-  color: var(--accent2);
-  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+}
+.nav-logo-img {
+  height: 28px;
+  width: auto;
+}
+.footer-logo-img {
+  height: 24px;
+  width: auto;
+  opacity: 0.85;
+}
+.project-logo-img {
+  height: 56px;
+  width: 56px;
+  object-fit: contain;
+  border-radius: 14px;
 }
 .nav-links { display: flex; gap: 32px; align-items: center; }
 .nav-links a {
