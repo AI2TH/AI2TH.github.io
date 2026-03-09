@@ -675,13 +675,14 @@ a { color: inherit; text-decoration: none; }
 /* ── Gallery ── */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 16px;
 }
 .gallery-thumb {
   width: 100%;
-  aspect-ratio: 16/10;
+  aspect-ratio: 9/19;
   object-fit: cover;
+  object-position: top;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
   cursor: pointer;
