@@ -32,6 +32,25 @@
         Three apps that embed QEMU + Alpine Linux directly in the APK.
         Run Docker, Asterisk PBX, or a bare shell on any arm64 Android device.
       </p>
+      <div class="terminal-window page-terminal">
+        <div class="terminal-bar">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="terminal-title">alpine@android:~</span>
+        </div>
+        <pre class="terminal-body"><span class="t-dim">$</span> <span class="t-cmd">uname -a</span>
+Linux alpine 6.1.0 #1 SMP PREEMPT arm64 GNU/Linux
+
+<span class="t-dim">$</span> <span class="t-cmd">docker run hello-world</span>
+Hello from Docker! This message shows that your installation
+appears to be working correctly.
+
+<span class="t-dim">$</span> <span class="t-cmd">asterisk -rx "sip show peers"</span>
+Name/username    Host    Dyn  Port  Status
+1001             (dyn)   D    5060  OK (12 ms)
+2 sip peers [1 monitored]
+
+<span class="t-dim">$</span> <span class="t-green">█</span></pre>
+      </div>
     </div>
   </div>
 

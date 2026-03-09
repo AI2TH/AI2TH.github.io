@@ -434,6 +434,13 @@ a { color: inherit; text-decoration: none; }
 .field-desc { font-size: 14px; color: var(--muted); line-height: 1.55; }
 .field-meta { font-size: 13px; color: var(--accent2); font-weight: 500; margin-top: 6px; }
 
+/* ── Terminal inside page header ── */
+.page-terminal {
+  margin-top: 36px;
+  max-width: 760px;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+}
+
 /* ── Page header (inner pages) ── */
 .page-header {
   padding: 56px 24px 48px;
