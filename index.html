@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI2TH — Build Something Real</title>
-  <meta name="description" content="AI2TH is an independent software lab building tools across Android infrastructure, systems software, and beyond." />
+  <title>AI2TH — Linux on Android, No Root</title>
+  <meta name="description" content="AI2TH builds tools that run full Linux environments on Android devices — no root, no Termux, one APK." />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,20 +17,20 @@
       <a href="index.html" class="nav-logo">AI2TH</a>
       <div class="nav-links">
         <a href="android.html">Android</a>
-        <a href="coming-soon.html" class="nav-soon">+ More</a>
+        <a href="coming-soon.html" class="nav-more">+ More</a>
         <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero -->
+  <!-- Hero — first version design -->
   <section class="hero">
     <div class="hero-inner">
-      <div class="hero-badge">Independent software lab</div>
-      <h1 class="hero-title">Tools built to<br /><span class="accent">push real limits.</span></h1>
+      <div class="hero-badge">No root. No Termux. One APK.</div>
+      <h1 class="hero-title">Linux on Android,<br /><span class="accent">the hard way done right.</span></h1>
       <p class="hero-sub">
-        AI2TH ships software that solves hard problems — starting with running full Linux environments
-        on Android without root, and expanding from there.
+        AI2TH ships Android apps that embed QEMU + Alpine Linux directly in the APK.
+        Run Docker, Asterisk PBX, or a bare Linux shell on any arm64 device — no special permissions required.
       </p>
       <div class="hero-cta">
         <a href="android.html" class="btn btn-primary">Explore Projects</a>
@@ -49,8 +49,8 @@ Hello from Docker! This message shows that your installation
 appears to be working correctly.
 
 <span class="t-dim">$</span> <span class="t-cmd">asterisk -rx "sip show peers"</span>
-Name/username    Host    Dyn  Port  Status
-1001             (dyn)   D    5060  OK (12 ms)
+Name/username    Host    Dyn  Nat  ACL  Port  Status
+1001             192.168.1.10   D    A    5060  OK (12 ms)
 2 sip peers [1 monitored]
 
 <span class="t-dim">$</span> <span class="t-green">█</span></pre>
@@ -58,22 +58,22 @@ Name/username    Host    Dyn  Port  Status
     </div>
   </section>
 
-  <!-- Fields overview -->
+  <!-- Fields -->
   <section class="section">
     <div class="section-inner">
-      <h2 class="section-title">What we build</h2>
-      <p class="section-sub">Each field is its own page. More open as AI2TH expands.</p>
+      <h2 class="section-title">Project fields</h2>
+      <p class="section-sub">Each page is a different field. More will open as AI2TH expands.</p>
 
       <div class="field-grid">
 
         <a href="android.html" class="field-card">
-          <div class="field-icon android-icon">
+          <div class="field-icon android">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="18" r="1" fill="currentColor" stroke="none"/></svg>
           </div>
           <div class="field-body">
             <div class="field-name">Android Infrastructure</div>
-            <div class="field-desc">Run full Linux environments on Android — no root, no Termux, one APK.</div>
-            <div class="field-projects">3 projects &rarr;</div>
+            <div class="field-desc">Run full Linux environments on Android — no root, no Termux, one APK. Docker, Asterisk PBX, bare shell.</div>
+            <div class="field-meta">3 projects &rarr;</div>
           </div>
         </a>
 
@@ -84,7 +84,7 @@ Name/username    Host    Dyn  Port  Status
           <div class="field-body">
             <div class="field-name">Coming Soon</div>
             <div class="field-desc">A new field is in progress. Follow the GitHub org to be the first to know.</div>
-            <div class="field-projects">In progress</div>
+            <div class="field-meta">In progress</div>
           </div>
         </a>
 
@@ -95,7 +95,7 @@ Name/username    Host    Dyn  Port  Status
           <div class="field-body">
             <div class="field-name">Coming Soon</div>
             <div class="field-desc">Another field will open here when the time is right.</div>
-            <div class="field-projects">In progress</div>
+            <div class="field-meta">In progress</div>
           </div>
         </a>
 
@@ -106,9 +106,12 @@ Name/username    Host    Dyn  Port  Status
   <footer class="footer">
     <div class="footer-inner">
       <span class="nav-logo">AI2TH</span>
-      <p class="footer-tagline">Building tools that push limits.</p>
+      <p class="footer-tagline">Building Linux on Android — no root required.</p>
       <div class="footer-links">
         <a href="android.html">Android</a>
+        <a href="https://github.com/AI2TH/Linxr" target="_blank" rel="noopener">Linxr</a>
+        <a href="https://github.com/AI2TH/Pockr" target="_blank" rel="noopener">Pockr</a>
+        <a href="https://github.com/AI2TH/Zyvr" target="_blank" rel="noopener">Zyvr</a>
         <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
