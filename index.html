@@ -18,7 +18,6 @@
       <span class="nav-logo">AI2TH</span>
       <div class="nav-links">
         <a href="#projects">Projects</a>
-        <a href="#architecture">How it works</a>
         <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
@@ -59,19 +58,36 @@ Name/username    Host    Dyn  Port  Status
     </div>
   </section>
 
-  <!-- Projects -->
+  <!-- Projects with tabs -->
   <section class="section" id="projects">
     <div class="section-inner">
       <h2 class="section-title">Projects</h2>
-      <p class="section-sub">A few projects now — more fields coming.</p>
+      <p class="section-sub">Each tab is a different field. More will open as AI2TH expands.</p>
 
-      <!-- Vertical: Android Infrastructure -->
-      <div class="vertical">
-        <div class="vertical-header">
+      <!-- Tab bar -->
+      <div class="tab-bar" role="tablist">
+        <button class="tab-btn active" role="tab" aria-selected="true" data-tab="android">
+          <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="18" r="1" fill="currentColor" stroke="none"/></svg>
+          Android Infrastructure
+        </button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-tab="coming1">
+          <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          Coming Soon
+        </button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-tab="coming2">
+          <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          Coming Soon
+        </button>
+      </div>
+
+      <!-- ── Tab: Android Infrastructure ── -->
+      <div class="tab-panel active" id="tab-android" role="tabpanel">
+
+        <div class="tab-intro">
           <span class="vertical-tag">Android Infrastructure</span>
           <p class="vertical-desc">
-            Three apps that run full Linux environments inside QEMU on any arm64 Android device.
-            No root, no Termux, one APK.
+            Three apps that embed QEMU + Alpine Linux directly in an APK.
+            Run Docker, Asterisk PBX, or a bare Linux shell on any arm64 Android device — no root, no Termux.
           </p>
         </div>
 
@@ -90,7 +106,7 @@ Name/username    Host    Dyn  Port  Status
             </div>
             <p class="card-desc">
               A full Alpine Linux environment running inside QEMU on Android.
-              Get a real bash shell, SSH access, and persistent storage — on any arm64 phone.
+              Real bash shell, SSH access, persistent storage — on any arm64 phone.
             </p>
             <ul class="card-features">
               <li>OpenSSH server — connect from any SSH client</li>
@@ -117,7 +133,7 @@ Name/username    Host    Dyn  Port  Status
             </div>
             <p class="card-desc">
               Run Docker containers on a non-rooted Android device. Pull images, start containers,
-              tail logs — all from a native Flutter UI backed by a Docker daemon in an Alpine VM.
+              tail logs — backed by a Docker daemon inside an Alpine VM.
             </p>
             <ul class="card-features">
               <li>Pull &amp; run any Docker image</li>
@@ -143,8 +159,8 @@ Name/username    Host    Dyn  Port  Status
               </div>
             </div>
             <p class="card-desc">
-              Zero-carrier Your Voice Router. A full Asterisk 20 PBX running on your phone.
-              Manage SIP extensions, monitor live calls, and route calls — carrier-independent.
+              Zero-carrier Your Voice Router. A full Asterisk 20 PBX on your phone.
+              Manage SIP extensions, monitor live calls, route calls — carrier-independent.
             </p>
             <ul class="card-features">
               <li>Asterisk 20 with PJSIP driver</li>
@@ -159,64 +175,91 @@ Name/username    Host    Dyn  Port  Status
           </div>
 
         </div>
-      </div>
 
-      <!-- Coming soon -->
-      <div class="coming-soon-block">
-        <div class="coming-soon-inner">
-          <div class="coming-soon-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        <!-- Architecture (inside this tab) -->
+        <div class="arch-section">
+          <h3 class="arch-heading">How it works</h3>
+          <p class="arch-sub">Every app uses the same layered stack.</p>
+          <div class="arch-row">
+            <div class="arch-grid">
+              <div class="arch-layer">
+                <div class="arch-label">Flutter UI (Dart)</div>
+                <div class="arch-desc">Native Android UI — tabs, logs, terminal, settings</div>
+              </div>
+              <div class="arch-arrow">↓</div>
+              <div class="arch-layer">
+                <div class="arch-label">Kotlin VmManager</div>
+                <div class="arch-desc">Launches libqemu.so via JNI, manages ForegroundService lifecycle</div>
+              </div>
+              <div class="arch-arrow">↓</div>
+              <div class="arch-layer arch-layer-highlight">
+                <div class="arch-label">QEMU (libqemu.so)</div>
+                <div class="arch-desc">Compiled as .so, ships in the APK — runs as a normal process, no root</div>
+              </div>
+              <div class="arch-arrow">↓</div>
+              <div class="arch-layer">
+                <div class="arch-label">Alpine Linux VM</div>
+                <div class="arch-desc">Bundled QCOW2 asset, SLIRP networking, persistent overlay, OpenRC init</div>
+              </div>
+              <div class="arch-arrow">↓</div>
+              <div class="arch-layer">
+                <div class="arch-label">Your workload</div>
+                <div class="arch-desc">Docker · Asterisk PBX · bash shell — whatever runs on Linux</div>
+              </div>
+            </div>
+            <div class="arch-meta">
+              <div class="req-mini">
+                <div class="req-item-sm"><span class="req-k">Android</span><span class="req-v">8.0+ (API 26)</span></div>
+                <div class="req-item-sm"><span class="req-k">Architecture</span><span class="req-v">arm64-v8a only</span></div>
+                <div class="req-item-sm"><span class="req-k">Storage</span><span class="req-v">~250 MB</span></div>
+                <div class="req-item-sm"><span class="req-k">Root</span><span class="req-v">Not required</span></div>
+              </div>
+              <div class="port-table-wrap">
+                <div class="port-table-label">SLIRP port mappings</div>
+                <table class="port-table">
+                  <thead>
+                    <tr><th>Port</th><th>Protocol</th><th>Service</th><th>App</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>7080</td><td>TCP</td><td>FastAPI control server</td><td>All</td></tr>
+                    <tr><td>2222</td><td>TCP</td><td>OpenSSH</td><td>Linxr</td></tr>
+                    <tr><td>5060</td><td>TCP/UDP</td><td>SIP</td><td>Zyvr</td></tr>
+                    <tr><td>5038</td><td>TCP</td><td>Asterisk AMI</td><td>Zyvr</td></tr>
+                    <tr><td>8088/8089</td><td>TCP</td><td>ARI / WSS</td><td>Zyvr</td></tr>
+                    <tr><td>10000–10019</td><td>UDP</td><td>RTP media</td><td>Zyvr</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
-          <div>
-            <div class="coming-soon-label">More projects coming</div>
-            <div class="coming-soon-desc">New fields, new tools. Follow the GitHub org to stay updated.</div>
+        </div>
+
+      </div><!-- /tab-android -->
+
+      <!-- ── Tab: Coming Soon 1 ── -->
+      <div class="tab-panel" id="tab-coming1" role="tabpanel">
+        <div class="coming-panel">
+          <div class="coming-glyph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" width="56" height="56"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
           </div>
-          <a href="https://github.com/AI2TH" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">Follow on GitHub</a>
+          <h3 class="coming-title">New field coming</h3>
+          <p class="coming-desc">This tab will open when the next project area is ready.<br />Follow the GitHub org to be the first to know.</p>
+          <a href="https://github.com/AI2TH" class="btn btn-primary" target="_blank" rel="noopener">Follow AI2TH on GitHub</a>
         </div>
       </div>
 
-    </div>
-  </section>
-
-  <!-- Architecture (scoped to Android vertical) -->
-  <section class="section section-alt" id="architecture">
-    <div class="section-inner">
-      <h2 class="section-title">How the Android apps work</h2>
-      <p class="section-sub">Every app uses the same layered stack — QEMU gives the Linux VM, Alpine gives the environment, the app gives the UI.</p>
-
-      <div class="arch-grid">
-        <div class="arch-layer">
-          <div class="arch-label">Flutter UI (Dart)</div>
-          <div class="arch-desc">Native Android UI — tabs, logs, terminal, settings</div>
-        </div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-layer">
-          <div class="arch-label">Kotlin VmManager</div>
-          <div class="arch-desc">Launches libqemu.so via JNI, manages ForegroundService lifecycle</div>
-        </div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-layer arch-layer-highlight">
-          <div class="arch-label">QEMU (libqemu.so)</div>
-          <div class="arch-desc">Compiled as .so shipped inside the APK. Runs as a normal app process — no root.</div>
-        </div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-layer">
-          <div class="arch-label">Alpine Linux VM</div>
-          <div class="arch-desc">Boots from a bundled QCOW2 asset. SLIRP networking, persistent overlay, OpenRC init.</div>
-        </div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-layer">
-          <div class="arch-label">Your workload</div>
-          <div class="arch-desc">Docker daemon · Asterisk PBX · bash shell — whatever runs on Linux</div>
+      <!-- ── Tab: Coming Soon 2 ── -->
+      <div class="tab-panel" id="tab-coming2" role="tabpanel">
+        <div class="coming-panel">
+          <div class="coming-glyph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" width="56" height="56"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <h3 class="coming-title">New field coming</h3>
+          <p class="coming-desc">This tab will open when the next project area is ready.<br />Follow the GitHub org to be the first to know.</p>
+          <a href="https://github.com/AI2TH" class="btn btn-primary" target="_blank" rel="noopener">Follow AI2TH on GitHub</a>
         </div>
       </div>
 
-      <div class="req-mini">
-        <div class="req-item-sm"><span class="req-k">Android</span><span class="req-v">8.0+ (API 26)</span></div>
-        <div class="req-item-sm"><span class="req-k">Architecture</span><span class="req-v">arm64-v8a only</span></div>
-        <div class="req-item-sm"><span class="req-k">Storage</span><span class="req-v">~250 MB</span></div>
-        <div class="req-item-sm"><span class="req-k">Root</span><span class="req-v">Not required</span></div>
-      </div>
     </div>
   </section>
 
@@ -233,6 +276,24 @@ Name/username    Host    Dyn  Port  Status
       </div>
     </div>
   </footer>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab-btn');
+    const panels = document.querySelectorAll('.tab-panel');
+
+    tabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+
+        tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+        panels.forEach(p => p.classList.remove('active'));
+
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        document.getElementById('tab-' + target).classList.add('active');
+      });
+    });
+  </script>
 
 </body>
 </html>
