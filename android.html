@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Android Infrastructure — AI2TH</title>
+  <meta name="description" content="Run full Linux environments on Android — no root, no Termux. Linxr, Pockr, and Zyvr by AI2TH." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">AI2TH</a>
+      <div class="nav-links">
+        <a href="android.html" class="nav-active">Android</a>
+        <a href="coming-soon.html" class="nav-soon">+ More</a>
+        <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page header -->
+  <section class="page-hero">
+    <div class="section-inner">
+      <div class="breadcrumb"><a href="index.html">AI2TH</a> <span>/</span> Android Infrastructure</div>
+      <span class="vertical-tag">Android Infrastructure</span>
+      <h1 class="page-title">Linux on Android,<br /><span class="accent">no root required.</span></h1>
+      <p class="page-sub">
+        Three apps that embed QEMU + Alpine Linux directly in the APK.
+        Run Docker, Asterisk PBX, or a bare shell on any arm64 Android device.
+      </p>
+    </div>
+  </section>
+
+  <!-- Project cards -->
+  <section class="section">
+    <div class="section-inner">
+      <h2 class="section-title">Projects</h2>
+
+      <div class="cards">
+
+        <!-- Linxr -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon linxr-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <div>
+              <h3 class="card-name">Linxr</h3>
+              <span class="card-tag">Alpine Linux Shell</span>
+            </div>
+          </div>
+          <p class="card-desc">
+            A full Alpine Linux environment running inside QEMU on Android.
+            Real bash shell, SSH access, and persistent storage — on any arm64 phone.
+          </p>
+          <ul class="card-features">
+            <li>OpenSSH server — connect from any SSH client</li>
+            <li>Built-in terminal with auto-reconnect</li>
+            <li>Persistent QCOW2 overlay across reboots</li>
+            <li>Full outbound internet via SLIRP networking</li>
+          </ul>
+          <div class="card-footer">
+            <a href="https://github.com/AI2TH/Linxr" class="btn btn-sm" target="_blank" rel="noopener">GitHub →</a>
+            <a href="https://github.com/AI2TH/Linxr/releases/latest" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">Download APK</a>
+          </div>
+        </div>
+
+        <!-- Pockr -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon pockr-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </div>
+            <div>
+              <h3 class="card-name">Pockr</h3>
+              <span class="card-tag">Docker on Android</span>
+            </div>
+          </div>
+          <p class="card-desc">
+            Run Docker containers on a non-rooted Android device. Pull images, start containers,
+            tail logs — backed by a Docker daemon inside an Alpine VM.
+          </p>
+          <ul class="card-features">
+            <li>Pull &amp; run any Docker image</li>
+            <li>Real-time container logs</li>
+            <li>Terminal into the Alpine VM host</li>
+            <li>Configurable vCPU + RAM (1–4 cores, 512 MB–4 GB)</li>
+          </ul>
+          <div class="card-footer">
+            <a href="https://github.com/AI2TH/Pockr" class="btn btn-sm" target="_blank" rel="noopener">GitHub →</a>
+            <a href="https://github.com/AI2TH/Pockr/releases/latest" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">Download APK</a>
+          </div>
+        </div>
+
+        <!-- Zyvr -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon zyvr-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.69h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.1a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <h3 class="card-name">Zyvr</h3>
+              <span class="card-tag">Asterisk PBX on Android</span>
+            </div>
+          </div>
+          <p class="card-desc">
+            Zero-carrier Your Voice Router. A full Asterisk 20 PBX on your phone.
+            Manage SIP extensions, monitor live calls, route calls — carrier-independent.
+          </p>
+          <ul class="card-features">
+            <li>Asterisk 20 with PJSIP driver</li>
+            <li>SIP extension management (create, delete, list)</li>
+            <li>Live call monitor + hangup</li>
+            <li>WebRTC/SIP.js support via WSS on 8089</li>
+          </ul>
+          <div class="card-footer">
+            <a href="https://github.com/AI2TH/Zyvr" class="btn btn-sm" target="_blank" rel="noopener">GitHub →</a>
+            <a href="https://github.com/AI2TH/Zyvr/releases/latest" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">Download APK</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section class="section section-alt">
+    <div class="section-inner">
+      <h2 class="section-title">How it works</h2>
+      <p class="section-sub">Every app uses the same layered stack.</p>
+
+      <div class="arch-row">
+        <div class="arch-grid">
+          <div class="arch-layer">
+            <div class="arch-label">Flutter UI (Dart)</div>
+            <div class="arch-desc">Native Android UI — tabs, logs, terminal, settings</div>
+          </div>
+          <div class="arch-arrow">↓</div>
+          <div class="arch-layer">
+            <div class="arch-label">Kotlin VmManager</div>
+            <div class="arch-desc">Launches libqemu.so via JNI, manages ForegroundService lifecycle</div>
+          </div>
+          <div class="arch-arrow">↓</div>
+          <div class="arch-layer arch-layer-highlight">
+            <div class="arch-label">QEMU (libqemu.so)</div>
+            <div class="arch-desc">Compiled as .so, ships inside the APK — runs as a normal process, no root</div>
+          </div>
+          <div class="arch-arrow">↓</div>
+          <div class="arch-layer">
+            <div class="arch-label">Alpine Linux VM</div>
+            <div class="arch-desc">Bundled QCOW2 asset, SLIRP networking, persistent overlay, OpenRC init</div>
+          </div>
+          <div class="arch-arrow">↓</div>
+          <div class="arch-layer">
+            <div class="arch-label">Your workload</div>
+            <div class="arch-desc">Docker · Asterisk PBX · bash shell — whatever runs on Linux</div>
+          </div>
+        </div>
+
+        <div class="arch-meta">
+          <div>
+            <div class="port-table-label">Requirements</div>
+            <div class="req-mini">
+              <div class="req-item-sm"><span class="req-k">Android</span><span class="req-v">8.0+ (API 26)</span></div>
+              <div class="req-item-sm"><span class="req-k">Architecture</span><span class="req-v">arm64-v8a only</span></div>
+              <div class="req-item-sm"><span class="req-k">Storage</span><span class="req-v">~250 MB</span></div>
+              <div class="req-item-sm"><span class="req-k">Root</span><span class="req-v">Not required</span></div>
+            </div>
+          </div>
+          <div class="port-table-wrap">
+            <div class="port-table-label">SLIRP port mappings</div>
+            <table class="port-table">
+              <thead>
+                <tr><th>Port</th><th>Protocol</th><th>Service</th><th>App</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>7080</td><td>TCP</td><td>FastAPI control server</td><td>All</td></tr>
+                <tr><td>2222</td><td>TCP</td><td>OpenSSH</td><td>Linxr</td></tr>
+                <tr><td>5060</td><td>TCP/UDP</td><td>SIP</td><td>Zyvr</td></tr>
+                <tr><td>5038</td><td>TCP</td><td>Asterisk AMI</td><td>Zyvr</td></tr>
+                <tr><td>8088/8089</td><td>TCP</td><td>ARI / WSS</td><td>Zyvr</td></tr>
+                <tr><td>10000–10019</td><td>UDP</td><td>RTP media</td><td>Zyvr</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="nav-logo">AI2TH</span>
+      <p class="footer-tagline">Building tools that push limits.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="https://github.com/AI2TH/Linxr" target="_blank" rel="noopener">Linxr</a>
+        <a href="https://github.com/AI2TH/Pockr" target="_blank" rel="noopener">Pockr</a>
+        <a href="https://github.com/AI2TH/Zyvr" target="_blank" rel="noopener">Zyvr</a>
+        <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
