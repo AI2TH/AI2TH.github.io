@@ -2,6 +2,16 @@
 let current = 0;
 let images = [];
 
+// Cache DOM elements
+let lb, lbImg, lbCaption;
+
+function getElements() {
+  if (!lb) lb = document.getElementById('lightbox');
+  if (!lbImg) lbImg = document.getElementById('lightbox-img');
+  if (!lbCaption) lbCaption = document.getElementById('lightbox-caption');
+  return { lb, lbImg, lbCaption };
+}
+
 document.querySelectorAll('.gallery-thumb').forEach((img, i) => {
   images.push({ src: img.src, caption: img.dataset.caption || '' });
   img.addEventListener('click', () => openLightbox(i));
@@ -9,27 +19,30 @@ document.querySelectorAll('.gallery-thumb').forEach((img, i) => {
 
 function openLightbox(i) {
   current = i;
-  const lb = document.getElementById('lightbox');
-  document.getElementById('lightbox-img').src = images[i].src;
-  document.getElementById('lightbox-caption').textContent = images[i].caption;
-  lb.classList.add('active');
+  const { lb, lbImg, lbCaption } = getElements();
+
+  if (lbImg) lbImg.src = images[i].src;
+  if (lbCaption) lbCaption.textContent = images[i].caption;
+  if (lb) lb.classList.add('active');
   document.body.style.overflow = 'hidden';
 }
 
 function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('active');
+  const { lb } = getElements();
+  if (lb) lb.classList.remove('active');
   document.body.style.overflow = '';
 }
 
 function shiftLightbox(dir) {
   current = (current + dir + images.length) % images.length;
-  document.getElementById('lightbox-img').src = images[current].src;
-  document.getElementById('lightbox-caption').textContent = images[current].caption;
+  const { lbImg, lbCaption } = getElements();
+  if (lbImg) lbImg.src = images[current].src;
+  if (lbCaption) lbCaption.textContent = images[current].caption;
 }
 
 document.addEventListener('keydown', e => {
-  const lb = document.getElementById('lightbox');
-  if (!lb.classList.contains('active')) return;
+  const { lb } = getElements();
+  if (!lb || !lb.classList.contains('active')) return;
   if (e.key === 'Escape') closeLightbox();
   if (e.key === 'ArrowLeft')  shiftLightbox(-1);
   if (e.key === 'ArrowRight') shiftLightbox(1);
