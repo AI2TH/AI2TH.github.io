@@ -316,6 +316,7 @@ a { color: inherit; text-decoration: none; }
   padding: 3px 10px;
   border-radius: 0 0 6px 6px;
   letter-spacing: 0.05em;
+  z-index: 2;
 }
 .card-deprecated {
   border-color: rgba(239, 68, 68, 0.4);
@@ -323,7 +324,7 @@ a { color: inherit; text-decoration: none; }
   position: relative;
 }
 .card-deprecated::before {
-  content: '⚠️ Deprecated';
+  content: 'Deprecated — Merged into Linxr';
   position: absolute;
   top: -1px;
   right: 20px;
@@ -334,6 +335,7 @@ a { color: inherit; text-decoration: none; }
   padding: 3px 10px;
   border-radius: 0 0 6px 6px;
   letter-spacing: 0.05em;
+  z-index: 2;
 }
 .card-header { display: flex; align-items: center; gap: 14px; }
 .card-icon {
