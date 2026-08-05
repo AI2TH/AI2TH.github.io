@@ -77,6 +77,7 @@
             <li style="margin-bottom: 8px;"><strong>Internet Access:</strong> Required for the Virtual Machine to communicate with the network (e.g., SSH, package management).</li>
             <li style="margin-bottom: 8px;"><strong>Foreground Service:</strong> Required to keep the QEMU process running when the app is in the background.</li>
             <li style="margin-bottom: 8px;"><strong>Post Notifications:</strong> Required to show the persistent service notification while a VM is active.</li>
+            <li style="margin-bottom: 8px;"><strong>All Files Access (MANAGE_EXTERNAL_STORAGE):</strong> Required for Virtio-9P filesystem passthrough to mount user-selected local storage directories into the guest Alpine Linux VM. All file operations remain strictly local to your device; no file data is ever collected, tracked, or transmitted.</li>
             <li style="margin-bottom: 8px;"><strong>Storage Access:</strong> Required to extract bundled VM assets and manage the writable storage overlay.</li>
           </ul>
         </div>

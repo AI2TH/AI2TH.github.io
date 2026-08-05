@@ -57,34 +57,34 @@
       <h2 class="section-title">Features</h2>
       <div class="feature-grid">
         <div class="feature-item">
-          <div class="feature-icon">🖥️</div>
-          <div class="feature-title">Full Linux shell</div>
-          <div class="feature-desc">Alpine Linux 3.19 with OpenRC init, OpenSSH, sudo, bash</div>
+          <div class="feature-icon">📜</div>
+          <div class="feature-title">System & VM Log Console</div>
+          <div class="feature-desc">Live streaming kernel serial logs (dmesg, init, sshd) directly on Home Screen</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🐳</div>
+          <div class="feature-title">Docker & Container Manager</div>
+          <div class="feature-desc">Integrated Pockr container dashboard to deploy, log, and manage Docker containers</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">⚡</div>
+          <div class="feature-title">15-Second Boot Speed</div>
+          <div class="feature-desc">Optimized SSH probe locks and Virtio-9P passthrough for instant bootup</div>
         </div>
         <div class="feature-item">
           <div class="feature-icon">📡</div>
           <div class="feature-title">Built-in SSH terminal</div>
-          <div class="feature-desc">SSH terminal tab with auto-reconnect, no client needed</div>
+          <div class="feature-desc">SSH terminal tab with auto-reconnect and UTF-8 multi-byte encoding</div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon">🔌</div>
-          <div class="feature-title">External SSH access</div>
-          <div class="feature-desc">Connect from any SSH client on the same device or network</div>
+          <div class="feature-icon">💾</div>
+          <div class="feature-title">Virtio-9P Storage Sharing</div>
+          <div class="feature-desc">Direct POSIX file path sharing between Android host and guest Linux VM</div>
         </div>
         <div class="feature-item">
           <div class="feature-icon">🔓</div>
           <div class="feature-title">No root required</div>
-          <div class="feature-desc">QEMU runs as a normal Android app process</div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">💾</div>
-          <div class="feature-title">Persistent storage</div>
-          <div class="feature-desc">Writable QCOW2 overlay preserves changes across reboots</div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🌐</div>
-          <div class="feature-title">Internet access</div>
-          <div class="feature-desc">SLIRP networking gives the VM full outbound internet</div>
+          <div class="feature-desc">Full QEMU virtual machine environment running under standard app sandbox</div>
         </div>
       </div>
     </div>
@@ -96,13 +96,11 @@
       <h2 class="section-title">Test results</h2>
       <p class="section-sub">Screenshots from real device testing.</p>
       <div class="gallery" id="gallery-linxr">
-        <img class="gallery-thumb" src="screenshots/linxr/01-home-stopped.png"      data-caption="Home — VM stopped, ready to start" alt="Home stopped" />
-        <img class="gallery-thumb" src="screenshots/linxr/02-home-running.png"      data-caption="Home — VM running with shell access info" alt="Home running" />
-        <img class="gallery-thumb" src="screenshots/linxr/03-terminal-connected.png" data-caption="Terminal — SSH connectivity" alt="Terminal connected" />
-        <img class="gallery-thumb" src="screenshots/linxr/04-terminal-connecting.png" data-caption="Terminal — connecting" alt="Terminal connecting" />
-        <img class="gallery-thumb" src="screenshots/linxr/05-about-main.png"        data-caption="About — App information and branding" alt="About" />
-        <img class="gallery-thumb" src="screenshots/linxr/06-about-licenses.png"    data-caption="About — License information" alt="About license" />
-        <img class="gallery-thumb" src="screenshots/linxr/07-about-components.png"  data-caption="About — Open source components" alt="About components" />
+        <img class="gallery-thumb" src="screenshots/linxr/01-home-stopped.png"      data-caption="Home — VM stopped with System Log Console" alt="Home stopped" />
+        <img class="gallery-thumb" src="screenshots/linxr/02-home-running.png"      data-caption="Home — VM running with real-time serial logs" alt="Home running" />
+        <img class="gallery-thumb" src="screenshots/linxr/03-terminal-connected.png" data-caption="Terminal — Built-in interactive SSH shell" alt="Terminal connected" />
+        <img class="gallery-thumb" src="screenshots/linxr/04-terminal-connecting.png" data-caption="Containers — Integrated Docker Dashboard" alt="Containers dashboard" />
+        <img class="gallery-thumb" src="screenshots/linxr/05-about-main.png"        data-caption="Settings — App parameters & SAF Storage selection" alt="Settings screen" />
       </div>
     </div>
   </section>
