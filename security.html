@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Security — AI2TH</title>
   <meta name="description" content="AI2TH Security: cryptship for encrypted, license-gated container delivery, and local-first, no-tracking apps." />
+  <link rel="icon" type="image/svg+xml" href="logo/ai2th-mark.svg" />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,15 +15,16 @@
 
   <nav class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo"><img src="logo/AI2TH.svg" alt="AI2TH" class="nav-logo-img" /><span class="nav-logo-text">AI2TH</span></a>
+      <a href="index.html" class="nav-logo"><img src="logo/ai2th-animated.svg" alt="AI2TH" class="nav-logo-img" /><span class="nav-logo-text">AI2TH</span></a>
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="android.html">Android</a>
         <a href="linux.html">Linux</a>
         <a href="kubernetes.html">Kubernetes</a>
         <a href="security.html" class="nav-active">Security</a>
+        <a href="bible.html">Bible</a>
         <a href="about.html">About</a>
-        <a href="https://groups.google.com/g/ai2th" class="nav-more" target="_blank" rel="noopener">Join early access</a>
+        <a href="https://groups.google.com/g/ai2th" target="_blank" rel="noopener">Community</a>
         <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
@@ -33,12 +35,13 @@
       <div class="breadcrumb"><a href="index.html">AI2TH</a><span>/</span>Security</div>
       <h1 class="page-title">Security,<br /><span class="accent">without snake oil.</span></h1>
       <p class="page-sub">Encrypted, license-gated software delivery with an honest threat model, and apps that keep your data on your device.</p>
-      <div class="cat-switch" aria-label="Other categories">
+      <nav class="cat-switch" aria-label="Categories">
         <a href="android.html" class="filter-chip">📱 Android</a>
         <a href="linux.html" class="filter-chip">🐧 Linux</a>
         <a href="kubernetes.html" class="filter-chip">☸️ Kubernetes</a>
         <a href="security.html" class="filter-chip is-active">🔐 Security</a>
-      </div>
+        <a href="bible.html" class="filter-chip">📖 Bible</a>
+      </nav>
     </div>
   </div>
 
@@ -51,7 +54,7 @@
             <img src="logo/cryptship.svg" alt="" class="card-logo-img" />
             <div>
               <h3 class="card-name"><a href="cryptship.html">cryptship</a></h3>
-              <span class="card-tag">Security · Software delivery</span>
+              <span class="card-tag">Software delivery</span>
             </div>
           </div>
           <p class="card-desc">Ship encrypted, license-gated application code inside Docker images. The image is ciphertext; a small loader runs your app only with a valid license.</p>
@@ -65,7 +68,6 @@
           <div class="card-footer">
             <a href="cryptship.html" class="btn btn-sm">Details →</a>
             <a href="https://github.com/AI2TH/cryptship" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://github.com/AI2TH/cryptship/releases/latest" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">Release</a>
           </div>
         </article>
       </div>
@@ -76,10 +78,10 @@
   <section class="section section-alt" id="how-it-works">
     <div class="section-inner">
       <h2 class="section-title">How cryptship works</h2>
-      <p class="section-sub">The image on disk is ciphertext. Only a valid license turns it back into your app. This is about cryptship only; the local-first notes below cover the apps.</p>
+      <p class="section-sub">The image on disk is ciphertext. Only a valid license turns it back into your app.</p>
       <div class="arch-cols">
         <div class="arch-col">
-          <a class="arch-col-title" href="cryptship.html">Build time · vendor →</a>
+          <h3 class="arch-col-title">Build time · vendor</h3>
       <div class="arch-grid arch-grid-col">
         <div class="arch-layer">
           <div class="arch-label">Your app</div>
@@ -103,7 +105,7 @@
       </div>
         </div>
         <div class="arch-col">
-          <a class="arch-col-title" href="cryptship.html">Run time · customer →</a>
+          <h3 class="arch-col-title">Run time · customer</h3>
       <div class="arch-grid arch-grid-col">
         <div class="arch-layer">
           <div class="arch-label">Loader starts</div>
@@ -145,14 +147,14 @@
 
   <footer class="footer">
     <div class="footer-inner">
-      <img src="logo/AI2TH.svg" alt="AI2TH" class="nav-logo-img footer-logo-img" />
+      <img src="logo/ai2th-mark.svg" alt="AI2TH" class="nav-logo-img footer-logo-img" />
       <p class="footer-tagline">Applied Intelligence To Tackle Hardships.</p>
       <div class="footer-links">
         <a href="linxr.html">Linxr</a>
         <a href="vizxr.html">Vizxr</a>
         <a href="miktam.html">Miktam Bible</a>
         <a href="cryptship.html">cryptship</a>
-        <a href="android.html">Linux on Android</a>
+        <a href="bible.html">Bible</a>
         <a href="about.html">About</a>
         <a href="contribute.html">Contribute</a>
         <a href="privacy.html">Privacy</a>

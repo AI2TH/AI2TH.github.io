@@ -4,7 +4,12 @@ let images = [];
 
 document.querySelectorAll('.gallery-thumb').forEach((img, i) => {
   images.push({ src: img.src, caption: img.dataset.caption || '' });
+  img.setAttribute('tabindex', '0');
+  img.setAttribute('role', 'button');
   img.addEventListener('click', () => openLightbox(i));
+  img.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(i); }
+  });
 });
 
 function openLightbox(i) {

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bible — AI2TH</title>
+  <meta name="description" content="AI2TH Bible: Miktam Bible, an offline Bible study app with on-device AI, and open Bible databases in SQLite." />
+  <link rel="icon" type="image/svg+xml" href="logo/ai2th-mark.svg" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="logo/ai2th-animated.svg" alt="AI2TH" class="nav-logo-img" /><span class="nav-logo-text">AI2TH</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="android.html">Android</a>
+        <a href="linux.html">Linux</a>
+        <a href="kubernetes.html">Kubernetes</a>
+        <a href="security.html">Security</a>
+        <a href="bible.html" class="nav-active">Bible</a>
+        <a href="about.html">About</a>
+        <a href="https://groups.google.com/g/ai2th" target="_blank" rel="noopener">Community</a>
+        <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="section-inner">
+      <div class="breadcrumb"><a href="index.html">AI2TH</a><span>/</span>Bible</div>
+      <h1 class="page-title">Bible study,<br /><span class="accent">offline and open.</span></h1>
+      <p class="page-sub">Miktam Bible puts thousands of translations, a concordance and an AI study assistant on your phone, and the data behind it is open for anyone to use.</p>
+      <nav class="cat-switch" aria-label="Categories">
+        <a href="android.html" class="filter-chip">📱 Android</a>
+        <a href="linux.html" class="filter-chip">🐧 Linux</a>
+        <a href="kubernetes.html" class="filter-chip">☸️ Kubernetes</a>
+        <a href="security.html" class="filter-chip">🔐 Security</a>
+        <a href="bible.html" class="filter-chip is-active">📖 Bible</a>
+      </nav>
+    </div>
+  </div>
+
+  <section class="section section-tight">
+    <div class="section-inner">
+      <h2 class="section-title">Apps</h2>
+      <div class="cards product-grid">
+        <article class="card product-card" data-cats="android bible">
+          <div class="card-header">
+            <img src="logo/miktam.png" alt="" class="card-logo-img" />
+            <div>
+              <h3 class="card-name"><a href="miktam.html">Miktam Bible</a></h3>
+              <span class="card-tag">Faith · Study</span>
+            </div>
+          </div>
+          <p class="card-desc">An offline Bible study companion with thousands of translations and an AI study assistant that runs entirely on your device.</p>
+          <ul class="card-features">
+            <li>5,600+ translations, fully offline</li>
+            <li>On-device AI study assistant</li>
+            <li>Strong's concordance and full-text search</li>
+            <li>Reading plans, reminders and streaks</li>
+          </ul>
+          <div class="product-status">v1.2.1 · Google Play closed testing</div>
+          <div class="card-footer">
+            <a href="miktam.html" class="btn btn-sm">Details →</a>
+            <a href="miktam.html#early-access" class="btn btn-sm btn-ghost">Early access</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section section-alt" id="how-it-works">
+    <div class="section-inner">
+      <h2 class="section-title">From open data to your phone</h2>
+      <p class="section-sub">How Miktam Bible gets its text, and why it works offline.</p>
+      <div class="arch-grid">
+        <div class="arch-layer">
+          <div class="arch-label">Open Bible data on GitHub</div>
+          <div class="arch-desc">bible_db and the language repos: one SQLite file per translation, with FTS5 search</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">Download once in the app</div>
+          <div class="arch-desc">KJV is bundled; pick other translations from the Translations screen</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer arch-layer-highlight">
+          <div class="arch-label">Stored on your phone</div>
+          <div class="arch-desc">Translations, Strong&rsquo;s concordance and your notes in local SQLite</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">Read, search and ask offline</div>
+          <div class="arch-desc">Search, plans and the on-device AI assistant need no connection</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="data">
+    <div class="section-inner">
+      <h2 class="section-title">Open Bible data</h2>
+      <p class="section-sub">The text and study databases behind the app are published as SQLite with FTS5 search.</p>
+      <div class="contrib-repos data-repos">
+        <a href="https://github.com/AI2TH/bible_db" class="repo-link" target="_blank" rel="noopener"><span class="repo-name">bible_db</span><span class="repo-sub">One SQLite database per translation</span><span class="repo-arrow">→</span></a>
+        <a href="https://github.com/AI2TH/concordance_db" class="repo-link" target="_blank" rel="noopener"><span class="repo-name">concordance_db</span><span class="repo-sub">Strong&rsquo;s Greek and Hebrew, lexicons, cross-references</span><span class="repo-arrow">→</span></a>
+        <a href="https://github.com/AI2TH/bible_db_languages_a_f" class="repo-link" target="_blank" rel="noopener"><span class="repo-name">Languages A–F</span><span class="repo-sub">~1,100 languages</span><span class="repo-arrow">→</span></a>
+        <a href="https://github.com/AI2TH/bible_db_languages_g_m" class="repo-link" target="_blank" rel="noopener"><span class="repo-name">Languages G–M</span><span class="repo-sub">~1,000 languages</span><span class="repo-arrow">→</span></a>
+        <a href="https://github.com/AI2TH/bible_db_languages_n_s" class="repo-link" target="_blank" rel="noopener"><span class="repo-name">Languages N–S</span><span class="repo-sub">~1,100 languages</span><span class="repo-arrow">→</span></a>
+        <a href="https://github.com/AI2TH/bible_db_languages_t_z" class="repo-link" target="_blank" rel="noopener"><span class="repo-name">Languages T–Z</span><span class="repo-sub">~970 languages</span><span class="repo-arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Google Play closed testing -->
+  <section class="section join-section" id="early-access">
+    <div class="section-inner">
+      <div class="join-banner">
+        <div class="join-icon" aria-hidden="true">🚀</div>
+        <div class="join-body">
+          <h2 class="join-title">Get our Play Store apps first</h2>
+          <p class="join-desc">
+            AI2TH&rsquo;s Google Play apps, Linxr and Miktam Bible today, are released through closed testing.
+            Join the <strong>AI2TH Google Group</strong> and you become a closed tester for all of them,
+            including every new Play app as it ships.
+          </p>
+          <ol class="join-steps">
+            <li><strong>Join the AI2TH Google Group</strong> at <a href="https://groups.google.com/g/ai2th" target="_blank" rel="noopener">groups.google.com/g/ai2th</a> with the Google account on your phone.</li>
+            <li><strong>Become a tester</strong> once per app: <a href="https://play.google.com/apps/testing/com.ai2th.linxr" target="_blank" rel="noopener">Linxr</a> · <a href="https://play.google.com/apps/testing/miktam.bible" target="_blank" rel="noopener">Miktam Bible</a>.</li>
+            <li><strong>Install from Google Play.</strong> Updates arrive like any other app.</li>
+          </ol>
+          <div class="join-actions">
+            <a href="https://groups.google.com/g/ai2th" class="btn btn-primary" target="_blank" rel="noopener">Join the AI2TH group →</a>
+            <a href="https://forms.gle/jdLxXPVhDYm5ubpQ7" class="btn btn-ghost" target="_blank" rel="noopener">Different Play account? Request access</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <img src="logo/ai2th-mark.svg" alt="AI2TH" class="nav-logo-img footer-logo-img" />
+      <p class="footer-tagline">Applied Intelligence To Tackle Hardships.</p>
+      <div class="footer-links">
+        <a href="linxr.html">Linxr</a>
+        <a href="vizxr.html">Vizxr</a>
+        <a href="miktam.html">Miktam Bible</a>
+        <a href="cryptship.html">cryptship</a>
+        <a href="bible.html">Bible</a>
+        <a href="about.html">About</a>
+        <a href="contribute.html">Contribute</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://groups.google.com/g/ai2th" target="_blank" rel="noopener">Community</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

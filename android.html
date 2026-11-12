@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Android apps — AI2TH</title>
   <meta name="description" content="AI2TH Android apps: Linxr (Linux on Android), Vizxr (Kubernetes IDE) and Miktam Bible (offline Bible study)." />
+  <link rel="icon" type="image/svg+xml" href="logo/ai2th-mark.svg" />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,15 +15,16 @@
 
   <nav class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo"><img src="logo/AI2TH.svg" alt="AI2TH" class="nav-logo-img" /><span class="nav-logo-text">AI2TH</span></a>
+      <a href="index.html" class="nav-logo"><img src="logo/ai2th-animated.svg" alt="AI2TH" class="nav-logo-img" /><span class="nav-logo-text">AI2TH</span></a>
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="android.html" class="nav-active">Android</a>
         <a href="linux.html">Linux</a>
         <a href="kubernetes.html">Kubernetes</a>
         <a href="security.html">Security</a>
+        <a href="bible.html">Bible</a>
         <a href="about.html">About</a>
-        <a href="https://groups.google.com/g/ai2th" class="nav-more" target="_blank" rel="noopener">Join early access</a>
+        <a href="https://groups.google.com/g/ai2th" target="_blank" rel="noopener">Community</a>
         <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
@@ -33,12 +35,13 @@
       <div class="breadcrumb"><a href="index.html">AI2TH</a><span>/</span>Android</div>
       <h1 class="page-title">Android apps,<br /><span class="accent">one job each.</span></h1>
       <p class="page-sub">Everything AI2TH builds for your phone. Each app does a different job: Linxr runs Linux, Vizxr manages Kubernetes, Miktam Bible is for Bible study. Open an app to see how it works.</p>
-      <div class="cat-switch" aria-label="Other categories">
+      <nav class="cat-switch" aria-label="Categories">
         <a href="android.html" class="filter-chip is-active">📱 Android</a>
         <a href="linux.html" class="filter-chip">🐧 Linux</a>
         <a href="kubernetes.html" class="filter-chip">☸️ Kubernetes</a>
         <a href="security.html" class="filter-chip">🔐 Security</a>
-      </div>
+        <a href="bible.html" class="filter-chip">📖 Bible</a>
+      </nav>
     </div>
   </div>
 
@@ -61,11 +64,10 @@
             <li>Linux desktop GUI and SSH terminal</li>
             <li>1-click Marketplace with community recipes</li>
           </ul>
-          <div class="product-status">v3.4.0 · Google Play closed testing · APK</div>
+          <div class="product-status">v3.4.0 · Google Play closed testing · APK on GitHub</div>
           <div class="card-footer">
             <a href="linxr.html" class="btn btn-sm">Details →</a>
             <a href="https://github.com/AI2TH/Linxr" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://github.com/AI2TH/Linxr/releases/latest" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">APK</a>
           </div>
         </article>
         <article class="card product-card" data-cats="android kubernetes">
@@ -83,14 +85,13 @@
             <li>CRD explorer and Helm releases</li>
             <li>Logs, pod exec and YAML editor</li>
           </ul>
-          <div class="product-status">v1.1.0 · APK</div>
+          <div class="product-status">v1.1.0 · APK on GitHub</div>
           <div class="card-footer">
             <a href="vizxr.html" class="btn btn-sm">Details →</a>
             <a href="https://github.com/AI2TH/Vizxr" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://github.com/AI2TH/Vizxr/releases/latest" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">APK</a>
           </div>
         </article>
-        <article class="card product-card" data-cats="android">
+        <article class="card product-card" data-cats="android bible">
           <div class="card-header">
             <img src="logo/miktam.png" alt="" class="card-logo-img" />
             <div>
@@ -108,50 +109,47 @@
           <div class="product-status">v1.2.1 · Google Play closed testing</div>
           <div class="card-footer">
             <a href="miktam.html" class="btn btn-sm">Details →</a>
-            <a href="https://play.google.com/store/apps/details?id=miktam.bible" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">Google Play</a>
-            <a href="https://github.com/AI2TH/miktam_bible" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">GitHub</a>
+            <a href="miktam.html#early-access" class="btn btn-sm btn-ghost">Early access</a>
           </div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- How it works -->
-  <section class="section section-alt" id="how-it-works">
+  <section class="section section-alt" id="get-the-apps">
     <div class="section-inner">
-      <h2 class="section-title">How you get them</h2>
-      <p class="section-sub">Linxr and Miktam Bible are in Google Play closed testing. Vizxr is available as an APK on GitHub.</p>
-      <div class="arch-grid">
-        <div class="arch-layer arch-layer-highlight">
-          <div class="arch-label">Join the AI2TH Google Group</div>
-          <div class="arch-desc">Use the Google account on your phone</div>
-        </div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-layer">
-          <div class="arch-label">Become a tester</div>
-          <div class="arch-desc">Open the app&rsquo;s Play testing page and opt in</div>
-        </div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-layer">
-          <div class="arch-label">Install from Google Play</div>
-          <div class="arch-desc">Updates arrive like any other app</div>
-        </div>
+      <h2 class="section-title">How to get each app</h2>
+      <p class="section-sub">Play Store apps go through closed testing first: joining the AI2TH Google Group makes you a tester for all of them.</p>
+      <div class="port-table-wrap">
+        <table class="port-table get-table">
+          <thead><tr><th>App</th><th>Google Play</th><th>Direct download</th></tr></thead>
+          <tbody>
+            <tr><td><a href="linxr.html">Linxr</a></td><td><a href="https://play.google.com/store/apps/details?id=com.ai2th.linxr" target="_blank" rel="noopener">Closed testing</a>, join the group</td><td><a href="https://github.com/AI2TH/Linxr/releases/latest" target="_blank" rel="noopener">APK on GitHub</a></td></tr>
+            <tr><td><a href="miktam.html">Miktam Bible</a></td><td><a href="https://play.google.com/store/apps/details?id=miktam.bible" target="_blank" rel="noopener">Closed testing</a>, join the group</td><td>—</td></tr>
+            <tr><td><a href="vizxr.html">Vizxr</a></td><td>Not yet</td><td><a href="https://github.com/AI2TH/Vizxr/releases/latest" target="_blank" rel="noopener">APK on GitHub</a></td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
 
-  <!-- Join the closed-testing group -->
+  <!-- Google Play closed testing -->
   <section class="section join-section" id="early-access">
     <div class="section-inner">
       <div class="join-banner">
         <div class="join-icon" aria-hidden="true">🚀</div>
         <div class="join-body">
-          <h2 class="join-title">Get every new app first on Google Play</h2>
+          <h2 class="join-title">Get our Play Store apps first</h2>
           <p class="join-desc">
-            New AI2TH apps go to Google Play closed testing first. Members of the
-            <strong>AI2TH Google Group</strong> get early access automatically: Linxr, Miktam Bible
-            and each new app as it ships.
+            AI2TH&rsquo;s Google Play apps, Linxr and Miktam Bible today, are released through closed testing.
+            Join the <strong>AI2TH Google Group</strong> and you become a closed tester for all of them,
+            including every new Play app as it ships.
           </p>
+          <ol class="join-steps">
+            <li><strong>Join the AI2TH Google Group</strong> at <a href="https://groups.google.com/g/ai2th" target="_blank" rel="noopener">groups.google.com/g/ai2th</a> with the Google account on your phone.</li>
+            <li><strong>Become a tester</strong> once per app: <a href="https://play.google.com/apps/testing/com.ai2th.linxr" target="_blank" rel="noopener">Linxr</a> · <a href="https://play.google.com/apps/testing/miktam.bible" target="_blank" rel="noopener">Miktam Bible</a>.</li>
+            <li><strong>Install from Google Play.</strong> Updates arrive like any other app.</li>
+          </ol>
           <div class="join-actions">
             <a href="https://groups.google.com/g/ai2th" class="btn btn-primary" target="_blank" rel="noopener">Join the AI2TH group →</a>
             <a href="https://forms.gle/jdLxXPVhDYm5ubpQ7" class="btn btn-ghost" target="_blank" rel="noopener">Different Play account? Request access</a>
@@ -161,29 +159,23 @@
     </div>
   </section>
 
-  <section class="section section-alt">
+  <section class="section section-tight">
     <div class="section-inner">
-      <h2 class="section-title">Merged apps</h2>
-      <p class="section-sub">These standalone apps are archived. Their features now live in Linxr.</p>
-      <div class="contrib-repos data-repos">
-        <a href="pockr.html" class="repo-link"><span class="repo-name">Pockr</span><span class="repo-sub">Docker on Android → Linxr Containers tab</span><span class="repo-arrow">→</span></a>
-        <a href="zyvr.html" class="repo-link"><span class="repo-name">Zyvr</span><span class="repo-sub">Asterisk PBX → Linxr Marketplace</span><span class="repo-arrow">→</span></a>
-        <a href="https://github.com/AI2TH/Kubxr" class="repo-link" target="_blank" rel="noopener"><span class="repo-name">Kubxr</span><span class="repo-sub">Kubernetes node → k3s in Linxr</span><span class="repo-arrow">→</span></a>
-      </div>
+      <p class="merged-note">Pockr, Zyvr and Kubxr are archived; their features now live in Linxr. <a href="linux.html#linux-on-android">See how they merged →</a></p>
     </div>
   </section>
 
 
   <footer class="footer">
     <div class="footer-inner">
-      <img src="logo/AI2TH.svg" alt="AI2TH" class="nav-logo-img footer-logo-img" />
+      <img src="logo/ai2th-mark.svg" alt="AI2TH" class="nav-logo-img footer-logo-img" />
       <p class="footer-tagline">Applied Intelligence To Tackle Hardships.</p>
       <div class="footer-links">
         <a href="linxr.html">Linxr</a>
         <a href="vizxr.html">Vizxr</a>
         <a href="miktam.html">Miktam Bible</a>
         <a href="cryptship.html">cryptship</a>
-        <a href="android.html">Linux on Android</a>
+        <a href="bible.html">Bible</a>
         <a href="about.html">About</a>
         <a href="contribute.html">Contribute</a>
         <a href="privacy.html">Privacy</a>
