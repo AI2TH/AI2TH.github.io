@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI2TH — Applied Intelligence To Tackle Hardships</title>
   <meta name="description" content="AI2TH builds open-source tools across fields: Linxr (Linux on Android), Vizxr (Kubernetes IDE), Miktam Bible (offline Bible study) and cryptship (encrypted software delivery)." />
+  <link rel="icon" type="image/svg+xml" href="logo/ai2th-mark.svg" />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,15 +15,16 @@
 
   <nav class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo"><img src="logo/AI2TH.svg" alt="AI2TH" class="nav-logo-img" /><span class="nav-logo-text">AI2TH</span></a>
+      <a href="index.html" class="nav-logo"><img src="logo/ai2th-animated.svg" alt="AI2TH" class="nav-logo-img" /><span class="nav-logo-text">AI2TH</span></a>
       <div class="nav-links">
         <a href="index.html" class="nav-active">Home</a>
         <a href="android.html">Android</a>
         <a href="linux.html">Linux</a>
         <a href="kubernetes.html">Kubernetes</a>
         <a href="security.html">Security</a>
+        <a href="bible.html">Bible</a>
         <a href="about.html">About</a>
-        <a href="https://groups.google.com/g/ai2th" class="nav-more" target="_blank" rel="noopener">Join early access</a>
+        <a href="https://groups.google.com/g/ai2th" target="_blank" rel="noopener">Community</a>
         <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
@@ -30,7 +32,7 @@
 
   <section class="hero">
     <div class="hero-inner">
-      <div class="hero-badge">Open source · Built in the open · Always iterating</div>
+      <div class="hero-badge">Open source · Always iterating</div>
       <h1 class="hero-title">Applied Intelligence<br /><span class="accent">To Tackle Hardships.</span></h1>
       <p class="hero-sub">
         AI2TH builds focused, open-source tools across different fields: a Linux workstation on Android,
@@ -42,7 +44,7 @@
       </div>
       <dl class="hero-stats">
         <div><dt>4</dt><dd>products</dd></div>
-        <div><dt>4</dt><dd>categories</dd></div>
+        <div><dt>5</dt><dd>categories</dd></div>
         <div><dt>3</dt><dd>apps merged into Linxr</dd></div>
         <div><dt>9</dt><dd>releases since 24 Oct</dd></div>
       </dl>
@@ -57,7 +59,7 @@
       <div class="cat-grid">
         <a href="android.html" class="cat-tile">
           <div class="cat-head"><span class="cat-icon" aria-hidden="true">📱</span><span class="cat-name">Android</span><span class="cat-count">3 apps</span></div>
-          <p class="cat-blurb">Apps for your phone: a Linux workstation, a Kubernetes IDE and an offline Bible.</p>
+          <p class="cat-blurb">Apps for your phone: Linux, a Kubernetes IDE and an offline Bible.</p>
           <div class="cat-apps"><img src="logo/linxr.svg" alt="" class="cat-app-icon" /><img src="logo/vizxr.svg" alt="" class="cat-app-icon" /><img src="logo/miktam.png" alt="" class="cat-app-icon" /><span class="cat-app-names">Linxr, Vizxr, Miktam Bible</span></div>
           <span class="cat-go">Open Android →</span>
         </a>
@@ -79,6 +81,12 @@
           <div class="cat-apps"><img src="logo/cryptship.svg" alt="" class="cat-app-icon" /><span class="cat-app-names">cryptship</span></div>
           <span class="cat-go">Open Security →</span>
         </a>
+        <a href="bible.html" class="cat-tile">
+          <div class="cat-head"><span class="cat-icon" aria-hidden="true">📖</span><span class="cat-name">Bible</span><span class="cat-count">1 app</span></div>
+          <p class="cat-blurb">Offline Bible study with on-device AI, and the open Bible data behind it.</p>
+          <div class="cat-apps"><img src="logo/miktam.png" alt="" class="cat-app-icon" /><span class="cat-app-names">Miktam Bible</span></div>
+          <span class="cat-go">Open Bible →</span>
+        </a>
       </div>
     </div>
   </section>
@@ -94,6 +102,7 @@
         <button type="button" class="filter-chip" data-filter="linux" aria-pressed="false">🐧 Linux</button>
         <button type="button" class="filter-chip" data-filter="kubernetes" aria-pressed="false">☸️ Kubernetes</button>
         <button type="button" class="filter-chip" data-filter="security" aria-pressed="false">🔐 Security</button>
+        <button type="button" class="filter-chip" data-filter="bible" aria-pressed="false">📖 Bible</button>
       </div>
       <div class="cards product-grid" id="product-grid">
         <article class="card product-card" data-cats="android linux kubernetes">
@@ -111,11 +120,10 @@
             <li>Linux desktop GUI and SSH terminal</li>
             <li>1-click Marketplace with community recipes</li>
           </ul>
-          <div class="product-status">v3.4.0 · Google Play closed testing · APK</div>
+          <div class="product-status">v3.4.0 · Google Play closed testing · APK on GitHub</div>
           <div class="card-footer">
             <a href="linxr.html" class="btn btn-sm">Details →</a>
             <a href="https://github.com/AI2TH/Linxr" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://github.com/AI2TH/Linxr/releases/latest" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">APK</a>
           </div>
         </article>
         <article class="card product-card" data-cats="android kubernetes">
@@ -133,14 +141,13 @@
             <li>CRD explorer and Helm releases</li>
             <li>Logs, pod exec and YAML editor</li>
           </ul>
-          <div class="product-status">v1.1.0 · APK</div>
+          <div class="product-status">v1.1.0 · APK on GitHub</div>
           <div class="card-footer">
             <a href="vizxr.html" class="btn btn-sm">Details →</a>
             <a href="https://github.com/AI2TH/Vizxr" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://github.com/AI2TH/Vizxr/releases/latest" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">APK</a>
           </div>
         </article>
-        <article class="card product-card" data-cats="android">
+        <article class="card product-card" data-cats="android bible">
           <div class="card-header">
             <img src="logo/miktam.png" alt="" class="card-logo-img" />
             <div>
@@ -158,8 +165,7 @@
           <div class="product-status">v1.2.1 · Google Play closed testing</div>
           <div class="card-footer">
             <a href="miktam.html" class="btn btn-sm">Details →</a>
-            <a href="https://play.google.com/store/apps/details?id=miktam.bible" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">Google Play</a>
-            <a href="https://github.com/AI2TH/miktam_bible" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">GitHub</a>
+            <a href="miktam.html#early-access" class="btn btn-sm btn-ghost">Early access</a>
           </div>
         </article>
         <article class="card product-card" data-cats="linux kubernetes security">
@@ -167,7 +173,7 @@
             <img src="logo/cryptship.svg" alt="" class="card-logo-img" />
             <div>
               <h3 class="card-name"><a href="cryptship.html">cryptship</a></h3>
-              <span class="card-tag">Security · Software delivery</span>
+              <span class="card-tag">Software delivery</span>
             </div>
           </div>
           <p class="card-desc">Ship encrypted, license-gated application code inside Docker images. The image is ciphertext; a small loader runs your app only with a valid license.</p>
@@ -181,7 +187,6 @@
           <div class="card-footer">
             <a href="cryptship.html" class="btn btn-sm">Details →</a>
             <a href="https://github.com/AI2TH/cryptship" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://github.com/AI2TH/cryptship/releases/latest" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">Release</a>
           </div>
         </article>
       </div>
@@ -233,7 +238,7 @@
         <div class="arch-arrow">↓</div>
         <div class="arch-layer arch-layer-highlight">
           <div class="arch-label">Google Play closed testing</div>
-          <div class="arch-desc">AI2TH Group members get it first</div>
+          <div class="arch-desc">For Play Store apps: AI2TH Google Group members test first</div>
         </div>
         <div class="arch-arrow">↓</div>
         <div class="arch-layer">
@@ -244,22 +249,22 @@
     </div>
   </section>
 
-  <!-- Join the closed-testing group -->
+  <!-- Google Play closed testing -->
   <section class="section join-section" id="early-access">
     <div class="section-inner">
       <div class="join-banner">
         <div class="join-icon" aria-hidden="true">🚀</div>
         <div class="join-body">
-          <h2 class="join-title">Get every new app first on Google Play</h2>
+          <h2 class="join-title">Get our Play Store apps first</h2>
           <p class="join-desc">
-            New AI2TH apps go to Google Play closed testing first. Members of the
-            <strong>AI2TH Google Group</strong> get early access automatically: Linxr, Miktam Bible
-            and each new app as it ships.
+            AI2TH&rsquo;s Google Play apps, Linxr and Miktam Bible today, are released through closed testing.
+            Join the <strong>AI2TH Google Group</strong> and you become a closed tester for all of them,
+            including every new Play app as it ships.
           </p>
           <ol class="join-steps">
-            <li><strong>Join the group</strong> at <a href="https://groups.google.com/g/ai2th" target="_blank" rel="noopener">groups.google.com/g/ai2th</a> with the Google account on your phone.</li>
-            <li><strong>Become a tester</strong> on the app&rsquo;s Play testing page, for example <a href="https://play.google.com/apps/testing/miktam.bible" target="_blank" rel="noopener">Miktam Bible</a>.</li>
-            <li><strong>Install from Google Play</strong> and get updates like any other app.</li>
+            <li><strong>Join the AI2TH Google Group</strong> at <a href="https://groups.google.com/g/ai2th" target="_blank" rel="noopener">groups.google.com/g/ai2th</a> with the Google account on your phone.</li>
+            <li><strong>Become a tester</strong> once per app: <a href="https://play.google.com/apps/testing/com.ai2th.linxr" target="_blank" rel="noopener">Linxr</a> · <a href="https://play.google.com/apps/testing/miktam.bible" target="_blank" rel="noopener">Miktam Bible</a>.</li>
+            <li><strong>Install from Google Play.</strong> Updates arrive like any other app.</li>
           </ol>
           <div class="join-actions">
             <a href="https://groups.google.com/g/ai2th" class="btn btn-primary" target="_blank" rel="noopener">Join the AI2TH group →</a>
@@ -333,14 +338,14 @@
 
   <footer class="footer">
     <div class="footer-inner">
-      <img src="logo/AI2TH.svg" alt="AI2TH" class="nav-logo-img footer-logo-img" />
+      <img src="logo/ai2th-mark.svg" alt="AI2TH" class="nav-logo-img footer-logo-img" />
       <p class="footer-tagline">Applied Intelligence To Tackle Hardships.</p>
       <div class="footer-links">
         <a href="linxr.html">Linxr</a>
         <a href="vizxr.html">Vizxr</a>
         <a href="miktam.html">Miktam Bible</a>
         <a href="cryptship.html">cryptship</a>
-        <a href="android.html">Linux on Android</a>
+        <a href="bible.html">Bible</a>
         <a href="about.html">About</a>
         <a href="contribute.html">Contribute</a>
         <a href="privacy.html">Privacy</a>

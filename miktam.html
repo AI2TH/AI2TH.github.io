@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Miktam Bible — AI2TH</title>
   <meta name="description" content="Miktam Bible: offline Bible study with 5,600+ translations, an on-device AI study assistant, Strong's concordance and reading plans." />
+  <link rel="icon" type="image/svg+xml" href="logo/ai2th-mark.svg" />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,15 +15,16 @@
 
   <nav class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo"><img src="logo/AI2TH.svg" alt="AI2TH" class="nav-logo-img" /><span class="nav-logo-text">AI2TH</span></a>
+      <a href="index.html" class="nav-logo"><img src="logo/ai2th-animated.svg" alt="AI2TH" class="nav-logo-img" /><span class="nav-logo-text">AI2TH</span></a>
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="android.html" class="nav-active">Android</a>
+        <a href="android.html">Android</a>
         <a href="linux.html">Linux</a>
         <a href="kubernetes.html">Kubernetes</a>
         <a href="security.html">Security</a>
+        <a href="bible.html" class="nav-active">Bible</a>
         <a href="about.html">About</a>
-        <a href="https://groups.google.com/g/ai2th" class="nav-more" target="_blank" rel="noopener">Join early access</a>
+        <a href="https://groups.google.com/g/ai2th" target="_blank" rel="noopener">Community</a>
         <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
@@ -30,7 +32,7 @@
 
   <div class="page-header">
     <div class="section-inner">
-      <div class="breadcrumb"><a href="index.html">AI2TH</a><span>/</span><a href="android.html">Android</a><span>/</span>Miktam Bible</div>
+      <div class="breadcrumb"><a href="index.html">AI2TH</a><span>/</span><a href="bible.html">Bible</a><span>/</span>Miktam Bible</div>
       <div class="project-header-row">
         <img src="logo/miktam.png" alt="Miktam Bible" class="project-logo-img" />
         <div>
@@ -42,7 +44,7 @@
         Read and study Scripture anywhere, with no connection needed. Thousands of translations, an AI study assistant that runs on your device, Strong&rsquo;s concordance and reading plans, all offline and private.
       </p>
       <div class="project-links">
-        <a href="https://play.google.com/store/apps/details?id=miktam.bible" class="btn btn-primary" target="_blank" rel="noopener">Google Play →</a>
+        <a href="#early-access" class="btn btn-primary">Get early access →</a>
         <a href="https://play.google.com/apps/testing/miktam.bible" class="btn btn-ghost" target="_blank" rel="noopener">Become a tester</a>
         <a href="https://github.com/AI2TH/miktam_bible" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
       </div>
@@ -54,42 +56,42 @@
       <h2 class="section-title">Features</h2>
       <div class="feature-grid">
         <div class="feature-item">
-          <div class="feature-icon">📖</div>
+          <div class="feature-icon" aria-hidden="true">📖</div>
           <div class="feature-title">5,600+ translations</div>
           <div class="feature-desc">Browse by book, chapter and verse; book names shown in the translation&rsquo;s own language</div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon">🤖</div>
+          <div class="feature-icon" aria-hidden="true">🤖</div>
           <div class="feature-title">AI study assistant</div>
           <div class="feature-desc">Ask about context and meaning with a local LLM. Runs fully offline; conversations stay on the device</div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon">🔍</div>
+          <div class="feature-icon" aria-hidden="true">🔍</div>
           <div class="feature-title">Strong&rsquo;s concordance</div>
           <div class="feature-desc">Original Greek and Hebrew word, transliteration, definition and every verse it appears in</div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon">🔎</div>
+          <div class="feature-icon" aria-hidden="true">🔎</div>
           <div class="feature-title">Full-text search</div>
           <div class="feature-desc">Search the whole Bible instantly, grouped by book, with one-tap jump to the chapter</div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon">📅</div>
+          <div class="feature-icon" aria-hidden="true">📅</div>
           <div class="feature-title">Reading plans</div>
           <div class="feature-desc">Navigators 4-track, 90-day, 6-month and New Testament plans with reminders that follow your progress</div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon">🌅</div>
+          <div class="feature-icon" aria-hidden="true">🌅</div>
           <div class="feature-title">Verse of the Day</div>
           <div class="feature-desc">Daily notification at midnight that matches the verse on the Home screen</div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon">⭐</div>
+          <div class="feature-icon" aria-hidden="true">⭐</div>
           <div class="feature-title">Highlights and notes</div>
           <div class="feature-desc">Per-verse highlights, bookmarks and study notes that follow you across translations</div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon">🎙️</div>
+          <div class="feature-icon" aria-hidden="true">🎙️</div>
           <div class="feature-title">Voice memos</div>
           <div class="feature-desc">Record study notes tagged with the current book, chapter and verse</div>
         </div>
@@ -146,18 +148,23 @@
     </div>
   </section>
 
-  <!-- Join the closed-testing group -->
+  <!-- Google Play closed testing -->
   <section class="section join-section" id="early-access">
     <div class="section-inner">
       <div class="join-banner">
         <div class="join-icon" aria-hidden="true">🚀</div>
         <div class="join-body">
-          <h2 class="join-title">Get every new app first on Google Play</h2>
+          <h2 class="join-title">Get our Play Store apps first</h2>
           <p class="join-desc">
-            New AI2TH apps go to Google Play closed testing first. Members of the
-            <strong>AI2TH Google Group</strong> get early access automatically: Linxr, Miktam Bible
-            and each new app as it ships.
+            AI2TH&rsquo;s Google Play apps, Linxr and Miktam Bible today, are released through closed testing.
+            Join the <strong>AI2TH Google Group</strong> and you become a closed tester for all of them,
+            including every new Play app as it ships.
           </p>
+          <ol class="join-steps">
+            <li><strong>Join the AI2TH Google Group</strong> at <a href="https://groups.google.com/g/ai2th" target="_blank" rel="noopener">groups.google.com/g/ai2th</a> with the Google account on your phone.</li>
+            <li><strong>Become a tester</strong> once per app: <a href="https://play.google.com/apps/testing/com.ai2th.linxr" target="_blank" rel="noopener">Linxr</a> · <a href="https://play.google.com/apps/testing/miktam.bible" target="_blank" rel="noopener">Miktam Bible</a>.</li>
+            <li><strong>Install from Google Play.</strong> Updates arrive like any other app.</li>
+          </ol>
           <div class="join-actions">
             <a href="https://groups.google.com/g/ai2th" class="btn btn-primary" target="_blank" rel="noopener">Join the AI2TH group →</a>
             <a href="https://forms.gle/jdLxXPVhDYm5ubpQ7" class="btn btn-ghost" target="_blank" rel="noopener">Different Play account? Request access</a>
@@ -168,17 +175,12 @@
   </section>
 
   <section class="section">
-    <div class="section-inner">
-      <h2 class="section-title">Open Bible data</h2>
-      <p class="section-sub">The text and study databases behind the app are published as SQLite with FTS5 search.</p>
-      <div class="contrib-repos data-repos">
-        <a href="https://github.com/AI2TH/bible_db" class="repo-link" target="_blank" rel="noopener"><span class="repo-name">bible_db</span><span class="repo-sub">One SQLite database per translation</span><span class="repo-arrow">→</span></a>
-        <a href="https://github.com/AI2TH/concordance_db" class="repo-link" target="_blank" rel="noopener"><span class="repo-name">concordance_db</span><span class="repo-sub">Strong&rsquo;s Greek and Hebrew, lexicons, cross-references</span><span class="repo-arrow">→</span></a>
-        <a href="https://github.com/AI2TH/bible_db_languages_a_f" class="repo-link" target="_blank" rel="noopener"><span class="repo-name">Languages A–F</span><span class="repo-sub">~1,100 languages</span><span class="repo-arrow">→</span></a>
-        <a href="https://github.com/AI2TH/bible_db_languages_g_m" class="repo-link" target="_blank" rel="noopener"><span class="repo-name">Languages G–M</span><span class="repo-sub">~1,000 languages</span><span class="repo-arrow">→</span></a>
-        <a href="https://github.com/AI2TH/bible_db_languages_n_s" class="repo-link" target="_blank" rel="noopener"><span class="repo-name">Languages N–S</span><span class="repo-sub">~1,100 languages</span><span class="repo-arrow">→</span></a>
-        <a href="https://github.com/AI2TH/bible_db_languages_t_z" class="repo-link" target="_blank" rel="noopener"><span class="repo-name">Languages T–Z</span><span class="repo-sub">~970 languages</span><span class="repo-arrow">→</span></a>
+    <div class="section-inner open-strip">
+      <div>
+        <h2 class="section-title">Open Bible data</h2>
+        <p class="section-sub">The translations and study databases behind the app are public.</p>
       </div>
+      <div class="project-links"><a href="bible.html#data" class="btn btn-ghost">See the data repos →</a></div>
     </div>
   </section>
 
@@ -195,23 +197,23 @@
 
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-    <button class="lightbox-prev" onclick="event.stopPropagation(); shiftLightbox(-1)">‹</button>
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">✕</button>
+    <button class="lightbox-prev" onclick="event.stopPropagation(); shiftLightbox(-1)" aria-label="Previous screenshot">‹</button>
     <img class="lightbox-img" id="lightbox-img" src="" alt="" />
-    <button class="lightbox-next" onclick="event.stopPropagation(); shiftLightbox(1)">›</button>
+    <button class="lightbox-next" onclick="event.stopPropagation(); shiftLightbox(1)" aria-label="Next screenshot">›</button>
     <div class="lightbox-caption" id="lightbox-caption"></div>
   </div>
 
   <footer class="footer">
     <div class="footer-inner">
-      <img src="logo/AI2TH.svg" alt="AI2TH" class="nav-logo-img footer-logo-img" />
+      <img src="logo/ai2th-mark.svg" alt="AI2TH" class="nav-logo-img footer-logo-img" />
       <p class="footer-tagline">Applied Intelligence To Tackle Hardships.</p>
       <div class="footer-links">
         <a href="linxr.html">Linxr</a>
         <a href="vizxr.html">Vizxr</a>
         <a href="miktam.html">Miktam Bible</a>
         <a href="cryptship.html">cryptship</a>
-        <a href="android.html">Linux on Android</a>
+        <a href="bible.html">Bible</a>
         <a href="about.html">About</a>
         <a href="contribute.html">Contribute</a>
         <a href="privacy.html">Privacy</a>

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zyvr — AI2TH</title>
   <meta name="description" content="Zyvr runs a full Asterisk 20 PBX on a non-rooted Android device." />
+  <link rel="icon" type="image/svg+xml" href="logo/ai2th-mark.svg" />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,15 +15,16 @@
 
   <nav class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo"><img src="logo/AI2TH.svg" alt="AI2TH" class="nav-logo-img" /><span class="nav-logo-text">AI2TH</span></a>
+      <a href="index.html" class="nav-logo"><img src="logo/ai2th-animated.svg" alt="AI2TH" class="nav-logo-img" /><span class="nav-logo-text">AI2TH</span></a>
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="android.html" class="nav-active">Android</a>
-        <a href="linux.html">Linux</a>
+        <a href="android.html">Android</a>
+        <a href="linux.html" class="nav-active">Linux</a>
         <a href="kubernetes.html">Kubernetes</a>
         <a href="security.html">Security</a>
+        <a href="bible.html">Bible</a>
         <a href="about.html">About</a>
-        <a href="https://groups.google.com/g/ai2th" class="nav-more" target="_blank" rel="noopener">Join early access</a>
+        <a href="https://groups.google.com/g/ai2th" target="_blank" rel="noopener">Community</a>
         <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
@@ -32,14 +34,14 @@
     <div class="section-inner">
       <div class="breadcrumb">
         <a href="index.html">AI2TH</a><span>/</span>
-        <a href="android.html">Android</a><span>/</span>
+        <a href="linux.html">Linux</a><span>/</span>
         Zyvr
       </div>
       <div class="project-header-row">
         <img src="logo/Zyvr.svg" alt="Zyvr" class="project-logo-img" />
         <div>
           <h1 class="page-title" style="margin-bottom:4px">Zyvr</h1>
-          <span class="card-tag" style="color: #f87171; background: rgba(239, 68, 68, 0.18); border: 1px solid rgba(239, 68, 68, 0.4);">Deprecated — Merged into Linxr</span>
+          <span class="card-tag card-tag-archived">Archived · merged into Linxr</span>
         </div>
       </div>
       <p class="page-sub">
@@ -51,7 +53,7 @@
         <a href="https://github.com/AI2TH/Zyvr" class="btn btn-ghost" target="_blank" rel="noopener">Zyvr GitHub (archived)</a>
       </div>
       <div class="notice-merged">
-        <strong>⚠️ Notice: Zyvr is deprecated as a separate app</strong><br />
+        <strong>Zyvr is archived</strong><br />
         The Asterisk 20 PBX from Zyvr now installs from the <a href="linxr.html">Linxr</a> Marketplace (since v3.3.0),
         as a container (<code>zyvr-docker</code>) or a native Alpine service (<code>zyvr-native</code>).
         Connect with <code>asterisk -rvvv</code> in the Linxr terminal.
@@ -65,37 +67,37 @@
       <h2 class="section-title">Features</h2>
       <div class="feature-grid">
         <div class="feature-item">
-          <div class="feature-icon">📞</div>
+          <div class="feature-icon" aria-hidden="true">📞</div>
           <div class="feature-title">Asterisk 20 + PJSIP</div>
           <div class="feature-desc">Full PBX engine with modern PJSIP channel driver</div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon">👤</div>
+          <div class="feature-icon" aria-hidden="true">👤</div>
           <div class="feature-title">SIP extension management</div>
           <div class="feature-desc">Create, delete, and list SIP extensions from the app UI</div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon">📊</div>
+          <div class="feature-icon" aria-hidden="true">📊</div>
           <div class="feature-title">Live call monitor</div>
           <div class="feature-desc">View active calls and hang up channels in real time</div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon">🌐</div>
+          <div class="feature-icon" aria-hidden="true">🌐</div>
           <div class="feature-title">WebRTC / SIP.js</div>
           <div class="feature-desc">WSS on port 8089, DTLS/SRTP, self-signed cert on first boot</div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon">💾</div>
+          <div class="feature-icon" aria-hidden="true">💾</div>
           <div class="feature-title">Persistent config</div>
           <div class="feature-desc">user.qcow2 overlay preserves SIP extensions and voicemail across reboots</div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon">💬</div>
+          <div class="feature-icon" aria-hidden="true">💬</div>
           <div class="feature-title">SIP text messaging</div>
           <div class="feature-desc">Send and receive SIP MESSAGE between extensions via AMI — with delivery status</div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon">🔓</div>
+          <div class="feature-icon" aria-hidden="true">🔓</div>
           <div class="feature-title">No root required</div>
           <div class="feature-desc">Runs entirely in user space via QEMU SLIRP networking</div>
         </div>
@@ -106,8 +108,8 @@
   <!-- Test Results -->
   <section class="section section-alt">
     <div class="section-inner">
-      <h2 class="section-title">Test results</h2>
-      <p class="section-sub">Screenshots from real device testing.</p>
+      <h2 class="section-title">Screenshots</h2>
+      <p class="section-sub">From real device testing.</p>
       <div class="gallery" id="gallery-zyvr">
         <img class="gallery-thumb" src="screenshots/zyvr/01-dashboard-main.png"     data-caption="Dashboard — WiFi VoIP server info" alt="Dashboard" />
         <img class="gallery-thumb" src="screenshots/zyvr/02-extensions-empty.png"   data-caption="Extensions — SIP extension management" alt="Extensions" />
@@ -124,23 +126,23 @@
 
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-    <button class="lightbox-prev" onclick="event.stopPropagation(); shiftLightbox(-1)">‹</button>
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">✕</button>
+    <button class="lightbox-prev" onclick="event.stopPropagation(); shiftLightbox(-1)" aria-label="Previous screenshot">‹</button>
     <img class="lightbox-img" id="lightbox-img" src="" alt="" />
-    <button class="lightbox-next" onclick="event.stopPropagation(); shiftLightbox(1)">›</button>
+    <button class="lightbox-next" onclick="event.stopPropagation(); shiftLightbox(1)" aria-label="Next screenshot">›</button>
     <div class="lightbox-caption" id="lightbox-caption"></div>
   </div>
 
   <footer class="footer">
     <div class="footer-inner">
-      <img src="logo/AI2TH.svg" alt="AI2TH" class="nav-logo-img footer-logo-img" />
+      <img src="logo/ai2th-mark.svg" alt="AI2TH" class="nav-logo-img footer-logo-img" />
       <p class="footer-tagline">Applied Intelligence To Tackle Hardships.</p>
       <div class="footer-links">
         <a href="linxr.html">Linxr</a>
         <a href="vizxr.html">Vizxr</a>
         <a href="miktam.html">Miktam Bible</a>
         <a href="cryptship.html">cryptship</a>
-        <a href="android.html">Linux on Android</a>
+        <a href="bible.html">Bible</a>
         <a href="about.html">About</a>
         <a href="contribute.html">Contribute</a>
         <a href="privacy.html">Privacy</a>

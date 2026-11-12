@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pockr — AI2TH</title>
   <meta name="description" content="Pockr runs Docker containers on a non-rooted Android device." />
+  <link rel="icon" type="image/svg+xml" href="logo/ai2th-mark.svg" />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,15 +15,16 @@
 
   <nav class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo"><img src="logo/AI2TH.svg" alt="AI2TH" class="nav-logo-img" /><span class="nav-logo-text">AI2TH</span></a>
+      <a href="index.html" class="nav-logo"><img src="logo/ai2th-animated.svg" alt="AI2TH" class="nav-logo-img" /><span class="nav-logo-text">AI2TH</span></a>
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="android.html" class="nav-active">Android</a>
-        <a href="linux.html">Linux</a>
+        <a href="android.html">Android</a>
+        <a href="linux.html" class="nav-active">Linux</a>
         <a href="kubernetes.html">Kubernetes</a>
         <a href="security.html">Security</a>
+        <a href="bible.html">Bible</a>
         <a href="about.html">About</a>
-        <a href="https://groups.google.com/g/ai2th" class="nav-more" target="_blank" rel="noopener">Join early access</a>
+        <a href="https://groups.google.com/g/ai2th" target="_blank" rel="noopener">Community</a>
         <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
@@ -32,14 +34,14 @@
     <div class="section-inner">
       <div class="breadcrumb">
         <a href="index.html">AI2TH</a><span>/</span>
-        <a href="android.html">Android</a><span>/</span>
+        <a href="linux.html">Linux</a><span>/</span>
         Pockr
       </div>
       <div class="project-header-row">
         <img src="logo/pockr_logo.svg" alt="Pockr" class="project-logo-img" />
         <div>
           <h1 class="page-title" style="margin-bottom:4px">Pockr</h1>
-          <span class="card-tag" style="color: #f87171; background: rgba(239, 68, 68, 0.18); border: 1px solid rgba(239, 68, 68, 0.4);">Deprecated — Merged into Linxr</span>
+          <span class="card-tag card-tag-archived">Archived · merged into Linxr</span>
         </div>
       </div>
       <p class="page-sub">
@@ -47,12 +49,12 @@
       </p>
       <div class="project-links">
         <a href="linxr.html" class="btn btn-primary">Open Linxr →</a>
-        <a href="https://github.com/AI2TH/Linxr" class="btn btn-ghost" target="_blank" rel="noopener">Linxr GitHub Repository</a>
+        <a href="https://github.com/AI2TH/Pockr" class="btn btn-ghost" target="_blank" rel="noopener">Pockr GitHub (archived)</a>
       </div>
-      <!-- Deprecation Notice -->
-      <div style="background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.4); border-radius: 12px; padding: 18px 24px; margin-top: 24px; color: #fca5a5; font-size: 15px; line-height: 1.6;">
-        <strong style="color: #ef4444; font-size: 16px;">⚠️ Notice: Pockr features are deprecated as a separate app</strong><br />
-        All Docker container management capabilities previously in Pockr are now natively available inside <a href="linxr.html" style="color: #60a5fa; text-decoration: underline; font-weight: 600;">Linxr</a>. You can manage Linux virtual machines and Docker containers together in one unified app under the <strong>Containers</strong> tab.
+      <div class="notice-merged">
+        <strong>Pockr is archived</strong><br />
+        Everything Pockr did, pulling images, running containers and streaming their logs, now lives in the
+        <a href="linxr.html">Linxr</a> <strong>Containers</strong> tab, alongside the rest of Linux on your phone.
       </div>
     </div>
   </div>
@@ -63,32 +65,32 @@
       <h2 class="section-title">Features</h2>
       <div class="feature-grid">
         <div class="feature-item">
-          <div class="feature-icon">🐳</div>
+          <div class="feature-icon" aria-hidden="true">🐳</div>
           <div class="feature-title">Pull &amp; run any image</div>
           <div class="feature-desc">Full Docker daemon running inside the Alpine VM</div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon">📋</div>
+          <div class="feature-icon" aria-hidden="true">📋</div>
           <div class="feature-title">Real-time container logs</div>
           <div class="feature-desc">Stream logs from any running container directly in the app</div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon">🖥️</div>
+          <div class="feature-icon" aria-hidden="true">🖥️</div>
           <div class="feature-title">VM terminal</div>
           <div class="feature-desc">Shell access directly into the Alpine VM host</div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon">⚙️</div>
+          <div class="feature-icon" aria-hidden="true">⚙️</div>
           <div class="feature-title">Configurable resources</div>
           <div class="feature-desc">1–4 vCPU cores, 512 MB–4 GB RAM, adjustable per session</div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon">🔓</div>
+          <div class="feature-icon" aria-hidden="true">🔓</div>
           <div class="feature-title">No root required</div>
           <div class="feature-desc">QEMU user-mode networking (SLIRP) as a regular app</div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon">🔐</div>
+          <div class="feature-icon" aria-hidden="true">🔐</div>
           <div class="feature-title">Token auth</div>
           <div class="feature-desc">UUID token injected via QEMU kernel cmdline, read from /proc/cmdline</div>
         </div>
@@ -99,8 +101,8 @@
   <!-- Test Results -->
   <section class="section section-alt">
     <div class="section-inner">
-      <h2 class="section-title">Test results</h2>
-      <p class="section-sub">Screenshots from real device testing.</p>
+      <h2 class="section-title">Screenshots</h2>
+      <p class="section-sub">From real device testing.</p>
       <div class="gallery" id="gallery-pockr">
         <img class="gallery-thumb" src="screenshots/pockr/01-home-stopped.png"      data-caption="Dashboard — Engine stopped" alt="Dashboard stopped" />
         <img class="gallery-thumb" src="screenshots/pockr/02-home-booting.png"      data-caption="Dashboard — Engine booting up" alt="Dashboard booting" />
@@ -116,23 +118,23 @@
 
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-    <button class="lightbox-prev" onclick="event.stopPropagation(); shiftLightbox(-1)">‹</button>
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">✕</button>
+    <button class="lightbox-prev" onclick="event.stopPropagation(); shiftLightbox(-1)" aria-label="Previous screenshot">‹</button>
     <img class="lightbox-img" id="lightbox-img" src="" alt="" />
-    <button class="lightbox-next" onclick="event.stopPropagation(); shiftLightbox(1)">›</button>
+    <button class="lightbox-next" onclick="event.stopPropagation(); shiftLightbox(1)" aria-label="Next screenshot">›</button>
     <div class="lightbox-caption" id="lightbox-caption"></div>
   </div>
 
   <footer class="footer">
     <div class="footer-inner">
-      <img src="logo/AI2TH.svg" alt="AI2TH" class="nav-logo-img footer-logo-img" />
+      <img src="logo/ai2th-mark.svg" alt="AI2TH" class="nav-logo-img footer-logo-img" />
       <p class="footer-tagline">Applied Intelligence To Tackle Hardships.</p>
       <div class="footer-links">
         <a href="linxr.html">Linxr</a>
         <a href="vizxr.html">Vizxr</a>
         <a href="miktam.html">Miktam Bible</a>
         <a href="cryptship.html">cryptship</a>
-        <a href="android.html">Linux on Android</a>
+        <a href="bible.html">Bible</a>
         <a href="about.html">About</a>
         <a href="contribute.html">Contribute</a>
         <a href="privacy.html">Privacy</a>
