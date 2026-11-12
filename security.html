@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Security — AI2TH</title>
+  <meta name="description" content="AI2TH Security: cryptship for encrypted, license-gated container delivery, and local-first, no-tracking apps." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="logo/AI2TH.svg" alt="AI2TH" class="nav-logo-img" /><span class="nav-logo-text">AI2TH</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="android.html">Android</a>
+        <a href="linux.html">Linux</a>
+        <a href="kubernetes.html">Kubernetes</a>
+        <a href="security.html" class="nav-active">Security</a>
+        <a href="about.html">About</a>
+        <a href="https://groups.google.com/g/ai2th" class="nav-more" target="_blank" rel="noopener">Join early access</a>
+        <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="section-inner">
+      <div class="breadcrumb"><a href="index.html">AI2TH</a><span>/</span>Security</div>
+      <h1 class="page-title">Security,<br /><span class="accent">without snake oil.</span></h1>
+      <p class="page-sub">Encrypted, license-gated software delivery with an honest threat model, and apps that keep your data on your device.</p>
+      <div class="cat-switch" aria-label="Other categories">
+        <a href="android.html" class="filter-chip">📱 Android</a>
+        <a href="linux.html" class="filter-chip">🐧 Linux</a>
+        <a href="kubernetes.html" class="filter-chip">☸️ Kubernetes</a>
+        <a href="security.html" class="filter-chip is-active">🔐 Security</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="section section-tight">
+    <div class="section-inner">
+      <h2 class="section-title">Apps</h2>
+      <div class="cards product-grid">
+        <article class="card product-card" data-cats="linux kubernetes security">
+          <div class="card-header">
+            <img src="logo/cryptship.svg" alt="" class="card-logo-img" />
+            <div>
+              <h3 class="card-name"><a href="cryptship.html">cryptship</a></h3>
+              <span class="card-tag">Security · Software delivery</span>
+            </div>
+          </div>
+          <p class="card-desc">Ship encrypted, license-gated application code inside Docker images. The image is ciphertext; a small loader runs your app only with a valid license.</p>
+          <ul class="card-features">
+            <li>AES-256-GCM payloads, Ed25519 licenses</li>
+            <li>Air-gapped, on-prem and cloud modes</li>
+            <li>Instant revocation via license server</li>
+            <li>Hardening and per-license watermarks</li>
+          </ul>
+          <div class="product-status">v0.1.0 · Go · GPLv3</div>
+          <div class="card-footer">
+            <a href="cryptship.html" class="btn btn-sm">Details →</a>
+            <a href="https://github.com/AI2TH/cryptship" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://github.com/AI2TH/cryptship/releases/latest" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">Release</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section section-alt" id="how-it-works">
+    <div class="section-inner">
+      <h2 class="section-title">How cryptship works</h2>
+      <p class="section-sub">The image on disk is ciphertext. Only a valid license turns it back into your app.</p>
+      <div class="arch-cols">
+        <div class="arch-col">
+          <a class="arch-col-title" href="cryptship.html">Build time · vendor →</a>
+      <div class="arch-grid arch-grid-col">
+        <div class="arch-layer">
+          <div class="arch-label">Your app</div>
+          <div class="arch-desc">Source or compiled build output</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer arch-layer-highlight">
+          <div class="arch-label">cryptship pack</div>
+          <div class="arch-desc">Random content key; AES-256-GCM into payload.enc</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">cryptship issue</div>
+          <div class="arch-desc">Ed25519-signed license that wraps the content key</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">Container image</div>
+          <div class="arch-desc">Loader + payload.enc + license + public key</div>
+        </div>
+      </div>
+        </div>
+        <div class="arch-col">
+          <a class="arch-col-title" href="cryptship.html">Run time · customer →</a>
+      <div class="arch-grid arch-grid-col">
+        <div class="arch-layer">
+          <div class="arch-label">Loader starts</div>
+          <div class="arch-desc">Verifies the license signature, expiry and revocation</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer arch-layer-highlight">
+          <div class="arch-label">Key provider</div>
+          <div class="arch-desc">offline · online license server · attested hardware</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">Decrypt to tmpfs</div>
+          <div class="arch-desc">Wrong license or machine means the AEAD tag fails</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">exec your app</div>
+          <div class="arch-desc">Runs with the license ID and customer as a watermark</div>
+        </div>
+      </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <h2 class="section-title">Local-first by design</h2>
+      <div class="feature-grid">
+        <div class="feature-item"><div class="feature-icon">📵</div><div class="feature-title">No tracking</div><div class="feature-desc">AI2TH apps ship no analytics or crash reporting that sends data off the device</div></div>
+        <div class="feature-item"><div class="feature-icon">🤖</div><div class="feature-title">Offline AI</div><div class="feature-desc">Miktam Bible&rsquo;s study assistant runs a local model; conversations stay on the phone</div></div>
+        <div class="feature-item"><div class="feature-icon">🔌</div><div class="feature-title">Loopback by default</div><div class="feature-desc">Linxr binds port forwards to 127.0.0.1; LAN access is an explicit opt-in</div></div>
+      </div>
+      <div class="project-links"><a href="privacy.html" class="btn btn-ghost">Read the privacy policy</a></div>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <img src="logo/AI2TH.svg" alt="AI2TH" class="nav-logo-img footer-logo-img" />
+      <p class="footer-tagline">Applied Intelligence To Tackle Hardships.</p>
+      <div class="footer-links">
+        <a href="linxr.html">Linxr</a>
+        <a href="vizxr.html">Vizxr</a>
+        <a href="miktam.html">Miktam Bible</a>
+        <a href="cryptship.html">cryptship</a>
+        <a href="android.html">Linux on Android</a>
+        <a href="about.html">About</a>
+        <a href="contribute.html">Contribute</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://groups.google.com/g/ai2th" target="_blank" rel="noopener">Community</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

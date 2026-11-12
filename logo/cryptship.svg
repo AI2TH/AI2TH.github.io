@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- cryptship: an encrypted shipping container, sealed by a license lock, riding the waterline -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="cs-bg" cx="50%" cy="42%" r="70%">
+      <stop offset="0%"   stop-color="#1E1745"/>
+      <stop offset="55%"  stop-color="#0E0B24"/>
+      <stop offset="100%" stop-color="#05040D"/>
+    </radialGradient>
+    <linearGradient id="cs-top" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#C4B5FD"/>
+      <stop offset="100%" stop-color="#8B7BFF"/>
+    </linearGradient>
+    <linearGradient id="cs-left" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#6D5BF5"/>
+      <stop offset="100%" stop-color="#3B2E9E"/>
+    </linearGradient>
+    <linearGradient id="cs-right" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#2A2170"/>
+      <stop offset="100%" stop-color="#171245"/>
+    </linearGradient>
+    <linearGradient id="cs-ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#38BDF8"/>
+      <stop offset="50%"  stop-color="#8B7BFF"/>
+      <stop offset="100%" stop-color="#F472B6"/>
+    </linearGradient>
+    <linearGradient id="cs-wave" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#38BDF8" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="cs-lock" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#FFD58A"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <filter id="cs-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="cs-soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+    <clipPath id="cs-clip"><rect width="512" height="512" rx="80"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#cs-clip)">
+    <!-- Background and faint grid of data points -->
+    <rect width="512" height="512" fill="url(#cs-bg)"/>
+    <g fill="#8B7BFF" opacity="0.18">
+      <circle cx="64" cy="64" r="3"/><circle cx="128" cy="64" r="3"/><circle cx="384" cy="64" r="3"/><circle cx="448" cy="64" r="3"/>
+      <circle cx="64" cy="128" r="3"/><circle cx="448" cy="128" r="3"/>
+      <circle cx="64" cy="384" r="3"/><circle cx="448" cy="384" r="3"/>
+      <circle cx="96" cy="448" r="3"/><circle cx="416" cy="448" r="3"/>
+    </g>
+
+    <!-- Ambient glow behind the container -->
+    <ellipse cx="256" cy="250" rx="150" ry="120" fill="#6D5BF5" opacity="0.35" filter="url(#cs-soft)"/>
+
+    <!-- Encryption ring with key nodes -->
+    <circle cx="256" cy="246" r="196" fill="none" stroke="url(#cs-ring)" stroke-width="5" stroke-dasharray="28 14 6 14" opacity="0.75"/>
+    <g fill="#0E0B24" stroke="url(#cs-ring)" stroke-width="5">
+      <circle cx="256" cy="50" r="10"/>
+      <circle cx="426" cy="148" r="10"/>
+      <circle cx="86" cy="148" r="10"/>
+    </g>
+
+    <!-- Isometric shipping container -->
+    <g stroke-linejoin="round">
+      <!-- top -->
+      <polygon points="256,116 384,180 256,244 128,180" fill="url(#cs-top)"/>
+      <!-- left face -->
+      <polygon points="128,180 256,244 256,380 128,316" fill="url(#cs-left)"/>
+      <!-- right face -->
+      <polygon points="256,244 384,180 384,316 256,380" fill="url(#cs-right)"/>
+      <!-- container corrugation ridges on the left face -->
+      <g stroke="#C4B5FD" stroke-opacity="0.35" stroke-width="4" stroke-linecap="round">
+        <line x1="152" y1="205" x2="152" y2="315"/>
+        <line x1="176" y1="217" x2="176" y2="327"/>
+        <line x1="200" y1="229" x2="200" y2="339"/>
+        <line x1="224" y1="241" x2="224" y2="351"/>
+      </g>
+      <!-- ciphertext blocks on the right face (encrypted payload) -->
+      <g fill="#38BDF8">
+        <rect x="0" y="0" width="34" height="9" rx="4" transform="matrix(1,-0.5,0,1,276,264)" opacity="0.95"/>
+        <rect x="0" y="0" width="18" height="9" rx="4" transform="matrix(1,-0.5,0,1,318,243)" opacity="0.6"/>
+        <rect x="0" y="0" width="20" height="9" rx="4" transform="matrix(1,-0.5,0,1,276,288)" opacity="0.6"/>
+        <rect x="0" y="0" width="40" height="9" rx="4" transform="matrix(1,-0.5,0,1,304,274)" opacity="0.95"/>
+        <rect x="0" y="0" width="44" height="9" rx="4" transform="matrix(1,-0.5,0,1,276,312)" opacity="0.85"/>
+        <rect x="0" y="0" width="14" height="9" rx="4" transform="matrix(1,-0.5,0,1,328,290)" opacity="0.5"/>
+        <rect x="0" y="0" width="26" height="9" rx="4" transform="matrix(1,-0.5,0,1,276,336)" opacity="0.7"/>
+        <rect x="0" y="0" width="30" height="9" rx="4" transform="matrix(1,-0.5,0,1,310,320)" opacity="0.9"/>
+      </g>
+      <!-- edges -->
+      <g fill="none" stroke="#E9E5FF" stroke-opacity="0.85" stroke-width="5">
+        <polyline points="128,180 256,244 384,180"/>
+        <line x1="256" y1="244" x2="256" y2="380"/>
+      </g>
+      <polygon points="256,116 384,180 384,316 256,380 128,316 128,180" fill="none" stroke="#E9E5FF" stroke-opacity="0.5" stroke-width="4"/>
+    </g>
+
+    <!-- License lock sealing the container -->
+    <g filter="url(#cs-glow)">
+      <path d="M232 226 v-20 a24 24 0 0 1 48 0 v20" fill="none" stroke="url(#cs-lock)" stroke-width="12" stroke-linecap="round"/>
+      <rect x="220" y="222" width="72" height="58" rx="12" fill="url(#cs-lock)"/>
+    </g>
+    <circle cx="256" cy="244" r="9" fill="#1E1745"/>
+    <path d="M251 248 h10 l4 20 h-18 z" fill="#1E1745"/>
+
+    <!-- Waterline: the code ships -->
+    <path d="M60 420 C 120 396, 180 444, 256 420 S 392 396, 452 420" fill="none" stroke="url(#cs-wave)" stroke-width="10" stroke-linecap="round"/>
+    <path d="M100 452 C 160 432, 210 472, 256 452 S 352 432, 412 452" fill="none" stroke="url(#cs-wave)" stroke-width="7" stroke-linecap="round" opacity="0.6"/>
+  </g>
+</svg>

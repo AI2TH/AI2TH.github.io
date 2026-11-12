@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vizxr — AI2TH</title>
+  <meta name="description" content="Vizxr is a Kubernetes IDE for Android: resource inspector, live metrics, CRD explorer, Helm, logs, pod exec and YAML for local and cloud clusters." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="logo/AI2TH.svg" alt="AI2TH" class="nav-logo-img" /><span class="nav-logo-text">AI2TH</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="android.html">Android</a>
+        <a href="linux.html">Linux</a>
+        <a href="kubernetes.html" class="nav-active">Kubernetes</a>
+        <a href="security.html">Security</a>
+        <a href="about.html">About</a>
+        <a href="https://groups.google.com/g/ai2th" class="nav-more" target="_blank" rel="noopener">Join early access</a>
+        <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="section-inner">
+      <div class="breadcrumb"><a href="index.html">AI2TH</a><span>/</span><a href="kubernetes.html">Kubernetes</a><span>/</span>Vizxr</div>
+      <div class="project-header-row">
+        <img src="logo/vizxr.svg" alt="Vizxr" class="project-logo-img" />
+        <div>
+          <h1 class="page-title" style="margin-bottom:4px">Vizxr</h1>
+          <span class="card-tag">Kubernetes IDE for Android</span>
+        </div>
+      </div>
+      <p class="page-sub">
+        High-fidelity Kubernetes management in your pocket. Vizxr is a pure UI layer: it runs no control plane of its own and connects to the clusters you already have, from Linxr&rsquo;s local k3s to AKS, GKE and EKS.
+      </p>
+      <div class="project-links">
+        <a href="https://github.com/AI2TH/Vizxr/releases/latest" class="btn btn-primary" target="_blank" rel="noopener">Download APK →</a>
+        <a href="https://github.com/AI2TH/Vizxr" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-inner">
+      <h2 class="section-title">Features</h2>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <div class="feature-icon">🔎</div>
+          <div class="feature-title">Resource inspector</div>
+          <div class="feature-desc">Lens-style slide-over dock with overview, containers and pod specs, live events and manifest YAML</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📈</div>
+          <div class="feature-title">Live metrics</div>
+          <div class="feature-desc">Cluster CPU and memory sparklines with utilisation pills for pods and nodes</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🧩</div>
+          <div class="feature-title">CRD explorer</div>
+          <div class="feature-desc">Discover CustomResourceDefinitions and drill into live custom resources</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">⛵</div>
+          <div class="feature-title">Helm hub</div>
+          <div class="feature-desc">Browse repositories, inspect release revisions and values, roll back or uninstall in one tap</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📜</div>
+          <div class="feature-title">Log streamer</div>
+          <div class="feature-desc">Tail logs from several containers in real time</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🖥️</div>
+          <div class="feature-title">Pod exec</div>
+          <div class="feature-desc">Integrated terminal for kubectl exec straight into containers</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📝</div>
+          <div class="feature-title">YAML editor</div>
+          <div class="feature-desc">View and change resource manifests with syntax highlighting</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🔀</div>
+          <div class="feature-title">Multi-cluster</div>
+          <div class="feature-desc">Switch contexts from the cluster drawer; import kubeconfig for cloud clusters</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- How it works -->
+  <section class="section" id="how-it-works">
+    <div class="section-inner">
+      <h2 class="section-title">How it works</h2>
+      <p class="section-sub">Vizxr runs no control plane of its own. It is a client for the clusters you already have.</p>
+      <div class="arch-grid">
+        <div class="arch-layer">
+          <div class="arch-label">Flutter UI (Dart)</div>
+          <div class="arch-desc">Explorer, inspector, logs, exec, YAML, Helm</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">Context manager</div>
+          <div class="arch-desc">Local and cloud clusters from imported kubeconfig</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer arch-layer-highlight">
+          <div class="arch-label">Kubernetes client (Dart)</div>
+          <div class="arch-desc">Talks to the API server over HTTPS / TLS</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">Your cluster</div>
+          <div class="arch-desc">Linxr k3s on localhost:6443 · AKS · GKE · EKS</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="section-inner">
+      <h2 class="section-title">Use it with Linxr</h2>
+      <p class="section-sub">A complete Kubernetes lab on one phone, no cloud account needed.</p>
+      <div class="contrib-steps steps-wide">
+        <div class="contrib-step"><div class="step-num">1</div><div><div class="step-title">Install k3s in Linxr</div><div class="step-desc">Open the Linxr Marketplace and deploy the k3s recipe.</div></div></div>
+        <div class="contrib-step"><div class="step-num">2</div><div><div class="step-title">Connect Vizxr</div><div class="step-desc">Vizxr reaches the local API server on <code>localhost:6443</code>.</div></div></div>
+        <div class="contrib-step"><div class="step-num">3</div><div><div class="step-title">Operate the cluster</div><div class="step-desc">Inspect workloads, stream logs, exec into pods and apply YAML from your phone.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <h2 class="section-title">Release history</h2>
+      <ol class="release-list">
+        <li><a href="https://github.com/AI2TH/Vizxr/releases/tag/v1.1.0" target="_blank" rel="noopener">v1.1.0</a><time datetime="2026-11-05">5 Nov 2026</time><span>Lens-style inspector, sparkline metrics, CRD explorer, Helm hub</span></li>
+      </ol>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <img src="logo/AI2TH.svg" alt="AI2TH" class="nav-logo-img footer-logo-img" />
+      <p class="footer-tagline">Applied Intelligence To Tackle Hardships.</p>
+      <div class="footer-links">
+        <a href="linxr.html">Linxr</a>
+        <a href="vizxr.html">Vizxr</a>
+        <a href="miktam.html">Miktam Bible</a>
+        <a href="cryptship.html">cryptship</a>
+        <a href="android.html">Linux on Android</a>
+        <a href="about.html">About</a>
+        <a href="contribute.html">Contribute</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://groups.google.com/g/ai2th" target="_blank" rel="noopener">Community</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

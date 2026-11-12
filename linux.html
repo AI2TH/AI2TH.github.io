@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linux — AI2TH</title>
+  <meta name="description" content="AI2TH Linux: Linxr runs Alpine Linux, containers, k3s and a desktop on Android; cryptship ships encrypted Linux containers." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="logo/AI2TH.svg" alt="AI2TH" class="nav-logo-img" /><span class="nav-logo-text">AI2TH</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="android.html">Android</a>
+        <a href="linux.html" class="nav-active">Linux</a>
+        <a href="kubernetes.html">Kubernetes</a>
+        <a href="security.html">Security</a>
+        <a href="about.html">About</a>
+        <a href="https://groups.google.com/g/ai2th" class="nav-more" target="_blank" rel="noopener">Join early access</a>
+        <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="section-inner">
+      <div class="breadcrumb"><a href="index.html">AI2TH</a><span>/</span>Linux</div>
+      <h1 class="page-title">Linux,<br /><span class="accent">wherever you need it.</span></h1>
+      <p class="page-sub">A full Alpine Linux VM on your phone with Linxr, and Linux containers you can ship without exposing your code with cryptship.</p>
+      <div class="cat-switch" aria-label="Other categories">
+        <a href="android.html" class="filter-chip">📱 Android</a>
+        <a href="linux.html" class="filter-chip is-active">🐧 Linux</a>
+        <a href="kubernetes.html" class="filter-chip">☸️ Kubernetes</a>
+        <a href="security.html" class="filter-chip">🔐 Security</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="section section-tight">
+    <div class="section-inner">
+      <h2 class="section-title">Apps</h2>
+      <div class="cards product-grid">
+        <article class="card product-card" data-cats="android linux kubernetes">
+          <div class="card-header">
+            <img src="logo/linxr.svg" alt="" class="card-logo-img" />
+            <div>
+              <h3 class="card-name"><a href="linxr.html">Linxr</a></h3>
+              <span class="card-tag">Linux on Android</span>
+            </div>
+          </div>
+          <p class="card-desc">A full Alpine Linux workstation in one APK, no root. The home for every Linux-on-Android project: Pockr, Zyvr and Kubxr are merged in, and new ones land here too.</p>
+          <ul class="card-features">
+            <li>Containers (FastTrack OCI or Docker)</li>
+            <li>k3s Kubernetes and Asterisk PBX</li>
+            <li>Linux desktop GUI and SSH terminal</li>
+            <li>1-click Marketplace with community recipes</li>
+          </ul>
+          <div class="product-status">v3.4.0 · Google Play closed testing · APK</div>
+          <div class="card-footer">
+            <a href="linxr.html" class="btn btn-sm">Details →</a>
+            <a href="https://github.com/AI2TH/Linxr" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://github.com/AI2TH/Linxr/releases/latest" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">APK</a>
+          </div>
+        </article>
+        <article class="card product-card" data-cats="linux kubernetes security">
+          <div class="card-header">
+            <img src="logo/cryptship.svg" alt="" class="card-logo-img" />
+            <div>
+              <h3 class="card-name"><a href="cryptship.html">cryptship</a></h3>
+              <span class="card-tag">Security · Software delivery</span>
+            </div>
+          </div>
+          <p class="card-desc">Ship encrypted, license-gated application code inside Docker images. The image is ciphertext; a small loader runs your app only with a valid license.</p>
+          <ul class="card-features">
+            <li>AES-256-GCM payloads, Ed25519 licenses</li>
+            <li>Air-gapped, on-prem and cloud modes</li>
+            <li>Instant revocation via license server</li>
+            <li>Hardening and per-license watermarks</li>
+          </ul>
+          <div class="product-status">v0.1.0 · Go · GPLv3</div>
+          <div class="card-footer">
+            <a href="cryptship.html" class="btn btn-sm">Details →</a>
+            <a href="https://github.com/AI2TH/cryptship" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://github.com/AI2TH/cryptship/releases/latest" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">Release</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Linxr is the home for Linux on Android -->
+  <section class="section section-alt" id="linux-on-android">
+    <div class="section-inner merge-section">
+      <div class="merge-copy">
+        <h2 class="section-title">One home for Linux on Android</h2>
+        <p class="section-sub">
+          AI2TH started with separate apps, each with its own VM: Docker, a phone PBX, a Kubernetes node.
+          They now live in <strong>Linxr</strong> as Marketplace recipes and tabs, sharing one VM and one install.
+          Every future Linux-on-Android project lands in Linxr too.
+        </p>
+        <div class="project-links">
+          <a href="linxr.html" class="btn btn-primary">Explore Linxr →</a>
+          <a href="android.html" class="btn btn-ghost">How it works</a>
+        </div>
+      </div>
+      <div class="merge-flow" role="img" aria-label="Pockr, Zyvr, Kubxr and future projects merge into Linxr; Vizxr manages Linxr's k3s">
+        <div class="merge-sources">
+          <a href="pockr.html" class="merge-chip"><span class="merge-chip-name">Pockr</span><span class="merge-chip-what">Docker</span></a>
+          <a href="zyvr.html" class="merge-chip"><span class="merge-chip-name">Zyvr</span><span class="merge-chip-what">Asterisk PBX</span></a>
+          <a href="https://github.com/AI2TH/Kubxr" class="merge-chip" target="_blank" rel="noopener"><span class="merge-chip-name">Kubxr</span><span class="merge-chip-what">k3s Kubernetes</span></a>
+          <div class="merge-chip merge-chip-next"><span class="merge-chip-name">Next</span><span class="merge-chip-what">future Linux projects</span></div>
+        </div>
+        <div class="merge-arrow" aria-hidden="true"></div>
+        <a href="linxr.html" class="merge-target">
+          <img src="logo/linxr.svg" alt="" />
+          <span class="merge-target-name">Linxr</span>
+          <span class="merge-target-what">one VM · one APK</span>
+        </a>
+        <a href="vizxr.html" class="merge-companion">
+          <img src="logo/vizxr.svg" alt="" />
+          <span><strong>Vizxr</strong> manages Linxr&rsquo;s k3s on localhost:6443</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="terminal">
+    <div class="section-inner">
+      <h2 class="section-title">A real Linux shell</h2>
+      <p class="section-sub">Inside Linxr on an ordinary arm64 phone.</p>
+      <div class="terminal-window page-terminal">
+        <div class="terminal-bar">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="terminal-title">root@linxr:~</span>
+        </div>
+        <pre class="terminal-body"><span class="t-dim">$</span> <span class="t-cmd">uname -a</span>
+Linux linxr 6.18.0-virt #1 SMP PREEMPT aarch64 Linux
+
+<span class="t-dim">$</span> <span class="t-cmd">docker run hello-world</span>
+Hello from Docker! This message shows that your installation
+appears to be working correctly.
+
+<span class="t-dim">$</span> <span class="t-cmd">k3s kubectl get nodes</span>
+NAME    STATUS   ROLES                  AGE   VERSION
+linxr   Ready    control-plane,master   2m    v1.30.4+k3s1
+
+<span class="t-dim">$</span> <span class="t-cmd">asterisk -rx "sip show peers"</span>
+Name/username    Host    Dyn  Port  Status
+1001             (dyn)   D    5060  OK (12 ms)
+2 sip peers [1 monitored]
+
+<span class="t-dim">$</span> <span class="t-green">█</span></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture — first version design -->
+  <section class="section section-alt" id="architecture">
+    <div class="section-inner">
+      <h2 class="section-title">How it works</h2>
+      <p class="section-sub">Every app uses the same layered stack — QEMU gives the Linux VM, Alpine gives the environment, the app gives the UI.</p>
+
+      <div class="arch-grid">
+        <div class="arch-layer">
+          <div class="arch-label">Flutter UI (Dart)</div>
+          <div class="arch-desc">Native Android UI — tabs, logs, terminal, settings</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">Kotlin VmManager</div>
+          <div class="arch-desc">Launches libqemu.so via JNI, manages ForegroundService lifecycle</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer arch-layer-highlight">
+          <div class="arch-label">QEMU (libqemu.so)</div>
+          <div class="arch-desc">Compiled as .so shipped inside the APK. Runs as a normal app process — no root.</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">Alpine Linux VM</div>
+          <div class="arch-desc">Boots from a bundled QCOW2 asset. SLIRP networking, persistent overlay, OpenRC init.</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">Your workload</div>
+          <div class="arch-desc">Containers · k3s · Asterisk PBX · Linux desktop · bash shell — whatever runs on Linux</div>
+        </div>
+      </div>
+
+      <div class="port-table-wrap">
+        <h3 class="sub-heading">SLIRP port mappings</h3>
+        <table class="port-table">
+          <thead>
+            <tr><th>Port</th><th>Protocol</th><th>Service</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>7080</td><td>TCP</td><td>Linxr control API</td></tr>
+            <tr><td>2222</td><td>TCP</td><td>OpenSSH (<code>ssh root@localhost -p 2222</code>)</td></tr>
+            <tr><td>6080 / 5900</td><td>TCP</td><td>noVNC web desktop / VNC server</td></tr>
+            <tr><td>11434</td><td>TCP</td><td>Ollama API</td></tr>
+            <tr><td>8088 → 80</td><td>TCP</td><td>Web server inside the VM</td></tr>
+            <tr><td>3000, 5000, 8000, 8080, 8443, 9000</td><td>TCP</td><td>Your web apps (open in Chrome on the phone)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Requirements — first version design -->
+  <section class="section" id="requirements">
+    <div class="section-inner">
+      <h2 class="section-title">Requirements</h2>
+      <div class="req-grid">
+        <div class="req-item">
+          <div class="req-icon">📱</div>
+          <div class="req-label">Android 8.0+</div>
+          <div class="req-detail">API level 26 or higher</div>
+        </div>
+        <div class="req-item">
+          <div class="req-icon">⚙️</div>
+          <div class="req-label">ARM64 only</div>
+          <div class="req-detail">arm64-v8a architecture required</div>
+        </div>
+        <div class="req-item">
+          <div class="req-icon">💾</div>
+          <div class="req-label">~250 MB + VM disk</div>
+          <div class="req-detail">APK, plus 8 GB or more for the VM disk</div>
+        </div>
+        <div class="req-item">
+          <div class="req-icon">🔓</div>
+          <div class="req-label">No root needed</div>
+          <div class="req-detail">QEMU runs as a normal app process</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <img src="logo/AI2TH.svg" alt="AI2TH" class="nav-logo-img footer-logo-img" />
+      <p class="footer-tagline">Applied Intelligence To Tackle Hardships.</p>
+      <div class="footer-links">
+        <a href="linxr.html">Linxr</a>
+        <a href="vizxr.html">Vizxr</a>
+        <a href="miktam.html">Miktam Bible</a>
+        <a href="cryptship.html">cryptship</a>
+        <a href="android.html">Linux on Android</a>
+        <a href="about.html">About</a>
+        <a href="contribute.html">Contribute</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://groups.google.com/g/ai2th" target="_blank" rel="noopener">Community</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

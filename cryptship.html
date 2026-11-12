@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cryptship — AI2TH</title>
+  <meta name="description" content="cryptship ships encrypted, license-gated application code inside Docker images, for air-gapped, on-prem and cloud deployments. GPLv3." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="logo/AI2TH.svg" alt="AI2TH" class="nav-logo-img" /><span class="nav-logo-text">AI2TH</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="android.html">Android</a>
+        <a href="linux.html">Linux</a>
+        <a href="kubernetes.html">Kubernetes</a>
+        <a href="security.html" class="nav-active">Security</a>
+        <a href="about.html">About</a>
+        <a href="https://groups.google.com/g/ai2th" class="nav-more" target="_blank" rel="noopener">Join early access</a>
+        <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="section-inner">
+      <div class="breadcrumb"><a href="index.html">AI2TH</a><span>/</span><a href="security.html">Security</a><span>/</span>cryptship</div>
+      <div class="project-header-row">
+        <img src="logo/cryptship.svg" alt="cryptship" class="project-logo-img" />
+        <div>
+          <h1 class="page-title" style="margin-bottom:4px">cryptship</h1>
+          <span class="card-tag">Encrypted, license-gated code in container images</span>
+        </div>
+      </div>
+      <p class="page-sub">
+        Docker images ship your source in the clear: anyone can <code>docker save</code> and read it. cryptship ships the app encrypted, with a thin loader that decrypts and runs it only when a valid license is present. One tool, one license format, three deployment modes.
+      </p>
+      <div class="project-links">
+        <a href="https://github.com/AI2TH/cryptship" class="btn btn-primary" target="_blank" rel="noopener">GitHub →</a>
+        <a href="https://github.com/AI2TH/cryptship/releases/latest" class="btn btn-ghost" target="_blank" rel="noopener">v0.1.0 release</a>
+        <a href="https://github.com/AI2TH/cryptship/blob/HEAD/docs/HOWTO.md" class="btn btn-ghost" target="_blank" rel="noopener">How-to guide</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-inner">
+      <h2 class="section-title">How it works</h2>
+      <p class="section-sub">Build time, by the vendor:</p>
+      <div class="contrib-steps steps-wide">
+        <div class="contrib-step"><div class="step-num">1</div><div><div class="step-title"><code>cryptship keygen</code></div><div class="step-desc">Generate an Ed25519 signing keypair, once.</div></div></div>
+        <div class="contrib-step"><div class="step-num">2</div><div><div class="step-title"><code>cryptship pack</code></div><div class="step-desc">Encrypt your app directory with a random content key (AES-256-GCM) into <code>payload.enc</code>.</div></div></div>
+        <div class="contrib-step"><div class="step-num">3</div><div><div class="step-title"><code>cryptship issue</code></div><div class="step-desc">Issue a signed license that wraps the content key to a binding: none, one machine, or a pool.</div></div></div>
+        <div class="contrib-step"><div class="step-num">4</div><div><div class="step-title">Build the image</div><div class="step-desc">Loader, <code>payload.enc</code>, license and public key. No source, no content key.</div></div></div>
+      </div>
+      <p class="section-sub run-time-note">At run time the loader verifies the license, checks expiry and revocation, derives the key, decrypts into tmpfs and <code>exec</code>s your app.</p>
+
+      <div class="terminal-window page-terminal">
+        <div class="terminal-bar">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="terminal-title">no "is valid?" boolean to patch</span>
+        </div>
+        <pre class="terminal-body"><span class="t-dim"># the key is derived from the license, so a valid license and a successful decrypt are the same event</span>
+content_key = unwrap(license.wrapped_key, KEK = derive(machine_fingerprint, license_id))
+plaintext   = aead_open(payload.enc, content_key)   <span class="t-dim"># wrong key =&gt; AEAD tag fails</span></pre>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- How it works -->
+  <section class="section" id="how-it-works">
+    <div class="section-inner">
+      <h2 class="section-title">How it works</h2>
+      <p class="section-sub">Build time on your side, run time on the customer&rsquo;s.</p>
+      <div class="arch-cols">
+        <div class="arch-col">
+          <a class="arch-col-title" href="#how-it-works">Build time · vendor →</a>
+      <div class="arch-grid arch-grid-col">
+        <div class="arch-layer">
+          <div class="arch-label">Your app</div>
+          <div class="arch-desc">Source or compiled build output</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer arch-layer-highlight">
+          <div class="arch-label">cryptship pack</div>
+          <div class="arch-desc">Random content key; AES-256-GCM into payload.enc</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">cryptship issue</div>
+          <div class="arch-desc">Ed25519-signed license that wraps the content key</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">Container image</div>
+          <div class="arch-desc">Loader + payload.enc + license + public key</div>
+        </div>
+      </div>
+        </div>
+        <div class="arch-col">
+          <a class="arch-col-title" href="#how-it-works">Run time · customer →</a>
+      <div class="arch-grid arch-grid-col">
+        <div class="arch-layer">
+          <div class="arch-label">Loader starts</div>
+          <div class="arch-desc">Verifies the license signature, expiry and revocation</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer arch-layer-highlight">
+          <div class="arch-label">Key provider</div>
+          <div class="arch-desc">offline · online license server · attested hardware</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">Decrypt to tmpfs</div>
+          <div class="arch-desc">Wrong license or machine means the AEAD tag fails</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">exec your app</div>
+          <div class="arch-desc">Runs with the license ID and customer as a watermark</div>
+        </div>
+      </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="section-inner">
+      <h2 class="section-title">Deployment modes</h2>
+      <p class="section-sub">Air-gapped, on-prem and cloud differ only in how the content key is obtained.</p>
+      <div class="port-table-wrap">
+        <table class="port-table">
+          <thead><tr><th>Mode</th><th>Provider</th><th>Binding</th><th>Revocation</th></tr></thead>
+          <tbody>
+            <tr><td>Air-gapped</td><td><code>offline</code></td><td>Machine fingerprint, or none</td><td>Expiry only</td></tr>
+            <tr><td>On-prem / cloud</td><td><code>online</code></td><td>Per-license secret held by your server</td><td>Real: the server declines</td></tr>
+            <tr><td>Confidential</td><td><code>attested</code></td><td>SEV-SNP / TDX attestation gates the key</td><td>Real, plus anti-tamper</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <h2 class="section-title">Hardening</h2>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <div class="feature-icon">🧱</div>
+          <div class="feature-title">Compile before sealing</div>
+          <div class="feature-desc"><code>pack --transform-cmd</code> runs your toolchain first, so a memory dump yields bytecode, not source</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🛡️</div>
+          <div class="feature-title">Runtime hardening</div>
+          <div class="feature-desc">Non-dumpable loader, seccomp profile, non-root, dropped capabilities, read-only root and tmpfs</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🔖</div>
+          <div class="feature-title">Per-license watermark</div>
+          <div class="feature-desc">Each instance carries its license ID and customer, so a leak traces back to its licensee</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🔁</div>
+          <div class="feature-title">Key rotation and revocation</div>
+          <div class="feature-desc">Signing-key ring, and open, closed or grace revocation policies</div>
+        </div>
+      </div>
+      <div class="notice-merged notice-info">
+        <strong>Honest threat model</strong><br />
+        Code that runs on hardware the customer controls can never be fully extraction-proof. cryptship raises the bar:
+        it makes casual copying impossible and serious reverse engineering cost more than a license. Against root on the
+        host, only the confidential-compute (<code>attested</code>) path, or keeping critical logic server-side, prevents extraction.
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="section-inner">
+      <h2 class="section-title">Try the demo</h2>
+      <p class="section-sub">Needs only Docker. The demo packs a small Python app, proves no layer contains the source, runs it, then tampers with the license to show the loader refuse.</p>
+      <div class="terminal-window page-terminal">
+        <div class="terminal-bar">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="terminal-title">cryptship</span>
+        </div>
+        <pre class="terminal-body"><span class="t-dim">$</span> <span class="t-cmd">git clone https://github.com/AI2TH/cryptship &amp;&amp; cd cryptship</span>
+<span class="t-dim">$</span> <span class="t-cmd">bash scripts/demo.sh</span></pre>
+      </div>
+      <ol class="release-list">
+        <li><a href="https://github.com/AI2TH/cryptship/releases/tag/v0.1.0" target="_blank" rel="noopener">v0.1.0</a><time datetime="2026-11-12">12 Nov 2026</time><span>First release: offline, online and attested key providers, license server, hardening, demos</span></li>
+      </ol>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <img src="logo/AI2TH.svg" alt="AI2TH" class="nav-logo-img footer-logo-img" />
+      <p class="footer-tagline">Applied Intelligence To Tackle Hardships.</p>
+      <div class="footer-links">
+        <a href="linxr.html">Linxr</a>
+        <a href="vizxr.html">Vizxr</a>
+        <a href="miktam.html">Miktam Bible</a>
+        <a href="cryptship.html">cryptship</a>
+        <a href="android.html">Linux on Android</a>
+        <a href="about.html">About</a>
+        <a href="contribute.html">Contribute</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://groups.google.com/g/ai2th" target="_blank" rel="noopener">Community</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
