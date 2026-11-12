@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient: Deep Obsidian Slate -->
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#111B2E"/>
+      <stop offset="55%" stop-color="#090E17"/>
+      <stop offset="100%" stop-color="#04060A"/>
+    </radialGradient>
+
+    <!-- Squircle Border Gradient -->
+    <linearGradient id="rim-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#3B82F6" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#A855F7" stop-opacity="0.7"/>
+    </linearGradient>
+
+    <!-- Neon Cyan-Sapphire Gradient (Vizxr Core) -->
+    <linearGradient id="neon-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE"/>
+      <stop offset="60%" stop-color="#00C8FF"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+
+    <!-- Aperture Iris Gradient with subtle violet & teal sheen -->
+    <linearGradient id="iris-grad" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE"/>
+      <stop offset="40%" stop-color="#1D6FE5"/>
+      <stop offset="85%" stop-color="#00C896"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+
+    <!-- Center Pupil Radial Glow -->
+    <radialGradient id="pupil-glow" cx="45%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.9"/>
+      <stop offset="35%" stop-color="#1E40AF" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#0B132B" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </radialGradient>
+
+    <!-- Neon Glow Filter -->
+    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="soft-glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Obsidian Glass Squircle Base -->
+  <rect x="16" y="16" width="480" height="480" rx="96" fill="url(#bg)"/>
+  <rect x="16" y="16" width="480" height="480" rx="96" fill="none" stroke="url(#rim-grad)" stroke-width="3" filter="url(#soft-glow)"/>
+
+  <!-- Ambient Internal Glow Behind Helm -->
+  <circle cx="256" cy="256" r="160" fill="#00F2FE" opacity="0.04" filter="url(#neon-glow)"/>
+
+  <!-- Outer Orbit Circuit Traces & Telemetry Constellation Nodes -->
+  <g stroke="#00C8FF" stroke-opacity="0.35" stroke-width="1.8" fill="none">
+    <circle cx="256" cy="256" r="182" stroke-dasharray="4 8" opacity="0.6"/>
+    <!-- Interconnecting Spoke Jumpers -->
+    <line x1="256" y1="76" x2="384" y2="138"/>
+    <line x1="384" y1="138" x2="435" y2="267"/>
+    <line x1="435" y1="267" x2="370" y2="390"/>
+    <line x1="370" y1="390" x2="256" y2="436"/>
+    <line x1="256" y1="436" x2="142" y2="390"/>
+    <line x1="142" y1="390" x2="77" y2="267"/>
+    <line x1="77" y1="267" x2="128" y2="138"/>
+    <line x1="128" y1="138" x2="256" y2="76"/>
+  </g>
+
+  <!-- Constellation Circuit Nodes (7 outer perimeter points) -->
+  <g fill="#00F2FE" filter="url(#soft-glow)">
+    <circle cx="256" cy="76" r="4.5"/>
+    <circle cx="384" cy="138" r="4.5"/>
+    <circle cx="435" cy="267" r="4.5"/>
+    <circle cx="370" cy="390" r="4.5"/>
+    <circle cx="256" cy="436" r="4.5"/>
+    <circle cx="142" cy="390" r="4.5"/>
+    <circle cx="77" cy="267" r="4.5"/>
+  </g>
+
+  <!-- Main Kubernetes 7-Spoke Wheel & Handles -->
+  <g id="k8s-helm" filter="url(#neon-glow)">
+    <!-- Outer Helm Ring -->
+    <circle cx="256" cy="256" r="132" fill="none" stroke="url(#neon-cyan)" stroke-width="7" stroke-linecap="round"/>
+    
+    <!-- Intermediate Concentric Chassis Ring with Calibration Notches -->
+    <circle cx="256" cy="256" r="108" fill="none" stroke="#2563EB" stroke-opacity="0.8" stroke-width="4"/>
+    <circle cx="256" cy="256" r="108" fill="none" stroke="#00F2FE" stroke-width="2.5" stroke-dasharray="12 18"/>
+
+    <!-- 7 Kubernetes Ship Handles (0°, 51.4°, 102.8°, 154.3°, 205.7°, 257.1°, 308.6°) -->
+    <!-- Spoke 1 (Top / 0°) -->
+    <g transform="translate(256, 256) rotate(0)">
+      <line x1="0" y1="-108" x2="0" y2="-176" stroke="url(#neon-cyan)" stroke-width="8" stroke-linecap="round"/>
+      <path d="M-9,-176 C-14,-184 -12,-198 0,-202 C12,-198 14,-184 9,-176 Z" fill="url(#neon-cyan)"/>
+      <circle cx="0" cy="-148" r="3" fill="#090E17"/>
+    </g>
+
+    <!-- Spoke 2 (51.4°) -->
+    <g transform="translate(256, 256) rotate(51.43)">
+      <line x1="0" y1="-108" x2="0" y2="-176" stroke="url(#neon-cyan)" stroke-width="8" stroke-linecap="round"/>
+      <path d="M-9,-176 C-14,-184 -12,-198 0,-202 C12,-198 14,-184 9,-176 Z" fill="url(#neon-cyan)"/>
+      <circle cx="0" cy="-148" r="3" fill="#090E17"/>
+    </g>
+
+    <!-- Spoke 3 (102.85°) -->
+    <g transform="translate(256, 256) rotate(102.86)">
+      <line x1="0" y1="-108" x2="0" y2="-176" stroke="url(#neon-cyan)" stroke-width="8" stroke-linecap="round"/>
+      <path d="M-9,-176 C-14,-184 -12,-198 0,-202 C12,-198 14,-184 9,-176 Z" fill="url(#neon-cyan)"/>
+      <circle cx="0" cy="-148" r="3" fill="#090E17"/>
+    </g>
+
+    <!-- Spoke 4 (154.3°) -->
+    <g transform="translate(256, 256) rotate(154.29)">
+      <line x1="0" y1="-108" x2="0" y2="-176" stroke="url(#neon-cyan)" stroke-width="8" stroke-linecap="round"/>
+      <path d="M-9,-176 C-14,-184 -12,-198 0,-202 C12,-198 14,-184 9,-176 Z" fill="url(#neon-cyan)"/>
+      <circle cx="0" cy="-148" r="3" fill="#090E17"/>
+    </g>
+
+    <!-- Spoke 5 (205.7°) -->
+    <g transform="translate(256, 256) rotate(205.71)">
+      <line x1="0" y1="-108" x2="0" y2="-176" stroke="url(#neon-cyan)" stroke-width="8" stroke-linecap="round"/>
+      <path d="M-9,-176 C-14,-184 -12,-198 0,-202 C12,-198 14,-184 9,-176 Z" fill="url(#neon-cyan)"/>
+      <circle cx="0" cy="-148" r="3" fill="#090E17"/>
+    </g>
+
+    <!-- Spoke 6 (257.1°) -->
+    <g transform="translate(256, 256) rotate(257.14)">
+      <line x1="0" y1="-108" x2="0" y2="-176" stroke="url(#neon-cyan)" stroke-width="8" stroke-linecap="round"/>
+      <path d="M-9,-176 C-14,-184 -12,-198 0,-202 C12,-198 14,-184 9,-176 Z" fill="url(#neon-cyan)"/>
+      <circle cx="0" cy="-148" r="3" fill="#090E17"/>
+    </g>
+
+    <!-- Spoke 7 (308.6°) -->
+    <g transform="translate(256, 256) rotate(308.57)">
+      <line x1="0" y1="-108" x2="0" y2="-176" stroke="url(#neon-cyan)" stroke-width="8" stroke-linecap="round"/>
+      <path d="M-9,-176 C-14,-184 -12,-198 0,-202 C12,-198 14,-184 9,-176 Z" fill="url(#neon-cyan)"/>
+      <circle cx="0" cy="-148" r="3" fill="#090E17"/>
+    </g>
+  </g>
+
+  <!-- Core Optical Lens / Camera Visor Aperture -->
+  <!-- Outer Bezel Ring -->
+  <circle cx="256" cy="256" r="80" fill="#0B1324" stroke="url(#neon-cyan)" stroke-width="5"/>
+  <circle cx="256" cy="256" r="74" fill="none" stroke="#38BDF8" stroke-width="1.5" stroke-dasharray="2 4"/>
+
+  <!-- Aperture Blades (6 Interlocking Geometric Iris Petals) -->
+  <g id="aperture-iris" filter="url(#soft-glow)">
+    <g transform="translate(256, 256)">
+      <!-- Blade 1 -->
+      <path d="M 0,-68 A 68,68 0 0,1 58.89,-34 L 14,-10 A 30,30 0 0,0 -20,-48 Z" fill="url(#iris-grad)" opacity="0.92"/>
+      <!-- Blade 2 -->
+      <path d="M 0,-68 A 68,68 0 0,1 58.89,-34 L 14,-10 A 30,30 0 0,0 -20,-48 Z" fill="url(#iris-grad)" opacity="0.92" transform="rotate(60)"/>
+      <!-- Blade 3 -->
+      <path d="M 0,-68 A 68,68 0 0,1 58.89,-34 L 14,-10 A 30,30 0 0,0 -20,-48 Z" fill="url(#iris-grad)" opacity="0.92" transform="rotate(120)"/>
+      <!-- Blade 4 -->
+      <path d="M 0,-68 A 68,68 0 0,1 58.89,-34 L 14,-10 A 30,30 0 0,0 -20,-48 Z" fill="url(#iris-grad)" opacity="0.92" transform="rotate(180)"/>
+      <!-- Blade 5 -->
+      <path d="M 0,-68 A 68,68 0 0,1 58.89,-34 L 14,-10 A 30,30 0 0,0 -20,-48 Z" fill="url(#iris-grad)" opacity="0.92" transform="rotate(240)"/>
+      <!-- Blade 6 -->
+      <path d="M 0,-68 A 68,68 0 0,1 58.89,-34 L 14,-10 A 30,30 0 0,0 -20,-48 Z" fill="url(#iris-grad)" opacity="0.92" transform="rotate(300)"/>
+    </g>
+  </g>
+
+  <!-- Central Optical Lens Pupil / Visor Core -->
+  <circle cx="256" cy="256" r="28" fill="url(#pupil-glow)"/>
+  <circle cx="256" cy="256" r="28" fill="none" stroke="#00F2FE" stroke-width="2" opacity="0.8"/>
+
+  <!-- Luminous Optical Specular Reflection Highlights -->
+  <ellipse cx="246" cy="246" rx="9" ry="5" transform="rotate(-30 246 246)" fill="#FFFFFF" opacity="0.75" filter="url(#soft-glow)"/>
+  <circle cx="266" cy="265" r="3" fill="#00F2FE" opacity="0.85"/>
+</svg>
