@@ -119,56 +119,22 @@
   <!-- How it works -->
   <section class="section section-alt" id="how-it-works">
     <div class="section-inner">
-      <h2 class="section-title">How it works</h2>
-      <p class="section-sub">A full Kubernetes lab on one phone, or a remote control for the clusters you already run.</p>
-      <div class="arch-cols">
-        <div class="arch-col">
-          <a class="arch-col-title" href="linxr.html">On your phone →</a>
-      <div class="arch-grid arch-grid-col">
+      <h2 class="section-title">How Vizxr and Linxr fit together</h2>
+      <p class="section-sub">They are two separate apps. Vizxr is only a client: it runs no VM and no cluster. Linxr is one place a cluster can run.</p>
+      <div class="arch-grid">
         <div class="arch-layer">
-          <div class="arch-label">Vizxr</div>
-          <div class="arch-desc">Inspect, logs, exec, YAML, Helm</div>
-        </div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-layer">
-          <div class="arch-label">localhost:6443</div>
-          <div class="arch-desc">Kubernetes API, HTTPS / TLS</div>
+          <div class="arch-label">Vizxr app</div>
+          <div class="arch-desc">Kubernetes IDE on your phone</div>
         </div>
         <div class="arch-arrow">↓</div>
         <div class="arch-layer arch-layer-highlight">
-          <div class="arch-label">k3s in Linxr</div>
-          <div class="arch-desc">Installed from the Linxr Marketplace</div>
+          <div class="arch-label">Kubernetes API over HTTPS</div>
+          <div class="arch-desc">localhost:6443 for Linxr, or an imported kubeconfig</div>
         </div>
         <div class="arch-arrow">↓</div>
         <div class="arch-layer">
-          <div class="arch-label">Pods</div>
-          <div class="arch-desc">Containers inside the Alpine VM</div>
-        </div>
-      </div>
-        </div>
-        <div class="arch-col">
-          <a class="arch-col-title" href="vizxr.html">In the cloud →</a>
-      <div class="arch-grid arch-grid-col">
-        <div class="arch-layer">
-          <div class="arch-label">Vizxr</div>
-          <div class="arch-desc">Same app, another context</div>
-        </div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-layer">
-          <div class="arch-label">kubeconfig</div>
-          <div class="arch-desc">Imported for each cluster</div>
-        </div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-layer arch-layer-highlight">
-          <div class="arch-label">AKS · GKE · EKS</div>
-          <div class="arch-desc">Or any self-hosted cluster</div>
-        </div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-layer">
-          <div class="arch-label">Your workloads</div>
-          <div class="arch-desc">Including cryptship-sealed images</div>
-        </div>
-      </div>
+          <div class="arch-label">Your cluster</div>
+          <div class="arch-desc">k3s inside Linxr on the same phone, or AKS · GKE · EKS · self-hosted</div>
         </div>
       </div>
     </div>

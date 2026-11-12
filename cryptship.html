@@ -49,33 +49,9 @@
     </div>
   </div>
 
-  <section class="section">
-    <div class="section-inner">
-      <h2 class="section-title">How it works</h2>
-      <p class="section-sub">Build time, by the vendor:</p>
-      <div class="contrib-steps steps-wide">
-        <div class="contrib-step"><div class="step-num">1</div><div><div class="step-title"><code>cryptship keygen</code></div><div class="step-desc">Generate an Ed25519 signing keypair, once.</div></div></div>
-        <div class="contrib-step"><div class="step-num">2</div><div><div class="step-title"><code>cryptship pack</code></div><div class="step-desc">Encrypt your app directory with a random content key (AES-256-GCM) into <code>payload.enc</code>.</div></div></div>
-        <div class="contrib-step"><div class="step-num">3</div><div><div class="step-title"><code>cryptship issue</code></div><div class="step-desc">Issue a signed license that wraps the content key to a binding: none, one machine, or a pool.</div></div></div>
-        <div class="contrib-step"><div class="step-num">4</div><div><div class="step-title">Build the image</div><div class="step-desc">Loader, <code>payload.enc</code>, license and public key. No source, no content key.</div></div></div>
-      </div>
-      <p class="section-sub run-time-note">At run time the loader verifies the license, checks expiry and revocation, derives the key, decrypts into tmpfs and <code>exec</code>s your app.</p>
-
-      <div class="terminal-window page-terminal">
-        <div class="terminal-bar">
-          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-          <span class="terminal-title">no "is valid?" boolean to patch</span>
-        </div>
-        <pre class="terminal-body"><span class="t-dim"># the key is derived from the license, so a valid license and a successful decrypt are the same event</span>
-content_key = unwrap(license.wrapped_key, KEK = derive(machine_fingerprint, license_id))
-plaintext   = aead_open(payload.enc, content_key)   <span class="t-dim"># wrong key =&gt; AEAD tag fails</span></pre>
-      </div>
-    </div>
-  </section>
-
 
   <!-- How it works -->
-  <section class="section" id="how-it-works">
+  <section class="section section-alt" id="how-it-works">
     <div class="section-inner">
       <h2 class="section-title">How it works</h2>
       <p class="section-sub">Build time on your side, run time on the customer&rsquo;s.</p>
@@ -128,6 +104,31 @@ plaintext   = aead_open(payload.enc, content_key)   <span class="t-dim"># wrong 
         </div>
       </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps -->
+  <section class="section">
+    <div class="section-inner">
+      <h2 class="section-title">Step by step</h2>
+      <p class="section-sub">Build time, by the vendor:</p>
+      <div class="contrib-steps steps-wide">
+        <div class="contrib-step"><div class="step-num">1</div><div><div class="step-title"><code>cryptship keygen</code></div><div class="step-desc">Generate an Ed25519 signing keypair, once.</div></div></div>
+        <div class="contrib-step"><div class="step-num">2</div><div><div class="step-title"><code>cryptship pack</code></div><div class="step-desc">Encrypt your app directory with a random content key (AES-256-GCM) into <code>payload.enc</code>.</div></div></div>
+        <div class="contrib-step"><div class="step-num">3</div><div><div class="step-title"><code>cryptship issue</code></div><div class="step-desc">Issue a signed license that wraps the content key to a binding: none, one machine, or a pool.</div></div></div>
+        <div class="contrib-step"><div class="step-num">4</div><div><div class="step-title">Build the image</div><div class="step-desc">Loader, <code>payload.enc</code>, license and public key. No source, no content key.</div></div></div>
+      </div>
+      <p class="section-sub run-time-note">At run time the loader verifies the license, checks expiry and revocation, derives the key, decrypts into tmpfs and <code>exec</code>s your app.</p>
+
+      <div class="terminal-window page-terminal">
+        <div class="terminal-bar">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="terminal-title">no "is valid?" boolean to patch</span>
+        </div>
+        <pre class="terminal-body"><span class="t-dim"># the key is derived from the license, so a valid license and a successful decrypt are the same event</span>
+content_key = unwrap(license.wrapped_key, KEK = derive(machine_fingerprint, license_id))
+plaintext   = aead_open(payload.enc, content_key)   <span class="t-dim"># wrong key =&gt; AEAD tag fails</span></pre>
       </div>
     </div>
   </section>

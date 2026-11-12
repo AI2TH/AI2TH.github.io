@@ -31,8 +31,8 @@
   <div class="page-header">
     <div class="section-inner">
       <div class="breadcrumb"><a href="index.html">AI2TH</a><span>/</span>Android</div>
-      <h1 class="page-title">Android apps,<br /><span class="accent">no root required.</span></h1>
-      <p class="page-sub">Everything AI2TH builds for your phone. Linux on the phone is one of them, alongside a Kubernetes IDE and an offline Bible.</p>
+      <h1 class="page-title">Android apps,<br /><span class="accent">one job each.</span></h1>
+      <p class="page-sub">Everything AI2TH builds for your phone. Each app does a different job: Linxr runs Linux, Vizxr manages Kubernetes, Miktam Bible is for Bible study. Open an app to see how it works.</p>
       <div class="cat-switch" aria-label="Other categories">
         <a href="android.html" class="filter-chip is-active">📱 Android</a>
         <a href="linux.html" class="filter-chip">🐧 Linux</a>
@@ -119,90 +119,8 @@
   <!-- How it works -->
   <section class="section section-alt" id="how-it-works">
     <div class="section-inner">
-      <h2 class="section-title">How the apps work</h2>
-      <p class="section-sub">Each app is a self-contained APK. Linxr carries a whole Linux VM; Vizxr talks to clusters, including Linxr&rsquo;s; Miktam Bible runs fully offline.</p>
-      <div class="arch-cols">
-        <div class="arch-col">
-          <a class="arch-col-title" href="linxr.html">Linxr →</a>
-      <div class="arch-grid arch-grid-col">
-        <div class="arch-layer">
-          <div class="arch-label">Flutter UI (Dart)</div>
-          <div class="arch-desc">Home, Terminal, Containers, Marketplace, Desktop, Files, Settings</div>
-        </div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-layer arch-layer-highlight">
-          <div class="arch-label">QEMU (libqemu.so)</div>
-          <div class="arch-desc">Shipped inside the APK; runs as a normal app process, no root</div>
-        </div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-layer">
-          <div class="arch-label">Alpine Linux VM</div>
-          <div class="arch-desc">Kernel 6.18-virt, OpenRC, SSH, apk; disk image grows on boot</div>
-        </div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-layer">
-          <div class="arch-label">Your workloads</div>
-          <div class="arch-desc">Containers · k3s · Asterisk PBX · Linux desktop · bash</div>
-        </div>
-      </div>
-        </div>
-        <div class="arch-col">
-          <a class="arch-col-title" href="vizxr.html">Vizxr →</a>
-      <div class="arch-grid arch-grid-col">
-        <div class="arch-layer">
-          <div class="arch-label">Flutter UI (Dart)</div>
-          <div class="arch-desc">Explorer, inspector, logs, exec, YAML, Helm</div>
-        </div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-layer">
-          <div class="arch-label">Context manager</div>
-          <div class="arch-desc">Local and cloud clusters from imported kubeconfig</div>
-        </div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-layer arch-layer-highlight">
-          <div class="arch-label">Kubernetes client (Dart)</div>
-          <div class="arch-desc">Talks to the API server over HTTPS / TLS</div>
-        </div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-layer">
-          <div class="arch-label">Your cluster</div>
-          <div class="arch-desc">Linxr k3s on localhost:6443 · AKS · GKE · EKS</div>
-        </div>
-      </div>
-        </div>
-        <div class="arch-col">
-          <a class="arch-col-title" href="miktam.html">Miktam Bible →</a>
-      <div class="arch-grid arch-grid-col">
-        <div class="arch-layer">
-          <div class="arch-label">React Native UI</div>
-          <div class="arch-desc">Read, search, plans, notes, AI chat</div>
-        </div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-layer">
-          <div class="arch-label">Bible and study databases</div>
-          <div class="arch-desc">SQLite with FTS5: translations, Strong&rsquo;s concordance, your notes</div>
-        </div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-layer arch-layer-highlight">
-          <div class="arch-label">On-device AI</div>
-          <div class="arch-desc">Local GGUF language model; nothing leaves the phone</div>
-        </div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-layer">
-          <div class="arch-label">Offline after download</div>
-          <div class="arch-desc">KJV is bundled; other translations download once from the open Bible data repos</div>
-        </div>
-      </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How it works -->
-  <section class="section" id="how-it-works">
-    <div class="section-inner">
       <h2 class="section-title">How you get them</h2>
-      <p class="section-sub">New apps go to Google Play closed testing first.</p>
+      <p class="section-sub">Linxr and Miktam Bible are in Google Play closed testing. Vizxr is available as an APK on GitHub.</p>
       <div class="arch-grid">
         <div class="arch-layer arch-layer-highlight">
           <div class="arch-label">Join the AI2TH Google Group</div>
