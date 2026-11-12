@@ -1087,3 +1087,10 @@ a.merge-chip:hover { border-color: rgba(124,106,255,0.5); }
   .gallery, .gallery-phone { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 .nav-logo-img { border-radius: 9px; }
+
+/* ── Brand mark ── */
+.hero-mark { display: block; width: 132px; height: 132px; margin: 0 auto 24px; border-radius: 30px; box-shadow: 0 18px 60px rgba(124, 106, 255, 0.28); }
+.brand-lockup { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin-bottom: 8px; }
+.brand-lockup .page-title { margin-bottom: 0; }
+.brand-mark { width: 120px; height: 120px; border-radius: 28px; box-shadow: 0 14px 48px rgba(124, 106, 255, 0.25); }
+@media (max-width: 640px) { .hero-mark { width: 104px; height: 104px; } .brand-mark { width: 88px; height: 88px; border-radius: 22px; } }
