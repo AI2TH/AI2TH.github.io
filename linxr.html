@@ -17,12 +17,13 @@
       <a href="index.html" class="nav-logo"><img src="logo/AI2TH.svg" alt="AI2TH" class="nav-logo-img" /><span class="nav-logo-text">AI2TH</span></a>
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="android.html" class="nav-active">Android</a>
-        <a href="coming-soon.html" class="nav-more">+ More</a>
-        <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
+        <a href="android.html">Android</a>
+        <a href="linux.html" class="nav-active">Linux</a>
+        <a href="kubernetes.html">Kubernetes</a>
+        <a href="security.html">Security</a>
         <a href="about.html">About</a>
-        <a href="contribute.html" class="nav-contribute">Contribute</a>
-        <a href="https://groups.google.com/g/ai2th" target="_blank" rel="noopener">Discuss</a>
+        <a href="https://groups.google.com/g/ai2th" class="nav-more" target="_blank" rel="noopener">Join early access</a>
+        <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
   </nav>
@@ -119,17 +120,52 @@
   </section>
 
 
+
+  <!-- How it works -->
+  <section class="section section-alt" id="how-it-works">
+    <div class="section-inner">
+      <h2 class="section-title">How it works</h2>
+      <p class="section-sub">One APK carries a whole Linux VM. QEMU gives the virtual machine, Alpine the system, the app the controls.</p>
+      <div class="arch-grid">
+        <div class="arch-layer">
+          <div class="arch-label">Flutter UI (Dart)</div>
+          <div class="arch-desc">Home, Terminal, Containers, Marketplace, Desktop, Files, Settings</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">Kotlin VmManager</div>
+          <div class="arch-desc">Starts libqemu.so and keeps it alive as a foreground service</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer arch-layer-highlight">
+          <div class="arch-label">QEMU (libqemu.so)</div>
+          <div class="arch-desc">Shipped inside the APK; runs as a normal app process, no root</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">Alpine Linux VM</div>
+          <div class="arch-desc">Kernel 6.18-virt, OpenRC, SSH, apk; disk image grows on boot</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">Your workloads</div>
+          <div class="arch-desc">Containers · k3s · Asterisk PBX · Linux desktop · bash</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Join the closed-testing group -->
-  <section class="section join-section">
+  <section class="section join-section" id="early-access">
     <div class="section-inner">
       <div class="join-banner">
         <div class="join-icon" aria-hidden="true">🚀</div>
         <div class="join-body">
-          <h2 class="join-title">Get new apps first on Google Play</h2>
+          <h2 class="join-title">Get every new app first on Google Play</h2>
           <p class="join-desc">
-            Every new AI2TH app is released on the Play Store through closed testing first.
-            Join the <strong>AI2TH Google Group</strong> with your Google account and you get early access
-            to Linxr, Vizxr, Miktam Bible and each new app as it ships — install and update straight from Google Play.
+            New AI2TH apps go to Google Play closed testing first. Members of the
+            <strong>AI2TH Google Group</strong> get early access automatically: Linxr, Miktam Bible
+            and each new app as it ships.
           </p>
           <div class="join-actions">
             <a href="https://groups.google.com/g/ai2th" class="btn btn-primary" target="_blank" rel="noopener">Join the AI2TH group →</a>
@@ -184,12 +220,17 @@
   <footer class="footer">
     <div class="footer-inner">
       <img src="logo/AI2TH.svg" alt="AI2TH" class="nav-logo-img footer-logo-img" />
-      <p class="footer-tagline">Building Linux on Android — no root required.</p>
+      <p class="footer-tagline">Applied Intelligence To Tackle Hardships.</p>
       <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="android.html">Android</a>
+        <a href="linxr.html">Linxr</a>
+        <a href="vizxr.html">Vizxr</a>
+        <a href="miktam.html">Miktam Bible</a>
+        <a href="cryptship.html">cryptship</a>
+        <a href="android.html">Linux on Android</a>
+        <a href="about.html">About</a>
+        <a href="contribute.html">Contribute</a>
         <a href="privacy.html">Privacy</a>
-        <a href="https://github.com/AI2TH/Linxr" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
         <a href="https://groups.google.com/g/ai2th" target="_blank" rel="noopener">Community</a>
       </div>
     </div>

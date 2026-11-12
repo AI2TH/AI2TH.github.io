@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI2TH — Linux on Android, No Root</title>
-  <meta name="description" content="AI2TH builds tools that run full Linux environments on Android devices — no root, no Termux, one APK." />
+  <title>AI2TH — Applied Intelligence To Tackle Hardships</title>
+  <meta name="description" content="AI2TH builds open-source tools across fields: Linxr (Linux on Android), Vizxr (Kubernetes IDE), Miktam Bible (offline Bible study) and cryptship (encrypted software delivery)." />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,44 +18,249 @@
       <div class="nav-links">
         <a href="index.html" class="nav-active">Home</a>
         <a href="android.html">Android</a>
-        <a href="coming-soon.html" class="nav-more">+ More</a>
-        <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
+        <a href="linux.html">Linux</a>
+        <a href="kubernetes.html">Kubernetes</a>
+        <a href="security.html">Security</a>
         <a href="about.html">About</a>
-        <a href="contribute.html">Contribute</a>
-        <a href="https://groups.google.com/g/ai2th" target="_blank" rel="noopener">Discuss</a>
+        <a href="https://groups.google.com/g/ai2th" class="nav-more" target="_blank" rel="noopener">Join early access</a>
+        <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero — first version design -->
   <section class="hero">
     <div class="hero-inner">
-      <div class="hero-badge">No root. No Termux. One APK.</div>
-      <h1 class="hero-title">Linux on Android,<br /><span class="accent">the hard way done right.</span></h1>
+      <div class="hero-badge">Open source · Built in the open · Always iterating</div>
+      <h1 class="hero-title">Applied Intelligence<br /><span class="accent">To Tackle Hardships.</span></h1>
       <p class="hero-sub">
-        AI2TH ships Android apps that embed QEMU + Alpine Linux directly in the APK.
-        Linxr runs containers, k3s Kubernetes, Asterisk PBX and a full Linux desktop on any arm64 device; Vizxr manages your clusters. No special permissions required.
+        AI2TH builds focused, open-source tools across different fields: a Linux workstation on Android,
+        a Kubernetes IDE in your pocket, an offline Bible study companion, and encrypted software delivery.
       </p>
       <div class="hero-cta">
-        <a href="android.html" class="btn btn-primary">Explore Projects</a>
-        <a href="https://github.com/AI2TH" class="btn btn-ghost" target="_blank" rel="noopener">View on GitHub</a>
+        <a href="#categories" class="btn btn-primary">Browse products</a>
+        <a href="#early-access" class="btn btn-ghost">Get early access</a>
+      </div>
+      <dl class="hero-stats">
+        <div><dt>4</dt><dd>products</dd></div>
+        <div><dt>4</dt><dd>categories</dd></div>
+        <div><dt>3</dt><dd>apps merged into Linxr</dd></div>
+        <div><dt>9</dt><dd>releases since 24 Oct</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="section section-tight" id="categories">
+    <div class="section-inner">
+      <h2 class="section-title">Browse by category</h2>
+      <p class="section-sub">Start from what you need. An app can sit in more than one category.</p>
+      <div class="cat-grid">
+        <a href="android.html" class="cat-tile">
+          <div class="cat-head"><span class="cat-icon" aria-hidden="true">📱</span><span class="cat-name">Android</span><span class="cat-count">3 apps</span></div>
+          <p class="cat-blurb">Apps for your phone: a Linux workstation, a Kubernetes IDE and an offline Bible.</p>
+          <div class="cat-apps"><img src="logo/linxr.svg" alt="" class="cat-app-icon" /><img src="logo/vizxr.svg" alt="" class="cat-app-icon" /><img src="logo/miktam.png" alt="" class="cat-app-icon" /><span class="cat-app-names">Linxr, Vizxr, Miktam Bible</span></div>
+          <span class="cat-go">Open Android →</span>
+        </a>
+        <a href="linux.html" class="cat-tile">
+          <div class="cat-head"><span class="cat-icon" aria-hidden="true">🐧</span><span class="cat-name">Linux</span><span class="cat-count">2 apps</span></div>
+          <p class="cat-blurb">Linux on your phone, and Linux containers you can ship safely.</p>
+          <div class="cat-apps"><img src="logo/linxr.svg" alt="" class="cat-app-icon" /><img src="logo/cryptship.svg" alt="" class="cat-app-icon" /><span class="cat-app-names">Linxr, cryptship</span></div>
+          <span class="cat-go">Open Linux →</span>
+        </a>
+        <a href="kubernetes.html" class="cat-tile">
+          <div class="cat-head"><span class="cat-icon" aria-hidden="true">☸️</span><span class="cat-name">Kubernetes</span><span class="cat-count">3 apps</span></div>
+          <p class="cat-blurb">Run k3s on a phone, manage any cluster, deploy hardened workloads.</p>
+          <div class="cat-apps"><img src="logo/linxr.svg" alt="" class="cat-app-icon" /><img src="logo/vizxr.svg" alt="" class="cat-app-icon" /><img src="logo/cryptship.svg" alt="" class="cat-app-icon" /><span class="cat-app-names">Linxr, Vizxr, cryptship</span></div>
+          <span class="cat-go">Open Kubernetes →</span>
+        </a>
+        <a href="security.html" class="cat-tile">
+          <div class="cat-head"><span class="cat-icon" aria-hidden="true">🔐</span><span class="cat-name">Security</span><span class="cat-count">1 app</span></div>
+          <p class="cat-blurb">Encrypted, license-gated software delivery for air-gapped, on-prem and cloud.</p>
+          <div class="cat-apps"><img src="logo/cryptship.svg" alt="" class="cat-app-icon" /><span class="cat-app-names">cryptship</span></div>
+          <span class="cat-go">Open Security →</span>
+        </a>
       </div>
     </div>
   </section>
 
+  <!-- Products -->
+  <section class="section section-alt" id="products">
+    <div class="section-inner">
+      <h2 class="section-title">All products</h2>
+      <p class="section-sub">Each product keeps shipping, and related work merges into one home.</p>
+      <div class="filter-bar" role="toolbar" aria-label="Filter products by category">
+        <button type="button" class="filter-chip is-active" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="filter-chip" data-filter="android" aria-pressed="false">📱 Android</button>
+        <button type="button" class="filter-chip" data-filter="linux" aria-pressed="false">🐧 Linux</button>
+        <button type="button" class="filter-chip" data-filter="kubernetes" aria-pressed="false">☸️ Kubernetes</button>
+        <button type="button" class="filter-chip" data-filter="security" aria-pressed="false">🔐 Security</button>
+      </div>
+      <div class="cards product-grid" id="product-grid">
+        <article class="card product-card" data-cats="android linux kubernetes">
+          <div class="card-header">
+            <img src="logo/linxr.svg" alt="" class="card-logo-img" />
+            <div>
+              <h3 class="card-name"><a href="linxr.html">Linxr</a></h3>
+              <span class="card-tag">Linux on Android</span>
+            </div>
+          </div>
+          <p class="card-desc">A full Alpine Linux workstation in one APK, no root. The home for every Linux-on-Android project: Pockr, Zyvr and Kubxr are merged in, and new ones land here too.</p>
+          <ul class="card-features">
+            <li>Containers (FastTrack OCI or Docker)</li>
+            <li>k3s Kubernetes and Asterisk PBX</li>
+            <li>Linux desktop GUI and SSH terminal</li>
+            <li>1-click Marketplace with community recipes</li>
+          </ul>
+          <div class="product-status">v3.4.0 · Google Play closed testing · APK</div>
+          <div class="card-footer">
+            <a href="linxr.html" class="btn btn-sm">Details →</a>
+            <a href="https://github.com/AI2TH/Linxr" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://github.com/AI2TH/Linxr/releases/latest" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">APK</a>
+          </div>
+        </article>
+        <article class="card product-card" data-cats="android kubernetes">
+          <div class="card-header">
+            <img src="logo/vizxr.svg" alt="" class="card-logo-img" />
+            <div>
+              <h3 class="card-name"><a href="vizxr.html">Vizxr</a></h3>
+              <span class="card-tag">Kubernetes · DevOps</span>
+            </div>
+          </div>
+          <p class="card-desc">A Kubernetes IDE in your pocket. Inspect, debug and operate clusters from your phone, whether that's Linxr's local k3s or AKS, GKE and EKS.</p>
+          <ul class="card-features">
+            <li>Lens-style resource inspector</li>
+            <li>Live CPU and memory sparklines</li>
+            <li>CRD explorer and Helm releases</li>
+            <li>Logs, pod exec and YAML editor</li>
+          </ul>
+          <div class="product-status">v1.1.0 · APK</div>
+          <div class="card-footer">
+            <a href="vizxr.html" class="btn btn-sm">Details →</a>
+            <a href="https://github.com/AI2TH/Vizxr" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://github.com/AI2TH/Vizxr/releases/latest" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">APK</a>
+          </div>
+        </article>
+        <article class="card product-card" data-cats="android">
+          <div class="card-header">
+            <img src="logo/miktam.png" alt="" class="card-logo-img" />
+            <div>
+              <h3 class="card-name"><a href="miktam.html">Miktam Bible</a></h3>
+              <span class="card-tag">Faith · Study</span>
+            </div>
+          </div>
+          <p class="card-desc">An offline Bible study companion with thousands of translations and an AI study assistant that runs entirely on your device.</p>
+          <ul class="card-features">
+            <li>5,600+ translations, fully offline</li>
+            <li>On-device AI study assistant</li>
+            <li>Strong's concordance and full-text search</li>
+            <li>Reading plans, reminders and streaks</li>
+          </ul>
+          <div class="product-status">v1.2.1 · Google Play closed testing</div>
+          <div class="card-footer">
+            <a href="miktam.html" class="btn btn-sm">Details →</a>
+            <a href="https://play.google.com/store/apps/details?id=miktam.bible" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">Google Play</a>
+            <a href="https://github.com/AI2TH/miktam_bible" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+        <article class="card product-card" data-cats="linux kubernetes security">
+          <div class="card-header">
+            <img src="logo/cryptship.svg" alt="" class="card-logo-img" />
+            <div>
+              <h3 class="card-name"><a href="cryptship.html">cryptship</a></h3>
+              <span class="card-tag">Security · Software delivery</span>
+            </div>
+          </div>
+          <p class="card-desc">Ship encrypted, license-gated application code inside Docker images. The image is ciphertext; a small loader runs your app only with a valid license.</p>
+          <ul class="card-features">
+            <li>AES-256-GCM payloads, Ed25519 licenses</li>
+            <li>Air-gapped, on-prem and cloud modes</li>
+            <li>Instant revocation via license server</li>
+            <li>Hardening and per-license watermarks</li>
+          </ul>
+          <div class="product-status">v0.1.0 · Go · GPLv3</div>
+          <div class="card-footer">
+            <a href="cryptship.html" class="btn btn-sm">Details →</a>
+            <a href="https://github.com/AI2TH/cryptship" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://github.com/AI2TH/cryptship/releases/latest" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">Release</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <script>
+    (function () {
+      var chips = document.querySelectorAll('.filter-chip');
+      var cards = document.querySelectorAll('#product-grid .product-card');
+      chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          var f = chip.getAttribute('data-filter');
+          chips.forEach(function (c) {
+            var on = c === chip;
+            c.classList.toggle('is-active', on);
+            c.setAttribute('aria-pressed', on ? 'true' : 'false');
+          });
+          cards.forEach(function (card) {
+            var cats = (card.getAttribute('data-cats') || '').split(' ');
+            card.hidden = !(f === 'all' || cats.indexOf(f) !== -1);
+          });
+        });
+      });
+    })();
+  </script>
+
+
+
+  <!-- How it works -->
+  <section class="section" id="how-it-works">
+    <div class="section-inner">
+      <h2 class="section-title">How AI2TH ships</h2>
+      <p class="section-sub">From idea to your phone, in the open.</p>
+      <div class="arch-grid">
+        <div class="arch-layer">
+          <div class="arch-label">Idea or issue</div>
+          <div class="arch-desc">Discussed in the AI2TH Google Group or on GitHub</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">Built in the open</div>
+          <div class="arch-desc">Public repo on github.com/AI2TH</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">Release</div>
+          <div class="arch-desc">Tagged on GitHub with release notes, APK or binaries</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer arch-layer-highlight">
+          <div class="arch-label">Google Play closed testing</div>
+          <div class="arch-desc">AI2TH Group members get it first</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">Everyone</div>
+          <div class="arch-desc">Public release once it is ready</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Join the closed-testing group -->
-  <section class="section join-section">
+  <section class="section join-section" id="early-access">
     <div class="section-inner">
       <div class="join-banner">
         <div class="join-icon" aria-hidden="true">🚀</div>
         <div class="join-body">
-          <h2 class="join-title">Get new apps first on Google Play</h2>
+          <h2 class="join-title">Get every new app first on Google Play</h2>
           <p class="join-desc">
-            Every new AI2TH app is released on the Play Store through closed testing first.
-            Join the <strong>AI2TH Google Group</strong> with your Google account and you get early access
-            to Linxr, Vizxr, Miktam Bible and each new app as it ships — install and update straight from Google Play.
+            New AI2TH apps go to Google Play closed testing first. Members of the
+            <strong>AI2TH Google Group</strong> get early access automatically: Linxr, Miktam Bible
+            and each new app as it ships.
           </p>
+          <ol class="join-steps">
+            <li><strong>Join the group</strong> at <a href="https://groups.google.com/g/ai2th" target="_blank" rel="noopener">groups.google.com/g/ai2th</a> with the Google account on your phone.</li>
+            <li><strong>Become a tester</strong> on the app&rsquo;s Play testing page, for example <a href="https://play.google.com/apps/testing/miktam.bible" target="_blank" rel="noopener">Miktam Bible</a>.</li>
+            <li><strong>Install from Google Play</strong> and get updates like any other app.</li>
+          </ol>
           <div class="join-actions">
             <a href="https://groups.google.com/g/ai2th" class="btn btn-primary" target="_blank" rel="noopener">Join the AI2TH group →</a>
             <a href="https://forms.gle/jdLxXPVhDYm5ubpQ7" class="btn btn-ghost" target="_blank" rel="noopener">Different Play account? Request access</a>
@@ -65,101 +270,84 @@
     </div>
   </section>
 
-  <!-- Fields -->
-  <section class="section">
-    <div class="section-inner">
-      <h2 class="section-title">Project fields</h2>
-      <p class="section-sub">Each page is a different field. More will open as AI2TH expands.</p>
-
-      <div class="field-grid">
-
-        <a href="android.html" class="field-card">
-          <div class="field-icon android">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="18" r="1" fill="currentColor" stroke="none"/></svg>
-          </div>
-          <div class="field-body">
-            <div class="field-name">Android Infrastructure</div>
-            <div class="field-desc">Run full Linux environments on Android — no root, no Termux, one APK. Linxr for containers, k3s, Asterisk PBX and a desktop GUI; Vizxr for Kubernetes.</div>
-            <div class="field-meta">Linxr + Vizxr &middot; Pockr, Zyvr, Kubxr merged &rarr;</div>
-          </div>
-        </a>
-
-        <a href="coming-soon.html" class="field-card field-locked">
-          <div class="field-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          </div>
-          <div class="field-body">
-            <div class="field-name">Coming Soon</div>
-            <div class="field-desc">A new field is in progress. Follow the GitHub org to be the first to know.</div>
-            <div class="field-meta">In progress</div>
-          </div>
-        </a>
-
-        <a href="coming-soon.html" class="field-card field-locked">
-          <div class="field-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          </div>
-          <div class="field-body">
-            <div class="field-name">Coming Soon</div>
-            <div class="field-desc">Another field will open here when the time is right.</div>
-            <div class="field-meta">In progress</div>
-          </div>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
   <!-- What's new -->
   <section class="section section-alt" id="whats-new">
     <div class="section-inner">
       <h2 class="section-title">What&rsquo;s new</h2>
-      <p class="section-sub">Recently built and released. Pockr, Zyvr and Kubxr are now merged into Linxr.</p>
+      <p class="section-sub">Recently built and released across AI2TH.</p>
       <ol class="news-list">
+        <li class="news-item">
+          <div class="news-meta"><span class="news-tag">cryptship v0.1.0</span><time datetime="2026-11-12">12 Nov 2026</time></div>
+          <div class="news-title">cryptship first release</div>
+          <p class="news-desc">Encrypted, license-gated app code in Docker images: offline, online and attested key providers, a reference license server with instant revocation, and three runnable demos.</p>
+        </li>
         <li class="news-item">
           <div class="news-meta"><span class="news-tag">Linxr v3.4.0</span><time datetime="2026-11-06">6 Nov 2026</time></div>
           <div class="news-title">Mobile Linux virtual desktop</div>
-          <p class="news-desc">Run graphical X11, GTK and Qt apps on your phone. Openbox or XFCE4 desktop, viewed in-app through noVNC, with a resolution picker and quick launchers.</p>
+          <p class="news-desc">Run graphical X11, GTK and Qt apps on your phone. Openbox or XFCE4, viewed in-app through noVNC, with a resolution picker and quick launchers.</p>
         </li>
         <li class="news-item">
           <div class="news-meta"><span class="news-tag">Vizxr v1.1.0</span><time datetime="2026-11-05">5 Nov 2026</time></div>
-          <div class="news-title">Kubernetes IDE for Android</div>
-          <p class="news-desc">Lens-style resource inspector, live CPU and memory sparklines, CRD explorer, and Helm releases with 1-tap rollback. Works with Linxr&rsquo;s k3s and remote clusters.</p>
+          <div class="news-title">Kubernetes IDE overhaul</div>
+          <p class="news-desc">Lens-style resource inspector, live CPU and memory sparklines, CRD explorer, and Helm releases with 1-tap rollback.</p>
+        </li>
+        <li class="news-item">
+          <div class="news-meta"><span class="news-tag">Miktam Bible v1.2.1</span><time datetime="2026-11-05">5 Nov 2026</time></div>
+          <div class="news-title">Smarter reading plans</div>
+          <p class="news-desc">Reminders that follow your progress, a midnight Verse of the Day, custom reminder times, and authentic curricula such as Navigators 4-track and 90-day plans.</p>
         </li>
         <li class="news-item">
           <div class="news-meta"><span class="news-tag">Linxr v3.3.0</span><time datetime="2026-11-02">2 Nov 2026</time></div>
-          <div class="news-title">Asterisk PBX merged in, dual-mode Marketplace</div>
-          <p class="news-desc">Zyvr&rsquo;s Asterisk 20 PBX now installs from the Linxr Marketplace, as a container or as a native Alpine service. Also new: Zabbix, and native Nginx, PostgreSQL 16 and Redis.</p>
+          <div class="news-title">Zyvr merged into Linxr</div>
+          <p class="news-desc">Asterisk 20 PBX now installs from the Linxr Marketplace, as a container or a native Alpine service. Also new: Zabbix, and native Nginx, PostgreSQL 16 and Redis.</p>
         </li>
         <li class="news-item">
           <div class="news-meta"><span class="news-tag">Linxr v3.2.0</span><time datetime="2026-11-01">1 Nov 2026</time></div>
-          <div class="news-title">FastTrack OCI engine and multi-core VM</div>
-          <p class="news-desc">Daemonless containers with podman and crun cut idle CPU to under 1%. QEMU now runs multi-threaded on Cortex-A76. Adds full container lifecycle, custom port forwarding and faster k3s TLS.</p>
+          <div class="news-title">FastTrack OCI engine</div>
+          <p class="news-desc">Daemonless podman and crun containers cut idle CPU to under 1%; multi-core Cortex-A76 VM; full container lifecycle; k3s TLS handshakes from ~11 s to ~15 ms.</p>
         </li>
         <li class="news-item">
           <div class="news-meta"><span class="news-tag">Linxr v3.1.0</span><time datetime="2026-10-24">24 Oct 2026</time></div>
           <div class="news-title">1-click Marketplace and Ollama AI</div>
-          <p class="news-desc">Deploy k3s Kubernetes, Ollama, Nginx, Redis, PostgreSQL, VS Code Server and more in one tap. Recipes sync from the community <a href="https://github.com/AI2TH/linxr-marketplace" target="_blank" rel="noopener">linxr-marketplace</a>.</p>
+          <p class="news-desc">Deploy k3s, Ollama, Nginx, Redis, PostgreSQL, VS Code Server and more in one tap, with recipes synced from <a href="https://github.com/AI2TH/linxr-marketplace" target="_blank" rel="noopener">linxr-marketplace</a>.</p>
         </li>
       </ol>
     </div>
   </section>
 
+  <!-- Open source -->
+  <section class="section">
+    <div class="section-inner open-strip">
+      <div>
+        <h2 class="section-title">Built in the open</h2>
+        <p class="section-sub">Every product is on GitHub. Report a bug, suggest a feature, or send a pull request.</p>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/AI2TH" class="btn btn-primary" target="_blank" rel="noopener">github.com/AI2TH →</a>
+        <a href="contribute.html" class="btn btn-ghost">Contribute</a>
+        <a href="https://groups.google.com/g/ai2th" class="btn btn-ghost" target="_blank" rel="noopener">Discuss</a>
+      </div>
+    </div>
+  </section>
+
+
   <footer class="footer">
     <div class="footer-inner">
       <img src="logo/AI2TH.svg" alt="AI2TH" class="nav-logo-img footer-logo-img" />
-      <p class="footer-tagline">Building Linux on Android — no root required.</p>
+      <p class="footer-tagline">Applied Intelligence To Tackle Hardships.</p>
       <div class="footer-links">
-        <a href="android.html">Android</a>
+        <a href="linxr.html">Linxr</a>
+        <a href="vizxr.html">Vizxr</a>
+        <a href="miktam.html">Miktam Bible</a>
+        <a href="cryptship.html">cryptship</a>
+        <a href="android.html">Linux on Android</a>
+        <a href="about.html">About</a>
+        <a href="contribute.html">Contribute</a>
         <a href="privacy.html">Privacy</a>
-        <a href="https://github.com/AI2TH/Linxr" target="_blank" rel="noopener">Linxr</a>
-        <a href="https://github.com/AI2TH/Vizxr" target="_blank" rel="noopener">Vizxr</a>
-        <a href="https://github.com/AI2TH/linxr-marketplace" target="_blank" rel="noopener">Marketplace</a>
         <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
         <a href="https://groups.google.com/g/ai2th" target="_blank" rel="noopener">Community</a>
       </div>
     </div>
   </footer>
-
 </body>
 </html>

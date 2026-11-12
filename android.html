@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Android Infrastructure — AI2TH</title>
-  <meta name="description" content="Run full Linux environments on Android — no root, no Termux. Linxr and Vizxr by AI2TH; Pockr, Zyvr and Kubxr are merged into Linxr." />
+  <title>Android apps — AI2TH</title>
+  <meta name="description" content="AI2TH Android apps: Linxr (Linux on Android), Vizxr (Kubernetes IDE) and Miktam Bible (offline Bible study)." />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,200 +18,221 @@
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="android.html" class="nav-active">Android</a>
-        <a href="coming-soon.html" class="nav-more">+ More</a>
-        <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
+        <a href="linux.html">Linux</a>
+        <a href="kubernetes.html">Kubernetes</a>
+        <a href="security.html">Security</a>
         <a href="about.html">About</a>
-        <a href="contribute.html">Contribute</a>
-        <a href="https://groups.google.com/g/ai2th" target="_blank" rel="noopener">Discuss</a>
+        <a href="https://groups.google.com/g/ai2th" class="nav-more" target="_blank" rel="noopener">Join early access</a>
+        <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
   </nav>
 
-  <!-- Page header -->
   <div class="page-header">
     <div class="section-inner">
-      <div class="breadcrumb"><a href="index.html">AI2TH</a><span>/</span>Android Infrastructure</div>
-      <h1 class="page-title">Linux on Android,<br /><span class="accent">no root required.</span></h1>
-      <p class="page-sub">
-        Linxr embeds QEMU + Alpine Linux directly in the APK and runs containers, k3s Kubernetes,
-        Asterisk PBX and a Linux desktop on any arm64 Android device. Vizxr manages the clusters.
-      </p>
-      <div class="terminal-window page-terminal">
-        <div class="terminal-bar">
-          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-          <span class="terminal-title">root@linxr:~</span>
-        </div>
-        <pre class="terminal-body"><span class="t-dim">$</span> <span class="t-cmd">uname -a</span>
-Linux linxr 6.18.0-virt #1 SMP PREEMPT aarch64 Linux
-
-<span class="t-dim">$</span> <span class="t-cmd">docker run hello-world</span>
-Hello from Docker! This message shows that your installation
-appears to be working correctly.
-
-<span class="t-dim">$</span> <span class="t-cmd">k3s kubectl get nodes</span>
-NAME    STATUS   ROLES                  AGE   VERSION
-linxr   Ready    control-plane,master   2m    v1.30.4+k3s1
-
-<span class="t-dim">$</span> <span class="t-cmd">asterisk -rx "sip show peers"</span>
-Name/username    Host    Dyn  Port  Status
-1001             (dyn)   D    5060  OK (12 ms)
-2 sip peers [1 monitored]
-
-<span class="t-dim">$</span> <span class="t-green">█</span></pre>
+      <div class="breadcrumb"><a href="index.html">AI2TH</a><span>/</span>Android</div>
+      <h1 class="page-title">Android apps,<br /><span class="accent">no root required.</span></h1>
+      <p class="page-sub">Everything AI2TH builds for your phone. Linux on the phone is one of them, alongside a Kubernetes IDE and an offline Bible.</p>
+      <div class="cat-switch" aria-label="Other categories">
+        <a href="android.html" class="filter-chip is-active">📱 Android</a>
+        <a href="linux.html" class="filter-chip">🐧 Linux</a>
+        <a href="kubernetes.html" class="filter-chip">☸️ Kubernetes</a>
+        <a href="security.html" class="filter-chip">🔐 Security</a>
       </div>
     </div>
   </div>
 
-  <!-- Projects -->
-  <section class="section" id="projects">
+  <section class="section section-tight">
     <div class="section-inner">
-      <h2 class="section-title">Projects</h2>
-      <p class="section-sub">Linxr is the one app for Linux on Android, and Vizxr is its Kubernetes IDE. Pockr, Zyvr and Kubxr have been merged into Linxr.</p>
-
-      <div class="cards">
-
-        <!-- Linxr -->
-        <div class="card card-featured">
+      <h2 class="section-title">Apps</h2>
+      <div class="cards product-grid">
+        <article class="card product-card" data-cats="android linux kubernetes">
           <div class="card-header">
-            <img src="logo/linxr.svg" alt="Linxr" class="card-logo-img" />
+            <img src="logo/linxr.svg" alt="" class="card-logo-img" />
             <div>
-              <h3 class="card-name">Linxr</h3>
-              <span class="card-tag">Linux, containers, k3s &amp; PBX</span>
+              <h3 class="card-name"><a href="linxr.html">Linxr</a></h3>
+              <span class="card-tag">Linux on Android</span>
             </div>
           </div>
-          <p class="card-desc">
-            A full Alpine Linux VM inside QEMU on Android — real shell, SSH, containers, Kubernetes and a desktop GUI,
-            on any arm64 phone with zero root. Now includes Pockr, Zyvr and Kubxr.
-          </p>
+          <p class="card-desc">A full Alpine Linux workstation in one APK, no root. The home for every Linux-on-Android project: Pockr, Zyvr and Kubxr are merged in, and new ones land here too.</p>
           <ul class="card-features">
-            <li>FastTrack OCI (podman/crun) or Docker containers</li>
-            <li>1-click Marketplace: k3s, Asterisk PBX, Ollama, Nginx, PostgreSQL&hellip;</li>
-            <li>Linux desktop GUI (X11, XFCE4) in the app</li>
-            <li>Multi-tab SSH terminal and Virtio-9P shared storage</li>
+            <li>Containers (FastTrack OCI or Docker)</li>
+            <li>k3s Kubernetes and Asterisk PBX</li>
+            <li>Linux desktop GUI and SSH terminal</li>
+            <li>1-click Marketplace with community recipes</li>
           </ul>
+          <div class="product-status">v3.4.0 · Google Play closed testing · APK</div>
           <div class="card-footer">
-            <a href="linxr.html" class="btn btn-sm">View details →</a>
+            <a href="linxr.html" class="btn btn-sm">Details →</a>
             <a href="https://github.com/AI2TH/Linxr" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">GitHub</a>
             <a href="https://github.com/AI2TH/Linxr/releases/latest" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">APK</a>
           </div>
-        </div>
-
-        <!-- Vizxr -->
-        <div class="card">
+        </article>
+        <article class="card product-card" data-cats="android kubernetes">
           <div class="card-header">
-            <img src="logo/vizxr.svg" alt="Vizxr" class="card-logo-img" />
+            <img src="logo/vizxr.svg" alt="" class="card-logo-img" />
             <div>
-              <h3 class="card-name">Vizxr</h3>
-              <span class="card-tag">Kubernetes IDE for Android</span>
+              <h3 class="card-name"><a href="vizxr.html">Vizxr</a></h3>
+              <span class="card-tag">Kubernetes · DevOps</span>
             </div>
           </div>
-          <p class="card-desc">
-            Manage local and remote Kubernetes clusters from your phone. Connects to Linxr&rsquo;s k3s on localhost:6443
-            or to AKS, GKE and EKS via kubeconfig.
-          </p>
+          <p class="card-desc">A Kubernetes IDE in your pocket. Inspect, debug and operate clusters from your phone, whether that's Linxr's local k3s or AKS, GKE and EKS.</p>
           <ul class="card-features">
-            <li>Lens-style resource inspector and events feed</li>
+            <li>Lens-style resource inspector</li>
             <li>Live CPU and memory sparklines</li>
-            <li>CRD explorer and Helm release rollback</li>
-            <li>Log streaming, pod exec and YAML editor</li>
+            <li>CRD explorer and Helm releases</li>
+            <li>Logs, pod exec and YAML editor</li>
           </ul>
+          <div class="product-status">v1.1.0 · APK</div>
           <div class="card-footer">
-            <a href="https://github.com/AI2TH/Vizxr" class="btn btn-sm" target="_blank" rel="noopener">GitHub →</a>
+            <a href="vizxr.html" class="btn btn-sm">Details →</a>
+            <a href="https://github.com/AI2TH/Vizxr" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">GitHub</a>
             <a href="https://github.com/AI2TH/Vizxr/releases/latest" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">APK</a>
           </div>
-        </div>
-
-        <!-- Pockr -->
-        <div class="card card-deprecated">
+        </article>
+        <article class="card product-card" data-cats="android">
           <div class="card-header">
-            <img src="logo/pockr_logo.svg" alt="Pockr" class="card-logo-img" />
+            <img src="logo/miktam.png" alt="" class="card-logo-img" />
             <div>
-              <h3 class="card-name">Pockr</h3>
-              <span class="card-tag" style="color: #f87171; background: rgba(239, 68, 68, 0.15);">Merged into Linxr</span>
+              <h3 class="card-name"><a href="miktam.html">Miktam Bible</a></h3>
+              <span class="card-tag">Faith · Study</span>
             </div>
           </div>
-          <p class="card-desc">
-            Standalone Pockr app is deprecated. All Docker container management capabilities, container dashboards, and log streaming have been natively merged into <strong>Linxr</strong> under the Containers tab.
-          </p>
+          <p class="card-desc">An offline Bible study companion with thousands of translations and an AI study assistant that runs entirely on your device.</p>
           <ul class="card-features">
-            <li>Pull &amp; run any Docker image</li>
-            <li>Real-time container logs</li>
-            <li>Terminal into the Alpine VM host</li>
-            <li>Configurable vCPU + RAM (1–4 cores, 512 MB–4 GB)</li>
+            <li>5,600+ translations, fully offline</li>
+            <li>On-device AI study assistant</li>
+            <li>Strong's concordance and full-text search</li>
+            <li>Reading plans, reminders and streaks</li>
           </ul>
+          <div class="product-status">v1.2.1 · Google Play closed testing</div>
           <div class="card-footer">
-            <a href="pockr.html" class="btn btn-sm">View details →</a>
-            <a href="https://github.com/AI2TH/Pockr" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://github.com/AI2TH/Pockr/releases/latest" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">APK</a>
+            <a href="miktam.html" class="btn btn-sm">Details →</a>
+            <a href="https://play.google.com/store/apps/details?id=miktam.bible" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">Google Play</a>
+            <a href="https://github.com/AI2TH/miktam_bible" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">GitHub</a>
           </div>
-        </div>
-
-        <!-- Zyvr -->
-        <div class="card card-deprecated">
-          <div class="card-header">
-            <img src="logo/Zyvr.svg" alt="Zyvr" class="card-logo-img" />
-            <div>
-              <h3 class="card-name">Zyvr</h3>
-              <span class="card-tag" style="color: #f87171; background: rgba(239, 68, 68, 0.15);">Merged into Linxr</span>
-            </div>
-          </div>
-          <p class="card-desc">
-            Standalone Zyvr app is deprecated. The Asterisk 20 PBX now installs from the <strong>Linxr</strong> Marketplace,
-            as a container (<code>zyvr-docker</code>) or a native Alpine service (<code>zyvr-native</code>).
-          </p>
-          <ul class="card-features">
-            <li>Asterisk 20 with PJSIP driver</li>
-            <li>SIP extension management (create, delete, list)</li>
-            <li>Live call monitor + hangup</li>
-            <li>WebRTC/SIP.js support via WSS on 8089</li>
-          </ul>
-          <div class="card-footer">
-            <a href="zyvr.html" class="btn btn-sm">View details →</a>
-            <a href="https://github.com/AI2TH/Zyvr" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">GitHub</a>
-            <a href="linxr.html" class="btn btn-sm btn-ghost">Open Linxr</a>
-          </div>
-        </div>
-
-        <!-- Kubxr -->
-        <div class="card card-deprecated">
-          <div class="card-header">
-            <div class="card-logo-img card-logo-glyph" aria-hidden="true">☸</div>
-            <div>
-              <h3 class="card-name">Kubxr</h3>
-              <span class="card-tag" style="color: #f87171; background: rgba(239, 68, 68, 0.15);">Merged into Linxr</span>
-            </div>
-          </div>
-          <p class="card-desc">
-            Standalone Kubxr Kubernetes node is deprecated. Run k3s from the <strong>Linxr</strong> Marketplace
-            and manage it with <strong>Vizxr</strong>.
-          </p>
-          <ul class="card-features">
-            <li>k3s with cgroup2 and /dev/kmsg support</li>
-            <li>TLS handshake down from ~11 s to ~15 ms</li>
-            <li>API on localhost:6443 for Vizxr</li>
-          </ul>
-          <div class="card-footer">
-            <a href="https://github.com/AI2TH/Kubxr" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">GitHub</a>
-            <a href="linxr.html" class="btn btn-sm btn-ghost">Open Linxr</a>
-          </div>
-        </div>
-
+        </article>
       </div>
     </div>
   </section>
 
+  <!-- How it works -->
+  <section class="section section-alt" id="how-it-works">
+    <div class="section-inner">
+      <h2 class="section-title">How the apps work</h2>
+      <p class="section-sub">Each app is a self-contained APK. Linxr carries a whole Linux VM; Vizxr talks to clusters, including Linxr&rsquo;s; Miktam Bible runs fully offline.</p>
+      <div class="arch-cols">
+        <div class="arch-col">
+          <a class="arch-col-title" href="linxr.html">Linxr →</a>
+      <div class="arch-grid arch-grid-col">
+        <div class="arch-layer">
+          <div class="arch-label">Flutter UI (Dart)</div>
+          <div class="arch-desc">Home, Terminal, Containers, Marketplace, Desktop, Files, Settings</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer arch-layer-highlight">
+          <div class="arch-label">QEMU (libqemu.so)</div>
+          <div class="arch-desc">Shipped inside the APK; runs as a normal app process, no root</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">Alpine Linux VM</div>
+          <div class="arch-desc">Kernel 6.18-virt, OpenRC, SSH, apk; disk image grows on boot</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">Your workloads</div>
+          <div class="arch-desc">Containers · k3s · Asterisk PBX · Linux desktop · bash</div>
+        </div>
+      </div>
+        </div>
+        <div class="arch-col">
+          <a class="arch-col-title" href="vizxr.html">Vizxr →</a>
+      <div class="arch-grid arch-grid-col">
+        <div class="arch-layer">
+          <div class="arch-label">Flutter UI (Dart)</div>
+          <div class="arch-desc">Explorer, inspector, logs, exec, YAML, Helm</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">Context manager</div>
+          <div class="arch-desc">Local and cloud clusters from imported kubeconfig</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer arch-layer-highlight">
+          <div class="arch-label">Kubernetes client (Dart)</div>
+          <div class="arch-desc">Talks to the API server over HTTPS / TLS</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">Your cluster</div>
+          <div class="arch-desc">Linxr k3s on localhost:6443 · AKS · GKE · EKS</div>
+        </div>
+      </div>
+        </div>
+        <div class="arch-col">
+          <a class="arch-col-title" href="miktam.html">Miktam Bible →</a>
+      <div class="arch-grid arch-grid-col">
+        <div class="arch-layer">
+          <div class="arch-label">React Native UI</div>
+          <div class="arch-desc">Read, search, plans, notes, AI chat</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">Bible and study databases</div>
+          <div class="arch-desc">SQLite with FTS5: translations, Strong&rsquo;s concordance, your notes</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer arch-layer-highlight">
+          <div class="arch-label">On-device AI</div>
+          <div class="arch-desc">Local GGUF language model; nothing leaves the phone</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">Offline after download</div>
+          <div class="arch-desc">KJV is bundled; other translations download once from the open Bible data repos</div>
+        </div>
+      </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section" id="how-it-works">
+    <div class="section-inner">
+      <h2 class="section-title">How you get them</h2>
+      <p class="section-sub">New apps go to Google Play closed testing first.</p>
+      <div class="arch-grid">
+        <div class="arch-layer arch-layer-highlight">
+          <div class="arch-label">Join the AI2TH Google Group</div>
+          <div class="arch-desc">Use the Google account on your phone</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">Become a tester</div>
+          <div class="arch-desc">Open the app&rsquo;s Play testing page and opt in</div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer">
+          <div class="arch-label">Install from Google Play</div>
+          <div class="arch-desc">Updates arrive like any other app</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Join the closed-testing group -->
-  <section class="section join-section">
+  <section class="section join-section" id="early-access">
     <div class="section-inner">
       <div class="join-banner">
         <div class="join-icon" aria-hidden="true">🚀</div>
         <div class="join-body">
-          <h2 class="join-title">Get new apps first on Google Play</h2>
+          <h2 class="join-title">Get every new app first on Google Play</h2>
           <p class="join-desc">
-            Every new AI2TH app is released on the Play Store through closed testing first.
-            Join the <strong>AI2TH Google Group</strong> with your Google account and you get early access
-            to Linxr, Vizxr, Miktam Bible and each new app as it ships — install and update straight from Google Play.
+            New AI2TH apps go to Google Play closed testing first. Members of the
+            <strong>AI2TH Google Group</strong> get early access automatically: Linxr, Miktam Bible
+            and each new app as it ships.
           </p>
           <div class="join-actions">
             <a href="https://groups.google.com/g/ai2th" class="btn btn-primary" target="_blank" rel="noopener">Join the AI2TH group →</a>
@@ -222,102 +243,36 @@ Name/username    Host    Dyn  Port  Status
     </div>
   </section>
 
-  <!-- Architecture — first version design -->
-  <section class="section section-alt" id="architecture">
+  <section class="section section-alt">
     <div class="section-inner">
-      <h2 class="section-title">How it works</h2>
-      <p class="section-sub">Every app uses the same layered stack — QEMU gives the Linux VM, Alpine gives the environment, the app gives the UI.</p>
-
-      <div class="arch-grid">
-        <div class="arch-layer">
-          <div class="arch-label">Flutter UI (Dart)</div>
-          <div class="arch-desc">Native Android UI — tabs, logs, terminal, settings</div>
-        </div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-layer">
-          <div class="arch-label">Kotlin VmManager</div>
-          <div class="arch-desc">Launches libqemu.so via JNI, manages ForegroundService lifecycle</div>
-        </div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-layer arch-layer-highlight">
-          <div class="arch-label">QEMU (libqemu.so)</div>
-          <div class="arch-desc">Compiled as .so shipped inside the APK. Runs as a normal app process — no root.</div>
-        </div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-layer">
-          <div class="arch-label">Alpine Linux VM</div>
-          <div class="arch-desc">Boots from a bundled QCOW2 asset. SLIRP networking, persistent overlay, OpenRC init.</div>
-        </div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-layer">
-          <div class="arch-label">Your workload</div>
-          <div class="arch-desc">Containers · k3s · Asterisk PBX · Linux desktop · bash shell — whatever runs on Linux</div>
-        </div>
-      </div>
-
-      <div class="port-table-wrap">
-        <h3 class="sub-heading">SLIRP port mappings</h3>
-        <table class="port-table">
-          <thead>
-            <tr><th>Port</th><th>Protocol</th><th>Service</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>7080</td><td>TCP</td><td>Linxr control API</td></tr>
-            <tr><td>2222</td><td>TCP</td><td>OpenSSH (<code>ssh root@localhost -p 2222</code>)</td></tr>
-            <tr><td>6080 / 5900</td><td>TCP</td><td>noVNC web desktop / VNC server</td></tr>
-            <tr><td>11434</td><td>TCP</td><td>Ollama API</td></tr>
-            <tr><td>8088 → 80</td><td>TCP</td><td>Web server inside the VM</td></tr>
-            <tr><td>3000, 5000, 8000, 8080, 8443, 9000</td><td>TCP</td><td>Your web apps (open in Chrome on the phone)</td></tr>
-          </tbody>
-        </table>
+      <h2 class="section-title">Merged apps</h2>
+      <p class="section-sub">These standalone apps are archived. Their features now live in Linxr.</p>
+      <div class="contrib-repos data-repos">
+        <a href="pockr.html" class="repo-link"><span class="repo-name">Pockr</span><span class="repo-sub">Docker on Android → Linxr Containers tab</span><span class="repo-arrow">→</span></a>
+        <a href="zyvr.html" class="repo-link"><span class="repo-name">Zyvr</span><span class="repo-sub">Asterisk PBX → Linxr Marketplace</span><span class="repo-arrow">→</span></a>
+        <a href="https://github.com/AI2TH/Kubxr" class="repo-link" target="_blank" rel="noopener"><span class="repo-name">Kubxr</span><span class="repo-sub">Kubernetes node → k3s in Linxr</span><span class="repo-arrow">→</span></a>
       </div>
     </div>
   </section>
 
-  <!-- Requirements — first version design -->
-  <section class="section" id="requirements">
-    <div class="section-inner">
-      <h2 class="section-title">Requirements</h2>
-      <div class="req-grid">
-        <div class="req-item">
-          <div class="req-icon">📱</div>
-          <div class="req-label">Android 8.0+</div>
-          <div class="req-detail">API level 26 or higher</div>
-        </div>
-        <div class="req-item">
-          <div class="req-icon">⚙️</div>
-          <div class="req-label">ARM64 only</div>
-          <div class="req-detail">arm64-v8a architecture required</div>
-        </div>
-        <div class="req-item">
-          <div class="req-icon">💾</div>
-          <div class="req-label">~250 MB + VM disk</div>
-          <div class="req-detail">APK, plus 8 GB or more for the VM disk</div>
-        </div>
-        <div class="req-item">
-          <div class="req-icon">🔓</div>
-          <div class="req-label">No root needed</div>
-          <div class="req-detail">QEMU runs as a normal app process</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <footer class="footer">
     <div class="footer-inner">
       <img src="logo/AI2TH.svg" alt="AI2TH" class="nav-logo-img footer-logo-img" />
-      <p class="footer-tagline">Building Linux on Android — no root required.</p>
+      <p class="footer-tagline">Applied Intelligence To Tackle Hardships.</p>
       <div class="footer-links">
-        <a href="index.html">Home</a>
+        <a href="linxr.html">Linxr</a>
+        <a href="vizxr.html">Vizxr</a>
+        <a href="miktam.html">Miktam Bible</a>
+        <a href="cryptship.html">cryptship</a>
+        <a href="android.html">Linux on Android</a>
+        <a href="about.html">About</a>
+        <a href="contribute.html">Contribute</a>
         <a href="privacy.html">Privacy</a>
-        <a href="https://github.com/AI2TH/Linxr" target="_blank" rel="noopener">Linxr</a>
-        <a href="https://github.com/AI2TH/Vizxr" target="_blank" rel="noopener">Vizxr</a>
-        <a href="https://github.com/AI2TH/linxr-marketplace" target="_blank" rel="noopener">Marketplace</a>
         <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
         <a href="https://groups.google.com/g/ai2th" target="_blank" rel="noopener">Community</a>
       </div>
     </div>
   </footer>
-
 </body>
 </html>
