@@ -163,8 +163,8 @@ Name/username    Host    Dyn  Port  Status
   <!-- Architecture — first version design -->
   <section class="section section-alt" id="architecture">
     <div class="section-inner">
-      <h2 class="section-title">How it works</h2>
-      <p class="section-sub">Every app uses the same layered stack — QEMU gives the Linux VM, Alpine gives the environment, the app gives the UI.</p>
+      <h2 class="section-title">How Linxr works</h2>
+      <p class="section-sub">Linxr carries a whole Linux virtual machine inside its APK: QEMU provides the VM, Alpine Linux the system, and the app the controls. This stack is Linxr&rsquo;s alone; cryptship runs wherever Docker runs.</p>
 
       <div class="arch-grid">
         <div class="arch-layer">
@@ -194,7 +194,7 @@ Name/username    Host    Dyn  Port  Status
       </div>
 
       <div class="port-table-wrap">
-        <h3 class="sub-heading">SLIRP port mappings</h3>
+        <h3 class="sub-heading">Linxr port forwards</h3>
         <table class="port-table">
           <thead>
             <tr><th>Port</th><th>Protocol</th><th>Service</th></tr>
@@ -215,7 +215,7 @@ Name/username    Host    Dyn  Port  Status
   <!-- Requirements — first version design -->
   <section class="section" id="requirements">
     <div class="section-inner">
-      <h2 class="section-title">Requirements</h2>
+      <h2 class="section-title">Linxr requirements</h2>
       <div class="req-grid">
         <div class="req-item">
           <div class="req-icon">📱</div>
