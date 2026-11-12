@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Android Infrastructure — AI2TH</title>
-  <meta name="description" content="Run full Linux environments on Android — no root, no Termux. Linxr, Pockr, and Zyvr by AI2TH." />
+  <meta name="description" content="Run full Linux environments on Android — no root, no Termux. Linxr and Vizxr by AI2TH; Pockr, Zyvr and Kubxr are merged into Linxr." />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,20 +33,24 @@
       <div class="breadcrumb"><a href="index.html">AI2TH</a><span>/</span>Android Infrastructure</div>
       <h1 class="page-title">Linux on Android,<br /><span class="accent">no root required.</span></h1>
       <p class="page-sub">
-        Three apps that embed QEMU + Alpine Linux directly in the APK.
-        Run Docker, Asterisk PBX, or a bare shell on any arm64 Android device.
+        Linxr embeds QEMU + Alpine Linux directly in the APK and runs containers, k3s Kubernetes,
+        Asterisk PBX and a Linux desktop on any arm64 Android device. Vizxr manages the clusters.
       </p>
       <div class="terminal-window page-terminal">
         <div class="terminal-bar">
           <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-          <span class="terminal-title">alpine@android:~</span>
+          <span class="terminal-title">root@linxr:~</span>
         </div>
         <pre class="terminal-body"><span class="t-dim">$</span> <span class="t-cmd">uname -a</span>
-Linux alpine 6.1.0 #1 SMP PREEMPT arm64 GNU/Linux
+Linux linxr 6.18.0-virt #1 SMP PREEMPT aarch64 Linux
 
 <span class="t-dim">$</span> <span class="t-cmd">docker run hello-world</span>
 Hello from Docker! This message shows that your installation
 appears to be working correctly.
+
+<span class="t-dim">$</span> <span class="t-cmd">k3s kubectl get nodes</span>
+NAME    STATUS   ROLES                  AGE   VERSION
+linxr   Ready    control-plane,master   2m    v1.30.4+k3s1
 
 <span class="t-dim">$</span> <span class="t-cmd">asterisk -rx "sip show peers"</span>
 Name/username    Host    Dyn  Port  Status
@@ -58,11 +62,11 @@ Name/username    Host    Dyn  Port  Status
     </div>
   </div>
 
-  <!-- Projects — first version design with featured Pockr -->
+  <!-- Projects -->
   <section class="section" id="projects">
     <div class="section-inner">
       <h2 class="section-title">Projects</h2>
-      <p class="section-sub">Three apps. Same architecture. Different superpowers.</p>
+      <p class="section-sub">Linxr is the one app for Linux on Android, and Vizxr is its Kubernetes IDE. Pockr, Zyvr and Kubxr have been merged into Linxr.</p>
 
       <div class="cards">
 
@@ -72,23 +76,48 @@ Name/username    Host    Dyn  Port  Status
             <img src="logo/linxr.svg" alt="Linxr" class="card-logo-img" />
             <div>
               <h3 class="card-name">Linxr</h3>
-              <span class="card-tag">Alpine Linux Shell</span>
+              <span class="card-tag">Linux, containers, k3s &amp; PBX</span>
             </div>
           </div>
           <p class="card-desc">
-            A full Alpine Linux environment running inside QEMU on Android.
-            Get a real bash shell, SSH access, persistent storage — on any arm64 phone with zero root.
+            A full Alpine Linux VM inside QEMU on Android — real shell, SSH, containers, Kubernetes and a desktop GUI,
+            on any arm64 phone with zero root. Now includes Pockr, Zyvr and Kubxr.
           </p>
           <ul class="card-features">
-            <li>OpenSSH server — connect from any SSH client</li>
-            <li>Built-in terminal with auto-reconnect</li>
-            <li>Persistent QCOW2 overlay across reboots</li>
-            <li>Full outbound internet via SLIRP networking</li>
+            <li>FastTrack OCI (podman/crun) or Docker containers</li>
+            <li>1-click Marketplace: k3s, Asterisk PBX, Ollama, Nginx, PostgreSQL&hellip;</li>
+            <li>Linux desktop GUI (X11, XFCE4) in the app</li>
+            <li>Multi-tab SSH terminal and Virtio-9P shared storage</li>
           </ul>
           <div class="card-footer">
             <a href="linxr.html" class="btn btn-sm">View details →</a>
             <a href="https://github.com/AI2TH/Linxr" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">GitHub</a>
             <a href="https://github.com/AI2TH/Linxr/releases/latest" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">APK</a>
+          </div>
+        </div>
+
+        <!-- Vizxr -->
+        <div class="card">
+          <div class="card-header">
+            <img src="logo/vizxr.svg" alt="Vizxr" class="card-logo-img" />
+            <div>
+              <h3 class="card-name">Vizxr</h3>
+              <span class="card-tag">Kubernetes IDE for Android</span>
+            </div>
+          </div>
+          <p class="card-desc">
+            Manage local and remote Kubernetes clusters from your phone. Connects to Linxr&rsquo;s k3s on localhost:6443
+            or to AKS, GKE and EKS via kubeconfig.
+          </p>
+          <ul class="card-features">
+            <li>Lens-style resource inspector and events feed</li>
+            <li>Live CPU and memory sparklines</li>
+            <li>CRD explorer and Helm release rollback</li>
+            <li>Log streaming, pod exec and YAML editor</li>
+          </ul>
+          <div class="card-footer">
+            <a href="https://github.com/AI2TH/Vizxr" class="btn btn-sm" target="_blank" rel="noopener">GitHub →</a>
+            <a href="https://github.com/AI2TH/Vizxr/releases/latest" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">APK</a>
           </div>
         </div>
 
@@ -118,17 +147,17 @@ Name/username    Host    Dyn  Port  Status
         </div>
 
         <!-- Zyvr -->
-        <div class="card">
+        <div class="card card-deprecated">
           <div class="card-header">
             <img src="logo/Zyvr.svg" alt="Zyvr" class="card-logo-img" />
             <div>
               <h3 class="card-name">Zyvr</h3>
-              <span class="card-tag">Asterisk PBX on Android</span>
+              <span class="card-tag" style="color: #f87171; background: rgba(239, 68, 68, 0.15);">Merged into Linxr</span>
             </div>
           </div>
           <p class="card-desc">
-            Zero-carrier Your Voice Router. A full Asterisk 20 PBX running on your phone.
-            Manage SIP extensions, monitor live calls, and route calls — carrier-independent.
+            Standalone Zyvr app is deprecated. The Asterisk 20 PBX now installs from the <strong>Linxr</strong> Marketplace,
+            as a container (<code>zyvr-docker</code>) or a native Alpine service (<code>zyvr-native</code>).
           </p>
           <ul class="card-features">
             <li>Asterisk 20 with PJSIP driver</li>
@@ -139,10 +168,56 @@ Name/username    Host    Dyn  Port  Status
           <div class="card-footer">
             <a href="zyvr.html" class="btn btn-sm">View details →</a>
             <a href="https://github.com/AI2TH/Zyvr" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://github.com/AI2TH/Zyvr/releases/latest" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">APK</a>
+            <a href="linxr.html" class="btn btn-sm btn-ghost">Open Linxr</a>
           </div>
         </div>
 
+        <!-- Kubxr -->
+        <div class="card card-deprecated">
+          <div class="card-header">
+            <div class="card-logo-img card-logo-glyph" aria-hidden="true">☸</div>
+            <div>
+              <h3 class="card-name">Kubxr</h3>
+              <span class="card-tag" style="color: #f87171; background: rgba(239, 68, 68, 0.15);">Merged into Linxr</span>
+            </div>
+          </div>
+          <p class="card-desc">
+            Standalone Kubxr Kubernetes node is deprecated. Run k3s from the <strong>Linxr</strong> Marketplace
+            and manage it with <strong>Vizxr</strong>.
+          </p>
+          <ul class="card-features">
+            <li>k3s with cgroup2 and /dev/kmsg support</li>
+            <li>TLS handshake down from ~11 s to ~15 ms</li>
+            <li>API on localhost:6443 for Vizxr</li>
+          </ul>
+          <div class="card-footer">
+            <a href="https://github.com/AI2TH/Kubxr" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">GitHub</a>
+            <a href="linxr.html" class="btn btn-sm btn-ghost">Open Linxr</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Join the closed-testing group -->
+  <section class="section join-section">
+    <div class="section-inner">
+      <div class="join-banner">
+        <div class="join-icon" aria-hidden="true">🚀</div>
+        <div class="join-body">
+          <h2 class="join-title">Get new apps first on Google Play</h2>
+          <p class="join-desc">
+            Every new AI2TH app is released on the Play Store through closed testing first.
+            Join the <strong>AI2TH Google Group</strong> with your Google account and you get early access
+            to Linxr, Vizxr, Miktam Bible and each new app as it ships — install and update straight from Google Play.
+          </p>
+          <div class="join-actions">
+            <a href="https://groups.google.com/g/ai2th" class="btn btn-primary" target="_blank" rel="noopener">Join the AI2TH group →</a>
+            <a href="https://forms.gle/jdLxXPVhDYm5ubpQ7" class="btn btn-ghost" target="_blank" rel="noopener">Different Play account? Request access</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -176,7 +251,7 @@ Name/username    Host    Dyn  Port  Status
         <div class="arch-arrow">↓</div>
         <div class="arch-layer">
           <div class="arch-label">Your workload</div>
-          <div class="arch-desc">Docker daemon · Asterisk PBX · bash shell — whatever runs on Linux</div>
+          <div class="arch-desc">Containers · k3s · Asterisk PBX · Linux desktop · bash shell — whatever runs on Linux</div>
         </div>
       </div>
 
@@ -184,15 +259,15 @@ Name/username    Host    Dyn  Port  Status
         <h3 class="sub-heading">SLIRP port mappings</h3>
         <table class="port-table">
           <thead>
-            <tr><th>Port</th><th>Protocol</th><th>Service</th><th>App</th></tr>
+            <tr><th>Port</th><th>Protocol</th><th>Service</th></tr>
           </thead>
           <tbody>
-            <tr><td>7080</td><td>TCP</td><td>FastAPI control server</td><td>All</td></tr>
-            <tr><td>2222</td><td>TCP</td><td>OpenSSH</td><td>Linxr</td></tr>
-            <tr><td>5060</td><td>TCP/UDP</td><td>SIP</td><td>Zyvr</td></tr>
-            <tr><td>5038</td><td>TCP</td><td>Asterisk AMI</td><td>Zyvr</td></tr>
-            <tr><td>8088/8089</td><td>TCP</td><td>ARI / WebSocket (WSS)</td><td>Zyvr</td></tr>
-            <tr><td>10000–10019</td><td>UDP</td><td>RTP media</td><td>Zyvr</td></tr>
+            <tr><td>7080</td><td>TCP</td><td>Linxr control API</td></tr>
+            <tr><td>2222</td><td>TCP</td><td>OpenSSH (<code>ssh root@localhost -p 2222</code>)</td></tr>
+            <tr><td>6080 / 5900</td><td>TCP</td><td>noVNC web desktop / VNC server</td></tr>
+            <tr><td>11434</td><td>TCP</td><td>Ollama API</td></tr>
+            <tr><td>8088 → 80</td><td>TCP</td><td>Web server inside the VM</td></tr>
+            <tr><td>3000, 5000, 8000, 8080, 8443, 9000</td><td>TCP</td><td>Your web apps (open in Chrome on the phone)</td></tr>
           </tbody>
         </table>
       </div>
@@ -216,8 +291,8 @@ Name/username    Host    Dyn  Port  Status
         </div>
         <div class="req-item">
           <div class="req-icon">💾</div>
-          <div class="req-label">~250 MB storage</div>
-          <div class="req-detail">For the APK + VM image</div>
+          <div class="req-label">~250 MB + VM disk</div>
+          <div class="req-detail">APK, plus 8 GB or more for the VM disk</div>
         </div>
         <div class="req-item">
           <div class="req-icon">🔓</div>
@@ -236,8 +311,8 @@ Name/username    Host    Dyn  Port  Status
         <a href="index.html">Home</a>
         <a href="privacy.html">Privacy</a>
         <a href="https://github.com/AI2TH/Linxr" target="_blank" rel="noopener">Linxr</a>
-        <a href="https://github.com/AI2TH/Pockr" target="_blank" rel="noopener">Pockr</a>
-        <a href="https://github.com/AI2TH/Zyvr" target="_blank" rel="noopener">Zyvr</a>
+        <a href="https://github.com/AI2TH/Vizxr" target="_blank" rel="noopener">Vizxr</a>
+        <a href="https://github.com/AI2TH/linxr-marketplace" target="_blank" rel="noopener">Marketplace</a>
         <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
         <a href="https://groups.google.com/g/ai2th" target="_blank" rel="noopener">Community</a>
       </div>

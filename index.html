@@ -34,11 +34,33 @@
       <h1 class="hero-title">Linux on Android,<br /><span class="accent">the hard way done right.</span></h1>
       <p class="hero-sub">
         AI2TH ships Android apps that embed QEMU + Alpine Linux directly in the APK.
-        Run Docker, Asterisk PBX, or a bare Linux shell on any arm64 device — no special permissions required.
+        Linxr runs containers, k3s Kubernetes, Asterisk PBX and a full Linux desktop on any arm64 device; Vizxr manages your clusters. No special permissions required.
       </p>
       <div class="hero-cta">
         <a href="android.html" class="btn btn-primary">Explore Projects</a>
         <a href="https://github.com/AI2TH" class="btn btn-ghost" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Join the closed-testing group -->
+  <section class="section join-section">
+    <div class="section-inner">
+      <div class="join-banner">
+        <div class="join-icon" aria-hidden="true">🚀</div>
+        <div class="join-body">
+          <h2 class="join-title">Get new apps first on Google Play</h2>
+          <p class="join-desc">
+            Every new AI2TH app is released on the Play Store through closed testing first.
+            Join the <strong>AI2TH Google Group</strong> with your Google account and you get early access
+            to Linxr, Vizxr, Miktam Bible and each new app as it ships — install and update straight from Google Play.
+          </p>
+          <div class="join-actions">
+            <a href="https://groups.google.com/g/ai2th" class="btn btn-primary" target="_blank" rel="noopener">Join the AI2TH group →</a>
+            <a href="https://forms.gle/jdLxXPVhDYm5ubpQ7" class="btn btn-ghost" target="_blank" rel="noopener">Different Play account? Request access</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -57,8 +79,8 @@
           </div>
           <div class="field-body">
             <div class="field-name">Android Infrastructure</div>
-            <div class="field-desc">Run full Linux environments on Android — no root, no Termux, one APK. Docker, Asterisk PBX, bare shell.</div>
-            <div class="field-meta">3 projects &rarr;</div>
+            <div class="field-desc">Run full Linux environments on Android — no root, no Termux, one APK. Linxr for containers, k3s, Asterisk PBX and a desktop GUI; Vizxr for Kubernetes.</div>
+            <div class="field-meta">Linxr + Vizxr &middot; Pockr, Zyvr, Kubxr merged &rarr;</div>
           </div>
         </a>
 
@@ -88,6 +110,41 @@
     </div>
   </section>
 
+  <!-- What's new -->
+  <section class="section section-alt" id="whats-new">
+    <div class="section-inner">
+      <h2 class="section-title">What&rsquo;s new</h2>
+      <p class="section-sub">Recently built and released. Pockr, Zyvr and Kubxr are now merged into Linxr.</p>
+      <ol class="news-list">
+        <li class="news-item">
+          <div class="news-meta"><span class="news-tag">Linxr v3.4.0</span><time datetime="2026-11-06">6 Nov 2026</time></div>
+          <div class="news-title">Mobile Linux virtual desktop</div>
+          <p class="news-desc">Run graphical X11, GTK and Qt apps on your phone. Openbox or XFCE4 desktop, viewed in-app through noVNC, with a resolution picker and quick launchers.</p>
+        </li>
+        <li class="news-item">
+          <div class="news-meta"><span class="news-tag">Vizxr v1.1.0</span><time datetime="2026-11-05">5 Nov 2026</time></div>
+          <div class="news-title">Kubernetes IDE for Android</div>
+          <p class="news-desc">Lens-style resource inspector, live CPU and memory sparklines, CRD explorer, and Helm releases with 1-tap rollback. Works with Linxr&rsquo;s k3s and remote clusters.</p>
+        </li>
+        <li class="news-item">
+          <div class="news-meta"><span class="news-tag">Linxr v3.3.0</span><time datetime="2026-11-02">2 Nov 2026</time></div>
+          <div class="news-title">Asterisk PBX merged in, dual-mode Marketplace</div>
+          <p class="news-desc">Zyvr&rsquo;s Asterisk 20 PBX now installs from the Linxr Marketplace, as a container or as a native Alpine service. Also new: Zabbix, and native Nginx, PostgreSQL 16 and Redis.</p>
+        </li>
+        <li class="news-item">
+          <div class="news-meta"><span class="news-tag">Linxr v3.2.0</span><time datetime="2026-11-01">1 Nov 2026</time></div>
+          <div class="news-title">FastTrack OCI engine and multi-core VM</div>
+          <p class="news-desc">Daemonless containers with podman and crun cut idle CPU to under 1%. QEMU now runs multi-threaded on Cortex-A76. Adds full container lifecycle, custom port forwarding and faster k3s TLS.</p>
+        </li>
+        <li class="news-item">
+          <div class="news-meta"><span class="news-tag">Linxr v3.1.0</span><time datetime="2026-10-24">24 Oct 2026</time></div>
+          <div class="news-title">1-click Marketplace and Ollama AI</div>
+          <p class="news-desc">Deploy k3s Kubernetes, Ollama, Nginx, Redis, PostgreSQL, VS Code Server and more in one tap. Recipes sync from the community <a href="https://github.com/AI2TH/linxr-marketplace" target="_blank" rel="noopener">linxr-marketplace</a>.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
   <footer class="footer">
     <div class="footer-inner">
       <img src="logo/AI2TH.svg" alt="AI2TH" class="nav-logo-img footer-logo-img" />
@@ -96,8 +153,8 @@
         <a href="android.html">Android</a>
         <a href="privacy.html">Privacy</a>
         <a href="https://github.com/AI2TH/Linxr" target="_blank" rel="noopener">Linxr</a>
-        <a href="https://github.com/AI2TH/Pockr" target="_blank" rel="noopener">Pockr</a>
-        <a href="https://github.com/AI2TH/Zyvr" target="_blank" rel="noopener">Zyvr</a>
+        <a href="https://github.com/AI2TH/Vizxr" target="_blank" rel="noopener">Vizxr</a>
+        <a href="https://github.com/AI2TH/linxr-marketplace" target="_blank" rel="noopener">Marketplace</a>
         <a href="https://github.com/AI2TH" target="_blank" rel="noopener">GitHub</a>
         <a href="https://groups.google.com/g/ai2th" target="_blank" rel="noopener">Community</a>
       </div>

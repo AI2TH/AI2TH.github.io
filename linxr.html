@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Linxr — AI2TH</title>
-  <meta name="description" content="Linxr runs full Alpine Linux inside QEMU on Android — no root required." />
+  <meta name="description" content="Linxr runs full Alpine Linux inside QEMU on Android — containers, k3s Kubernetes, Asterisk PBX and a desktop GUI. No root required." />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,16 +38,18 @@
         <img src="logo/linxr.svg" alt="Linxr" class="project-logo-img" />
         <div>
           <h1 class="page-title" style="margin-bottom:4px">Linxr</h1>
-          <span class="card-tag">Alpine Linux Shell on Android</span>
+          <span class="card-tag">Linux, containers, k3s &amp; PBX on Android</span>
         </div>
       </div>
       <p class="page-sub">
         A full Alpine Linux environment running inside QEMU on Android.
-        Real bash shell, SSH access, persistent storage — on any arm64 phone with zero root.
+        Real bash shell, SSH, containers, k3s Kubernetes, Asterisk PBX and a Linux desktop — on any arm64 phone with zero root.
+        Pockr, Zyvr and Kubxr are now merged into Linxr.
       </p>
       <div class="project-links">
         <a href="https://github.com/AI2TH/Linxr" class="btn btn-primary" target="_blank" rel="noopener">GitHub →</a>
         <a href="https://github.com/AI2TH/Linxr/releases/latest" class="btn btn-ghost" target="_blank" rel="noopener">Download APK</a>
+        <a href="https://play.google.com/store/apps/details?id=com.ai2th.linxr" class="btn btn-ghost" target="_blank" rel="noopener">Google Play (early access)</a>
       </div>
     </div>
   </div>
@@ -65,7 +67,7 @@
         <div class="feature-item">
           <div class="feature-icon">⚙️</div>
           <div class="feature-title">QEMU Virtualization Engine</div>
-          <div class="feature-desc">Powered by QEMU arm64 virtualization with virtio-net, virtio-blk, virtio-rng, and virtio-9p devices</div>
+          <div class="feature-desc">QEMU arm64 on a Cortex-A76 model with multi-threaded TCG across up to 4 vCPUs; virtio-net, -blk, -rng and -9p devices</div>
         </div>
         <div class="feature-item">
           <div class="feature-icon">📜</div>
@@ -74,8 +76,33 @@
         </div>
         <div class="feature-item">
           <div class="feature-icon">🐳</div>
-          <div class="feature-title">Docker &amp; Container Manager</div>
-          <div class="feature-desc">Integrated container dashboard to deploy, log, and manage Docker containers</div>
+          <div class="feature-title">FastTrack OCI &amp; Docker</div>
+          <div class="feature-desc">Daemonless podman/crun containers (idle CPU under 1%) or Docker; start, restart, inspect, export and import. Merged from Pockr</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🖥️</div>
+          <div class="feature-title">Linux Desktop GUI</div>
+          <div class="feature-desc">Openbox or XFCE4 desktop for X11, GTK and Qt apps, viewed in-app through noVNC (new in v3.4)</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🛒</div>
+          <div class="feature-title">1-Click Marketplace</div>
+          <div class="feature-desc">Docker or native Alpine recipes: k3s, Ollama AI, Nginx, PostgreSQL 16, Redis, Zabbix, VS Code Server, synced from linxr-marketplace</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">☸️</div>
+          <div class="feature-title">k3s Kubernetes</div>
+          <div class="feature-desc">k3s with cgroup2 and fast TLS (~15 ms handshakes); manage it with Vizxr. Merged from Kubxr</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📞</div>
+          <div class="feature-title">Asterisk PBX</div>
+          <div class="feature-desc">Asterisk 20 VoIP PBX as a container or native service from the Marketplace. Merged from Zyvr</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🔌</div>
+          <div class="feature-title">Port Forwarding</div>
+          <div class="feature-desc">Open VM web apps in Chrome on localhost; custom mappings, loopback-only by default with an opt-in LAN toggle</div>
         </div>
         <div class="feature-item">
           <div class="feature-icon">📡</div>
@@ -88,6 +115,43 @@
           <div class="feature-desc">Direct POSIX file path sharing between Android host and guest Linux VM</div>
         </div>
       </div>
+    </div>
+  </section>
+
+
+  <!-- Join the closed-testing group -->
+  <section class="section join-section">
+    <div class="section-inner">
+      <div class="join-banner">
+        <div class="join-icon" aria-hidden="true">🚀</div>
+        <div class="join-body">
+          <h2 class="join-title">Get new apps first on Google Play</h2>
+          <p class="join-desc">
+            Every new AI2TH app is released on the Play Store through closed testing first.
+            Join the <strong>AI2TH Google Group</strong> with your Google account and you get early access
+            to Linxr, Vizxr, Miktam Bible and each new app as it ships — install and update straight from Google Play.
+          </p>
+          <div class="join-actions">
+            <a href="https://groups.google.com/g/ai2th" class="btn btn-primary" target="_blank" rel="noopener">Join the AI2TH group →</a>
+            <a href="https://forms.gle/jdLxXPVhDYm5ubpQ7" class="btn btn-ghost" target="_blank" rel="noopener">Different Play account? Request access</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Release history -->
+  <section class="section">
+    <div class="section-inner">
+      <h2 class="section-title">Release history</h2>
+      <ol class="release-list">
+        <li><a href="https://github.com/AI2TH/Linxr/releases/tag/v3.4.0%2B30" target="_blank" rel="noopener">v3.4.0</a><time datetime="2026-11-06">6 Nov 2026</time><span>Mobile Linux virtual desktop GUI</span></li>
+        <li><a href="https://github.com/AI2TH/Linxr/releases/tag/v3.3.0%2B29" target="_blank" rel="noopener">v3.3.0</a><time datetime="2026-11-02">2 Nov 2026</time><span>Dual-mode Marketplace (Docker or native), Asterisk PBX from Zyvr, Zabbix</span></li>
+        <li><a href="https://github.com/AI2TH/Linxr/releases/tag/v3.2.0%2B28" target="_blank" rel="noopener">v3.2.0</a><time datetime="2026-11-01">1 Nov 2026</time><span>FastTrack OCI engine, multi-vCPU Cortex-A76, container lifecycle, port forwarding</span></li>
+        <li><a href="https://github.com/AI2TH/Linxr/releases/tag/v3.1.0%2B27" target="_blank" rel="noopener">v3.1.0</a><time datetime="2026-10-24">24 Oct 2026</time><span>1-click Marketplace, community sync, Docker and Ollama AI</span></li>
+        <li><a href="https://github.com/AI2TH/Linxr/releases/tag/v3.0.0%2B26" target="_blank" rel="noopener">v3.0.0</a><time datetime="2026-08-05">5 Aug 2026</time><span>Kernel 6.18-virt, live serial log console, Virtio-9P storage</span></li>
+        <li><a href="https://github.com/AI2TH/Linxr/releases/tag/v1.1.6" target="_blank" rel="noopener">v1.1.6</a><time datetime="2026-04-27">27 Apr 2026</time><span>Dynamic disk expansion</span></li>
+      </ol>
     </div>
   </section>
 
