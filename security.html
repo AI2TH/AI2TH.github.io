@@ -61,7 +61,7 @@
           <ul class="card-features">
             <li>AES-256-GCM payloads, Ed25519 licenses</li>
             <li>Air-gapped, on-prem and cloud modes</li>
-            <li>Instant revocation via license server</li>
+            <li>Revocation via your own key server</li>
             <li>Hardening and per-license watermarks</li>
           </ul>
           <div class="product-status">v0.1.0 · Go · GPLv3</div>
@@ -119,7 +119,7 @@
         <div class="arch-arrow">↓</div>
         <div class="arch-layer">
           <div class="arch-label">Decrypt to tmpfs</div>
-          <div class="arch-desc">Wrong license or machine means the AEAD tag fails</div>
+          <div class="arch-desc">Wrong machine or an edited license means the AEAD tag fails</div>
         </div>
         <div class="arch-arrow">↓</div>
         <div class="arch-layer">

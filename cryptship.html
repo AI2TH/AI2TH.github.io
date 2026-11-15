@@ -97,7 +97,7 @@
         <div class="arch-arrow">↓</div>
         <div class="arch-layer">
           <div class="arch-label">Decrypt to tmpfs</div>
-          <div class="arch-desc">Wrong license or machine means the AEAD tag fails</div>
+          <div class="arch-desc">Wrong machine or an edited license means the AEAD tag fails</div>
         </div>
         <div class="arch-arrow">↓</div>
         <div class="arch-layer">
@@ -114,14 +114,15 @@
   <section class="section">
     <div class="section-inner">
       <h2 class="section-title">The key idea</h2>
-      <p class="section-sub">There is no &ldquo;is the license valid?&rdquo; check to patch out. The decryption key is derived from the license itself.</p>
+      <p class="section-sub">Binding is cryptographic: the decryption key is derived from the machine and the license&rsquo;s bound claims, so the wrong machine or an edited license cannot decrypt. The signature and expiry are checked by the loader; for expiry that holds against a patched loader, use the <code>online</code> provider.</p>
       <div class="terminal-window page-terminal">
         <div class="terminal-bar">
           <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-          <span class="terminal-title">no "is valid?" boolean to patch</span>
+          <span class="terminal-title">binding is cryptographic</span>
         </div>
-        <pre class="terminal-body"><span class="t-dim"># the key is derived from the license, so a valid license and a successful decrypt are the same event</span>
-content_key = unwrap(license.wrapped_key, KEK = derive(machine_fingerprint, license_id))
+        <pre class="terminal-body"><span class="t-dim"># the key is derived from the machine and the bound claims: wrong machine or edited license => no key</span>
+KEK         = HKDF(machine_fingerprint, license_id, bound claims)
+content_key = unwrap(license.wrapped_key, KEK)
 plaintext   = aead_open(payload.enc, content_key)   <span class="t-dim"># wrong key =&gt; AEAD tag fails</span></pre>
       </div>
     </div>
@@ -136,8 +137,8 @@ plaintext   = aead_open(payload.enc, content_key)   <span class="t-dim"># wrong 
           <thead><tr><th>Mode</th><th>Provider</th><th>Binding</th><th>Revocation</th></tr></thead>
           <tbody>
             <tr><td>Air-gapped</td><td><code>offline</code></td><td>Machine fingerprint, or none</td><td>Expiry only</td></tr>
-            <tr><td>On-prem / cloud</td><td><code>online</code></td><td>Per-license secret held by your server</td><td>Real: the server declines</td></tr>
-            <tr><td>Confidential</td><td><code>attested</code></td><td>SEV-SNP / TDX attestation gates the key</td><td>Real, plus anti-tamper</td></tr>
+            <tr><td>On-prem / cloud</td><td><code>online</code></td><td>Per-license secret held by your server</td><td>Yes: the server declines on the next start</td></tr>
+            <tr><td>Confidential</td><td><code>attested</code></td><td>SEV-SNP / TDX attestation gates the key</td><td>Planned: interface and mock only today</td></tr>
           </tbody>
         </table>
       </div>
@@ -181,7 +182,7 @@ plaintext   = aead_open(payload.enc, content_key)   <span class="t-dim"># wrong 
   <section class="section section-alt">
     <div class="section-inner">
       <h2 class="section-title">Try the demo</h2>
-      <p class="section-sub">Needs only Docker. The demo packs a small Python app, proves no layer contains the source, runs it, then tampers with the license to show the loader refuse.</p>
+      <p class="section-sub">Needs Docker, plus <code>python3</code> for the tamper step. The demo packs a small Python app, shows the saved image does not contain the source, runs it, then tampers with the license to show the loader refuse it.</p>
       <div class="terminal-window page-terminal">
         <div class="terminal-bar">
           <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
@@ -191,7 +192,7 @@ plaintext   = aead_open(payload.enc, content_key)   <span class="t-dim"># wrong 
 <span class="t-dim">$</span> <span class="t-cmd">bash scripts/demo.sh</span></pre>
       </div>
       <ol class="release-list">
-        <li><a href="https://github.com/AI2TH/cryptship/releases/tag/v0.1.0" target="_blank" rel="noopener">v0.1.0</a><time datetime="2026-11-12">12 Nov 2026</time><span>First release: offline, online and attested key providers, license server, hardening, demos</span></li>
+        <li><a href="https://github.com/AI2TH/cryptship/releases/tag/v0.1.0" target="_blank" rel="noopener">v0.1.0</a><time datetime="2026-11-12">12 Nov 2026</time><span>First release: offline and online key providers, attested (mock), key server, hardening, demos</span></li>
       </ol>
     </div>
   </section>
