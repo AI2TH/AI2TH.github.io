@@ -64,7 +64,7 @@
             <li>Linux desktop GUI and SSH terminal</li>
             <li>1-click Marketplace with community recipes</li>
           </ul>
-          <div class="product-status">v3.4.0 · Google Play closed testing · APK on GitHub</div>
+          <div class="product-status">v3.4.0 · APK on GitHub · Google Play</div>
           <div class="card-footer">
             <a href="linxr.html" class="btn btn-sm">Details →</a>
             <a href="https://github.com/AI2TH/Linxr" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">GitHub</a>
@@ -141,7 +141,7 @@
           <span class="terminal-title">root@linxr:~</span>
         </div>
         <pre class="terminal-body"><span class="t-dim">#</span> <span class="t-cmd">uname -a</span>
-Linux linxr 6.18.0-virt #1 SMP PREEMPT aarch64 Linux
+Linux linxr 6.x-virt #1 SMP PREEMPT aarch64 Linux
 
 <span class="t-dim">#</span> <span class="t-cmd">docker run hello-world</span>
 Hello from Docker! This message shows that your installation
@@ -170,7 +170,7 @@ Objects found: 2
       <div class="arch-grid">
         <div class="arch-layer">
           <div class="arch-label">Flutter UI (Dart)</div>
-          <div class="arch-desc">Home, Terminal, Containers, Marketplace, Desktop, Files, Settings</div>
+          <div class="arch-desc">Home, Terminal, Containers, Marketplace, Files and Settings tabs; Desktop opens from Home</div>
         </div>
         <div class="arch-arrow">↓</div>
         <div class="arch-layer">
@@ -185,7 +185,7 @@ Objects found: 2
         <div class="arch-arrow">↓</div>
         <div class="arch-layer">
           <div class="arch-label">Alpine Linux VM</div>
-          <div class="arch-desc">Kernel 6.18-virt, OpenRC, SSH, apk; disk image grows on boot</div>
+          <div class="arch-desc">Alpine Linux on a linux-virt kernel, Dropbear SSH, apk packages</div>
         </div>
         <div class="arch-arrow">↓</div>
         <div class="arch-layer">
@@ -200,8 +200,8 @@ Objects found: 2
             <tr><th>Port</th><th>Protocol</th><th>Service</th></tr>
           </thead>
           <tbody>
-            <tr><td>7080</td><td>TCP</td><td>Linxr control API</td></tr>
-            <tr><td>2222</td><td>TCP</td><td>OpenSSH (<code>ssh root@localhost -p 2222</code>)</td></tr>
+            <tr><td>7081 → 7080</td><td>TCP</td><td>Linxr control API</td></tr>
+            <tr><td>2222</td><td>TCP</td><td>Dropbear SSH (<code>ssh root@localhost -p 2222</code>)</td></tr>
             <tr><td>6080 / 5900</td><td>TCP</td><td>noVNC web desktop / VNC server</td></tr>
             <tr><td>11434</td><td>TCP</td><td>Ollama API</td></tr>
             <tr><td>8088 → 80</td><td>TCP</td><td>Web server inside the VM</td></tr>

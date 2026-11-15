@@ -52,7 +52,7 @@
       <div class="project-links">
         <a href="https://github.com/AI2TH/Linxr" class="btn btn-primary" target="_blank" rel="noopener">GitHub →</a>
         <a href="https://github.com/AI2TH/Linxr/releases/latest" class="btn btn-ghost" target="_blank" rel="noopener">Download APK</a>
-        <a href="https://play.google.com/store/apps/details?id=com.ai2th.linxr" class="btn btn-ghost" target="_blank" rel="noopener">Google Play (closed testing)</a>
+        <a href="https://play.google.com/store/apps/details?id=com.ai2th.linxr" class="btn btn-ghost" target="_blank" rel="noopener">Google Play</a>
       </div>
     </div>
   </div>
@@ -64,13 +64,13 @@
       <div class="feature-grid">
         <div class="feature-item">
           <div class="feature-icon" aria-hidden="true">🐧</div>
-          <div class="feature-title">Alpine 3.20 and kernel 6.18-virt</div>
-          <div class="feature-desc">Real Linux kernel 6.18-virt with Alpine Linux 3.20, OpenRC init, OpenSSH, sudo, and apk package manager</div>
+          <div class="feature-title">Alpine Linux VM</div>
+          <div class="feature-desc">Alpine Linux on a real linux-virt kernel, with a fast custom init, Dropbear SSH, sudo and the apk package manager</div>
         </div>
         <div class="feature-item">
           <div class="feature-icon" aria-hidden="true">⚙️</div>
           <div class="feature-title">QEMU virtualization engine</div>
-          <div class="feature-desc">QEMU arm64 on a Cortex-A76 model with multi-threaded TCG across up to 4 vCPUs; virtio-net, -blk, -rng and -9p devices</div>
+          <div class="feature-desc">QEMU arm64 on a Cortex-A76 model with multi-threaded TCG across several vCPUs (2&ndash;4 by default, up to your phone&rsquo;s cores); virtio-net, -blk, -rng and -9p devices</div>
         </div>
         <div class="feature-item">
           <div class="feature-icon" aria-hidden="true">📜</div>
@@ -80,7 +80,7 @@
         <div class="feature-item">
           <div class="feature-icon" aria-hidden="true">🐳</div>
           <div class="feature-title">FastTrack OCI and Docker</div>
-          <div class="feature-desc">Daemonless podman/crun containers (idle CPU under 1%) or Docker; start, restart, inspect, export and import. Merged from Pockr</div>
+          <div class="feature-desc">Daemonless podman/crun containers, with no dockerd in the background, or Docker; start, restart, inspect, export and import. Merged from Pockr</div>
         </div>
         <div class="feature-item">
           <div class="feature-icon" aria-hidden="true">🖥️</div>
@@ -90,7 +90,7 @@
         <div class="feature-item">
           <div class="feature-icon" aria-hidden="true">☸️</div>
           <div class="feature-title">k3s Kubernetes</div>
-          <div class="feature-desc">k3s with cgroup2 and fast TLS (~15 ms handshakes); manage it with Vizxr. Merged from Kubxr</div>
+          <div class="feature-desc">k3s with cgroup2 and TLS tuned for emulation; manage it with Vizxr. Merged from Kubxr</div>
         </div>
         <div class="feature-item">
           <div class="feature-icon" aria-hidden="true">📞</div>
@@ -142,7 +142,6 @@
             <li>In Marketplace, open the <strong>custom recipe builder</strong>.</li>
             <li>Choose <strong>docker</strong> (image and ports) or <strong>script</strong> (an <code>apk</code> install script).</li>
             <li>Save it, or <strong>import</strong> a recipe JSON someone shared with you.</li>
-            <li><strong>Export</strong> your recipe as JSON to share it.</li>
           </ol>
         </div>
         <div class="market-card">
@@ -187,7 +186,7 @@
       <div class="arch-grid">
         <div class="arch-layer">
           <div class="arch-label">Flutter UI (Dart)</div>
-          <div class="arch-desc">Home, Terminal, Containers, Marketplace, Desktop, Files, Settings</div>
+          <div class="arch-desc">Home, Terminal, Containers, Marketplace, Files and Settings tabs; Desktop opens from Home</div>
         </div>
         <div class="arch-arrow">↓</div>
         <div class="arch-layer">
@@ -202,7 +201,7 @@
         <div class="arch-arrow">↓</div>
         <div class="arch-layer">
           <div class="arch-label">Alpine Linux VM</div>
-          <div class="arch-desc">Kernel 6.18-virt, OpenRC, SSH, apk; disk image grows on boot</div>
+          <div class="arch-desc">Alpine Linux on a linux-virt kernel, Dropbear SSH, apk packages</div>
         </div>
         <div class="arch-arrow">↓</div>
         <div class="arch-layer">
@@ -221,7 +220,7 @@
         <div class="join-body">
           <h2 class="join-title">Get our Play Store apps first</h2>
           <p class="join-desc">
-            AI2TH&rsquo;s Google Play apps, Linxr and Miktam Bible today, are released through closed testing.
+            New builds of AI2TH&rsquo;s Google Play apps, Linxr and Miktam Bible today, go to closed testing first; Miktam Bible is testing-only for now.
             Join the <strong>AI2TH Google Group</strong> and you become a closed tester for all of them,
             including every new Play app as it ships.
           </p>
