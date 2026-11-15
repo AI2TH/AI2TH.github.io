@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vizxr — AI2TH</title>
-  <meta name="description" content="Vizxr is a Kubernetes IDE for Android: resource inspector, live metrics, CRD explorer, Helm, logs, pod exec and YAML for local and cloud clusters." />
+  <meta name="description" content="Vizxr is a Kubernetes IDE for Android: resource inspector, CRD explorer, k3s Helm releases, live logs, events and YAML apply for local and cloud clusters." />
   <link rel="icon" type="image/svg+xml" href="logo/ai2th-mark.svg" />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -60,9 +60,9 @@
           <div class="feature-desc">Lens-style slide-over dock with overview, containers and pod specs, live events and manifest YAML</div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon" aria-hidden="true">📈</div>
-          <div class="feature-title">Live metrics</div>
-          <div class="feature-desc">Cluster CPU and memory sparklines with utilization pills for pods and nodes</div>
+          <div class="feature-icon" aria-hidden="true">🔔</div>
+          <div class="feature-title">Events feed</div>
+          <div class="feature-desc">Cluster and namespace events, plus each resource&rsquo;s own events in the inspector</div>
         </div>
         <div class="feature-item">
           <div class="feature-icon" aria-hidden="true">🧩</div>
@@ -71,23 +71,23 @@
         </div>
         <div class="feature-item">
           <div class="feature-icon" aria-hidden="true">⛵</div>
-          <div class="feature-title">Helm hub</div>
-          <div class="feature-desc">Browse repositories, inspect release revisions and values, roll back or uninstall in one tap</div>
+          <div class="feature-title">Helm on k3s</div>
+          <div class="feature-desc">k3s HelmChart releases: inspect values, install, roll back or uninstall in one tap</div>
         </div>
         <div class="feature-item">
           <div class="feature-icon" aria-hidden="true">📜</div>
           <div class="feature-title">Log streamer</div>
-          <div class="feature-desc">Tail logs from several containers in real time</div>
+          <div class="feature-desc">Stream a container&rsquo;s logs live, as <code>kubectl logs -f</code> does</div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon" aria-hidden="true">🖥️</div>
-          <div class="feature-title">Pod exec</div>
-          <div class="feature-desc">Integrated terminal for kubectl exec straight into containers</div>
+          <div class="feature-icon" aria-hidden="true">🧪</div>
+          <div class="feature-title">Demo cluster</div>
+          <div class="feature-desc">Point it at <code>demo.k8s.local</code> to try every screen without a real cluster</div>
         </div>
         <div class="feature-item">
           <div class="feature-icon" aria-hidden="true">📝</div>
-          <div class="feature-title">YAML editor</div>
-          <div class="feature-desc">View and change resource manifests with syntax highlighting</div>
+          <div class="feature-title">YAML apply</div>
+          <div class="feature-desc">View manifests and apply YAML; existing objects are updated, like <code>kubectl apply</code></div>
         </div>
         <div class="feature-item">
           <div class="feature-icon" aria-hidden="true">🔀</div>
@@ -107,7 +107,7 @@
       <div class="arch-grid">
         <div class="arch-layer">
           <div class="arch-label">Flutter UI (Dart)</div>
-          <div class="arch-desc">Explorer, inspector, logs, exec, YAML, Helm</div>
+          <div class="arch-desc">Explorer, inspector, logs, events, YAML, Helm</div>
         </div>
         <div class="arch-arrow">↓</div>
         <div class="arch-layer">
@@ -135,16 +135,37 @@
       <div class="contrib-steps steps-wide">
         <div class="contrib-step"><div class="step-num">1</div><div><div class="step-title">Install k3s in Linxr</div><div class="step-desc">Open the Linxr Marketplace and deploy the k3s recipe.</div></div></div>
         <div class="contrib-step"><div class="step-num">2</div><div><div class="step-title">Connect Vizxr</div><div class="step-desc">Vizxr reaches the local API server on <code>localhost:6443</code>.</div></div></div>
-        <div class="contrib-step"><div class="step-num">3</div><div><div class="step-title">Operate the cluster</div><div class="step-desc">Inspect workloads, stream logs, exec into pods and apply YAML from your phone.</div></div></div>
+        <div class="contrib-step"><div class="step-num">3</div><div><div class="step-title">Operate the cluster</div><div class="step-desc">Inspect workloads, stream logs, read events and apply YAML from your phone.</div></div></div>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="status">
+    <div class="section-inner">
+      <h2 class="section-title">Status</h2>
+      <p class="section-sub">What works today, and what is still being built.</p>
+      <div class="port-table-wrap">
+        <table class="port-table">
+          <thead><tr><th>Feature</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Resource browsing, CRDs</td><td>Working: live Kubernetes API calls</td></tr>
+            <tr><td>Logs and events</td><td>Working</td></tr>
+            <tr><td>YAML apply (create or update)</td><td>Working</td></tr>
+            <tr><td>Helm releases</td><td>Working on k3s (HelmChart resources); classic Helm v3 releases next</td></tr>
+            <tr><td>CPU and memory metrics</td><td>In progress: metrics-server integration</td></tr>
+            <tr><td>Pod exec terminal</td><td>In progress: the terminal view exists; exec over the API is being built</td></tr>
+            <tr><td>Port forwarding</td><td>Planned</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
     <div class="section-inner">
       <h2 class="section-title">Release history</h2>
       <ol class="release-list">
-        <li><a href="https://github.com/AI2TH/Vizxr/releases/tag/v1.1.0" target="_blank" rel="noopener">v1.1.0</a><time datetime="2026-11-05">5 Nov 2026</time><span>Lens-style inspector, sparkline metrics, CRD explorer, Helm hub</span></li>
+        <li><a href="https://github.com/AI2TH/Vizxr/releases/tag/v1.1.0" target="_blank" rel="noopener">v1.1.0</a><time datetime="2026-11-05">5 Nov 2026</time><span>Lens-style inspector, scope bar, CRD explorer, Helm hub</span></li>
       </ol>
     </div>
   </section>
